@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # CREATING THE INITIAL SEEDS
+puts "Destroying old seeds"
 User.destroy_all
 Restaurant.destroy_all
 Visit.destroy_all
@@ -42,7 +43,7 @@ Bookmark.create(restaurant: five_fields, user: test_user)
 puts "Created initial bookmark seed"
 
 puts "Creating the initial follow seed"
-Follow.create(following_id: follower_test_user, follower_id: test_user)
+Follow.create('following_id': follower_test_user.id, 'follower_id': test_user.id)
 puts "Created the intiial follow seed."
 
 puts "All initial seeds completed."
