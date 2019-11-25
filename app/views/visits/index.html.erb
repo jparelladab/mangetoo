@@ -1,1 +1,13 @@
-<h1>index Visits</h1>
+<h1>Visits Index</h1>
+
+<% @visits.each do |visit| %>
+<div class="card">
+  <h2><%= visit.restaurant.name %></h2>
+  <h2><%= visit.restaurant.address %></h2>
+  <h2><%= visit.date %></h2>
+  <h2><%= visit.number_of_people %></h2>
+  <%= link_to "Write Review", new_visit_review_path(visit) %>
+</div>
+<% end %>
+
+<%= link_to "Home Page", root_path %>
