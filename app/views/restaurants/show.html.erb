@@ -1,1 +1,11 @@
 <h1>Restaurant showpage</h1>
+
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.city %></p>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.website %></p>
+<p><%= @restaurant.phone_number %></p>
+
+
+<%= link_to 'Bookmark Restaurant', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'btn btn-secondary' %>

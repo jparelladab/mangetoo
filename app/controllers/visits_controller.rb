@@ -1,5 +1,6 @@
 class VisitsController < ApplicationController
   def index
+    @visits = Visit.all
   end
 
   def create
