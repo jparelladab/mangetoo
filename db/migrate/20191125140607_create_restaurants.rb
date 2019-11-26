@@ -7,7 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.float :latitude
       t.float :longitude
       t.string :category
-      t.integer :total_rating
+      t.integer :total_rating, default: 0
       t.string :website
       t.string :phone_number
 
