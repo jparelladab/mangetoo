@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_144702) do
+ActiveRecord::Schema.define(version: 2019_11_26_164239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "restaurant_id"
@@ -41,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_144702) do
     t.float "latitude"
     t.float "longitude"
     t.string "category"
-    t.integer "total_rating", default: 0
+    t.integer "total_rating"
     t.string "website"
     t.string "phone_number"
     t.datetime "created_at", null: false
@@ -68,8 +89,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_144702) do
     t.string "first_name"
     t.string "last_name"
     t.string "city"
-    t.boolean "super_foodie", default: false
-    t.boolean "admin", default: false
+    t.boolean "super_foodie"
+    t.boolean "admin"
     t.string "default_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -86,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_144702) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "restaurants"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "reviews", "visits"

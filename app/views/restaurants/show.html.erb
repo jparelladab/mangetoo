@@ -1,4 +1,23 @@
 <h1>Restaurant showpage</h1>
+<div class="container-show">
+  <div class="main-photo">
+    <% if @restaurant.photos.attached? %>
+      <% @restaurant.photos.each do |photo| %>
+        <%= cl_photo_path @restaurant.photo.key %>
+      <% end %>
+    <% else %>
+      <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" alt="">
+    <% end %>
+  </div>
+  <div class="reviews">
+
+
+  </div>
+
+
+
+
+</div>
 
 <h1><%= @restaurant.name %></h1>
 <p><%= @restaurant.address %></p>
