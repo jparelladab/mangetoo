@@ -1,2 +1,31 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#restaurant_index_container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: gray;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#restaurant_index_cards_container {
+  background-color: red;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+#restaurant_index_map_container {
+  background-color: blue;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+#test_map {
+  width: 0px;
+  padding-bottom: 75%;
+  min-width: 100%;
+  max-width: 100%;
+  background-color: green;
+}
+
