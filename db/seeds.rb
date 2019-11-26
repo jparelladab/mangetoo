@@ -25,7 +25,7 @@ follower_test_user.save
 puts "Default user created Test Test, test@test.com, password"
 
 puts "Creating restuarant intiial seed"
-five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', latitude: 51.4917, longitude: 0.1613, category: 'Modern British', total_rating: 5, website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
+five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', latitude: 51.4917, longitude: 0.1613, category: 'Modern British', total_rating: 5, website: 'www.fivefieldsrestaurant.com', phone_number: '+44 20 7838 1082')
 five_fields.save
 puts "Created The Five Fields!"
 
@@ -48,3 +48,7 @@ puts "Created the intiial follow seed."
 
 puts "All initial seeds completed."
 # FINISH OF THE INITIAL SEEDS
+
+
+
+
