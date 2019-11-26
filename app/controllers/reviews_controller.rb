@@ -6,7 +6,8 @@ class ReviewsController < ApplicationController
       visit = Visit.find(review.visit_id)
       restaurant = Restaurant.find(visit.restaurant_id)
       index_hash = {
-        review_content: truncate(review.content),
+        review_content_truncated: truncate(review.content),
+        review_content: review.content,
         review_rating: review.rating,
         review_date: review.created_at.strftime("%d/%m/%y"),
         visit_date: visit.date.strftime("%d/%m/%y"),

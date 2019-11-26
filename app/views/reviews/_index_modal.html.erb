@@ -1,0 +1,21 @@
+<div class="modal fade" id="reviewIndexModal" tabindex="-1" role="dialog" aria-labelledby="reviewIndexModalTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex flex-column">
+        <h5 class="modal-title " id="reviewIndexModalTitle"><%= review_hash[:restaurant_name] %></h5>
+        <p><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>
+        <div class="modal-review-details">
+          <p>Rating: <%= review_hash[:review_rating]%> | Visited on: <%= review_hash[:visit_date] %> | Review from: <%= review_hash[:review_date] %></p>
+        </div>
+      </div>
+      <div class="modal-body" style="font-size: 16px">
+        <%= review_hash[:review_content] %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

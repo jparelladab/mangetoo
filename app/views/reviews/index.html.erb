@@ -1,4 +1,3 @@
-<h1>Reviews Index</h1>
 <div class="d-flex align-items-center flex-column">
   <div
   id="map"
@@ -16,11 +15,13 @@
         <div class="review-body">
           <h4><%= review_hash[:restaurant_name] %></h4>
           <p id="address"><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>
-          <p><%= review_hash[:review_content] %></p>
+          <p><%= review_hash[:review_content_truncated] %></p>
           <div class="d-flex justify-content-between review-details flex-wrap">
             <p>Rating: <%= review_hash[:review_rating]%></p>
             <p>Visited on: <%= review_hash[:visit_date] %></p>
             <p>Review from: <%= review_hash[:review_date] %></p>
+            <a href="#" data-toggle="modal" data-target="#reviewIndexModal">See More</a>
+            <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
           </div>
         </div>
       </div>
