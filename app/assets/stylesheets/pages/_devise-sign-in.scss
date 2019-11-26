@@ -1,0 +1,63 @@
+.sign-in-image {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-card {
+  background-color: rgba(251,251,251,0.95);
+  border-radius: 10px;
+  padding: 10px;
+  #mangetoo-logo {
+    font-family: $MangeToo-logofont;
+    font-size: 90px;
+    color: $MangeToo-green !important;
+    letter-spacing: 2px;
+    padding: 30px;
+    position: relative;
+  }
+  .form-check-label {
+    color: $MangeToo-green !important;
+  }
+  .form-actions {
+    justify-content: center;
+    text-align: center;
+  .btn {
+    border: $MangeToo-green 1px solid;
+    margin-top: 5px;
+    width: 200px;
+    height: 50px;
+    background-color: $MangeToo-green;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  }
+}
+
+.mangetoo-image {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+}
+.form-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.optional {
+  font-family: $body-font;
+  color: $MangeToo-green;
+  padding: 0;
+  font-weight: bold;
+}
+
+.sign-in-links {
+  color: $MangeToo-green !important;
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
