@@ -24,7 +24,17 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    # @reviews = Review.where()
+    followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
+    @visit_id_from_followings = []
+    followings_id.each do |id|
+      @visit_id_from_followings << Visit.where(user_id: id, restaurant: @restaurant).map { |visit| visit.id}
+    end
+    @reviews = []
+    @visit_id_from_followings.each do |id|
+      if !Review.where(visit_id: id).first.nil?
+        @reviews << Review.where(visit_id: id).first
+      end
+    end
   end
 
   def edit
