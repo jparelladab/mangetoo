@@ -63,9 +63,9 @@ mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av.
 mar_do_inferno.save
 la_colombe = Restaurant.new(name: "La Colombe", address: "Silvermist Wine Estate, Main Road, Constantia Nek, Cape Town, 7806", city: 'Cape Town', latitude: 34.0152, longitude: 18.4033, category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
 la_colombe.save
-test_kitchen = Restaurant.new(name: "Test Kitchen", address: "The Old Buscuit Mill, Woodstock, Cape Town, 7915", city: 'Cape Town', latitude: 33.9275, longitude: 18.4571, category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
+test_kitchen = Restaurant.new(name: "Test Kitchen", address: "The Old Biscuit Mill, Woodstock, Cape Town, 7915", city: 'Cape Town', latitude: 33.9275, longitude: 18.4571, category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
 test_kitchen.save
-koy_shunka = Restaurant.new(name: "Test Kitchen", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
+koy_shunka = Restaurant.new(name: "Koy Shunka", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
 koy_shunka.save
 
 puts "Created restaurant initial seeds!"
