@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
-
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
