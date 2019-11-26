@@ -4,7 +4,7 @@
 # Restaurant SCULLY
 
 puts "Creating restuarant intiial seed"
-scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', latitude: 51.5087, longitude: 0.1331, category: 'Asian Fusion', total_rating: 5, website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
+scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', latitude: 51.5087, longitude: 0.1331, category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
 scully.save
 puts "Created Scully!"
 
@@ -24,7 +24,7 @@ puts "Created initial bookmark seed"
 # Restaurant ROGANIC
 
 puts "Creating restuarant intiial seed"
-roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', latitude: 51.5182, longitude: 0.1521, category: 'Modern British', total_rating: 4, website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
+roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', latitude: 51.5182, longitude: 0.1521, category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
 roganic.save
 puts "Created Roganic!"
 
@@ -45,7 +45,7 @@ puts "Created initial bookmark seed"
 # Restaurant Mar do Inferno
 
 puts "Creating restuarant intiial seed"
-mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', latitude: 38.6910, longitude: 9.4300, category: 'Seafood', total_rating: 4, website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
+mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', latitude: 38.6910, longitude: 9.4300, category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
 mar_do_inferno.save
 puts "Created Restaurant Mar do Inferno!"
 
@@ -65,7 +65,7 @@ puts "Created initial bookmark seed"
 # Restaurant La Colombe
 
 puts "Creating restuarant intiial seed"
-la_colombe = Restaurant.new(name: "La Colombe", address: "Silvermist Wine Estate, Main Road, Constantia Nek, Cape Town, 7806", city: 'Cape Town', latitude: 34.0152, longitude: 18.4033, category: 'Mondern French', total_rating: 5, website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
+la_colombe = Restaurant.new(name: "La Colombe", address: "Silvermist Wine Estate, Main Road, Constantia Nek, Cape Town, 7806", city: 'Cape Town', latitude: 34.0152, longitude: 18.4033, category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
 la_colombe.save
 puts "Created La Colombe!"
 
@@ -86,7 +86,7 @@ puts "Created initial bookmark seed"
 # Restaurant Test Kitchen
 
 puts "Creating restuarant intiial seed"
-test_kitchen = Restaurant.new(name: "Test Kitchen", address: "The Old Buscuit Mill, Woodstock, Cape Town, 7915", city: 'Cape Town', latitude: 33.9275, longitude: 18.4571, category: 'Latin South African', total_rating: 5, website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
+test_kitchen = Restaurant.new(name: "Test Kitchen", address: "The Old Buscuit Mill, Woodstock, Cape Town, 7915", city: 'Cape Town', latitude: 33.9275, longitude: 18.4571, category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
 test_kitchen.save
 puts "Created Test Kitchen!"
 
@@ -106,7 +106,7 @@ puts "Created initial bookmark seed"
 # Restaurant Koy Shunka
 
 puts "Creating restuarant intiial seed"
-koy_shunka = Restaurant.new(name: "Test Kitchen", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', total_rating: 4, website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
+koy_shunka = Restaurant.new(name: "Test Kitchen", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
 koy_shunka.save
 puts "Created Koy Shunka!"
 
