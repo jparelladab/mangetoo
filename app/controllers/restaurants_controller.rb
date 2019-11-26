@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
       }
+    end
     if params[:query].present?
       @restaurants = Restaurant.where("city ILIKE ?", "%#{params[:query]}%")
     else
