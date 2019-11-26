@@ -1,6 +1,6 @@
 class VisitsController < ApplicationController
   def index
-    @visits = Visit.all
+    @visits = Visit.where(user: current_user)
   end
 
   def create
