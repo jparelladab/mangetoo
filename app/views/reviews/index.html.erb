@@ -1,10 +1,17 @@
 <h1>Reviews Index</h1>
-
-<% @reviews.each do |review| %>
-  <div class="card">
-    <p><%= review.content %></p>
-    <p>Rating: <%= review.rating %></p>
-  </div>
-<% end %>
-
+<div class="reviews-index-container">
+  <div
+  id="map"
+  style="width: 90%;
+  height: 500px; margin: 0 auto;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  <% @reviews.each do |review| %>
+    <div class="review-index-card">
+      <p><%= review.content %></p>
+      <p>Rating: <%= review.rating %></p>
+    </div>
+  <% end %>
+</div>
 <%= link_to "Home Page", root_path %>
