@@ -1,14 +1,19 @@
 <h1> Restaurant index.html.erb</h1>
-
-<% @restaurants.each do |restaurant| %>
-<div class="card">
-   <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-  <p><%= restaurant.address %></p>
-  <p><%= restaurant.city %></p>
-  <p><%= restaurant.category %></p>
-  <p><%= restaurant.website %></p>
-  <p><%= restaurant.phone_number %></p>
+<div class="container-index">
+  <div class="cards-index">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card">
+        <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.city %></p>
+        <p><%= restaurant.category %></p>
+        <p><%= restaurant.website %></p>
+        <p><%= restaurant.phone_number %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="map-index">
+    <%= render 'shared/map' %>
+  </div>
 </div>
-<% end %>
-
 <%= link_to "Home Page", root_path %>
