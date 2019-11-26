@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_144702) do
     t.float "latitude"
     t.float "longitude"
     t.string "category"
-    t.integer "total_rating"
+    t.integer "total_rating", default: 0
     t.string "website"
     t.string "phone_number"
     t.datetime "created_at", null: false
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_144702) do
     t.string "first_name"
     t.string "last_name"
     t.string "city"
-    t.boolean "super_foodie"
-    t.boolean "admin"
+    t.boolean "super_foodie", default: false
+    t.boolean "admin", default: false
     t.string "default_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
