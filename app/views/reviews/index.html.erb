@@ -1,17 +1,30 @@
 <h1>Reviews Index</h1>
-<div class="reviews-index-container">
+<div class="d-flex align-items-center flex-column">
   <div
   id="map"
   style="width: 90%;
-  height: 500px; margin: 0 auto;"
+  height: 500px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
-  <% @reviews.each do |review| %>
-    <div class="review-index-card">
-      <p><%= review.content %></p>
-      <p>Rating: <%= review.rating %></p>
-    </div>
-  <% end %>
+  <div class="d-flex justify-content-between align-items-center flex-column">
+    <% @reviews_array.each do |review_hash| %>
+      <div class="review-index-card d-flex flex-wrap-reverse flex-sm-nowrap">
+        <div>
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", alt="Picture of restaurant table">
+        </div>
+        <div class="review-body">
+          <h4><%= review_hash[:restaurant_name] %></h4>
+          <p id="address"><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>
+          <p><%= review_hash[:review_content] %></p>
+          <div class="d-flex justify-content-between review-details flex-wrap">
+            <p>Rating: <%= review_hash[:review_rating]%></p>
+            <p>Visited on: <%= review_hash[:visit_date] %></p>
+            <p>Review from: <%= review_hash[:review_date] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<%= link_to "Home Page", root_path %>
+

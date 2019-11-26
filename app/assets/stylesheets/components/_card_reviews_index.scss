@@ -1,0 +1,30 @@
+.review-index-card {
+  width: 70%;
+  margin: 7px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 10px;
+  .review-details {
+    font-size: 0.7rem;
+  }
+  #address {
+    font-size: 0.8rem;
+  }
+  img {
+    height: 100%;
+    width: 250px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .review-body {
+    padding: 7px 20px;
+  }
+}
+
+.review-index-card:first-child {
+  margin-top: 20px;
+}
+
+.review-index-card:last-child {
+  margin-bottom: 30px;
+}
