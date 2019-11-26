@@ -2,4 +2,21 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 
+<h4>Search</h4>
+<%= form_tag restaurants_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Select a city" %>
+
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+
+
+
+
 <%= link_to "Restaurants Index", restaurants_path %>
