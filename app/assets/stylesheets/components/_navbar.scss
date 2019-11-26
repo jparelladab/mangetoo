@@ -11,3 +11,25 @@
   width: 40px;
 }
 
+.mangetoo-logo {
+  font-family: $MangeToo-logofont;
+  font-size: 36px;
+  color: $MangeToo-green !important;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: $MangeToo-brightred !important;
+  }
+}
+
+.nav-link, .dropdown-item {
+  color: $MangeToo-green !important;
+
+  &:hover {
+    color: $MangeToo-brightred !important;
+  }
+}
+
+.nav-link {
+  margin-right: 5px;
+}
