@@ -24,6 +24,9 @@ test_user_two = User.new(first_name: 'Test', last_name: 'Two', city: 'London', s
 test_user_two.save
 test_user_three = User.new(first_name: 'Test', last_name: 'Three', city: 'London', super_foodie: true, admin: true, email: 'three@test.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
 test_user_three.save
+test_user_four = User.new(first_name: 'Test', last_name: 'Four', city: 'London', super_foodie: true, admin: true, email: 'four@test.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
+test_user_four.save
+
 puts "Default user initial seeds created"
 
 
@@ -52,6 +55,18 @@ trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', addres
 trattoria_carampane.save
 hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Rd, Farringdon, London EC1R 3AL", city: 'London', latitude: 51.524519, longitude: 0.110139, category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
 hammer_tongs.save
+scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', latitude: 51.5087, longitude: 0.1331, category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
+scully.save
+roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', latitude: 51.5182, longitude: 0.1521, category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
+roganic.save
+mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', latitude: 38.6910, longitude: 9.4300, category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
+mar_do_inferno.save
+la_colombe = Restaurant.new(name: "La Colombe", address: "Silvermist Wine Estate, Main Road, Constantia Nek, Cape Town, 7806", city: 'Cape Town', latitude: 34.0152, longitude: 18.4033, category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
+la_colombe.save
+test_kitchen = Restaurant.new(name: "Test Kitchen", address: "The Old Buscuit Mill, Woodstock, Cape Town, 7915", city: 'Cape Town', latitude: 33.9275, longitude: 18.4571, category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
+test_kitchen.save
+koy_shunka = Restaurant.new(name: "Test Kitchen", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
+koy_shunka.save
 
 puts "Created restaurant initial seeds!"
 
@@ -68,6 +83,10 @@ test_visit_five = Visit.new(date: Date.today, user: test_user_three, restaurant:
 test_visit_five.save
 test_visit_six = Visit.new(date: Date.today, user: test_user_three, restaurant: song_que, number_of_people: 4)
 test_visit_six.save
+test_visit_seven = Visit.new(date: Date.today, user: test_user_four, restaurant: la_colombe, number_of_people: 2)
+test_visit_seven.save
+test_visit_eight = Visit.new(date: Date.today, user: test_user_four, restaurant: koy_shunka, number_of_people: 5)
+test_visit_eight.save
 puts "Visit seeds completed!"
 
 puts "Creating review initial seeds"
@@ -77,6 +96,8 @@ Review.create(visit: test_visit_three, content: 'The veal was really incredible.
 Review.create(visit: test_visit_four, content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5)
 Review.create(visit: test_visit_five, content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5)
 Review.create(visit: test_visit_six, content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4)
+Review.create(visit: test_visit_seven, content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5)
+Review.create(visit: test_visit_eight, content: 'Top rated sushi, beautifully presented ', rating: 4)
 puts "Created review initial seeds!"
 
 puts "Creating the bookmark initial seeds"
@@ -86,6 +107,8 @@ Bookmark.create(restaurant: five_fields, user: test_user_two)
 Bookmark.create(restaurant: song_que, user: test_user_two)
 Bookmark.create(restaurant: five_fields, user: test_user_three)
 Bookmark.create(restaurant: song_que, user: test_user_three)
+Bookmark.create(restaurant: la_colombe, user: test_user_four)
+Bookmark.create(restaurant: koy_shunka, user: test_user_four)
 puts "Created initial bookmark seeds"
 
 puts "Creating the initial follow seed"
@@ -94,7 +117,9 @@ Follow.create('following_id': test_user_three.id, 'follower_id': test_user_one.i
 Follow.create('following_id': test_user_one.id, 'follower_id': test_user_two.id)
 Follow.create('following_id': test_user_three.id, 'follower_id': test_user_two.id)
 Follow.create('following_id': test_user_one.id, 'follower_id': test_user_three.id)
-Follow.create('following_id': test_user_two.id, 'follower_id': test_user_three.id)
+Follow.create('following_id': test_user_four.id, 'follower_id': test_user_three.id)
+Follow.create('following_id': test_user_one.id, 'follower_id': test_user_four.id)
+Follow.create('following_id': test_user_two.id, 'follower_id': test_user_four.id)
 puts "Created the intiial follow seed."
 
 puts "All initial seeds completed."
