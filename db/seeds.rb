@@ -26,7 +26,8 @@ test_user_three = User.new(first_name: 'Test', last_name: 'Three', city: 'London
 test_user_three.save
 puts "Default user initial seeds created"
 
-puts "Creating restuarant intiial seeds"
+
+puts "Creating restaurant initial seeds"
 five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', latitude: 51.4917, longitude: 0.1613, category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
 five_fields.save
 song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London E2 8DY', city: 'London', latitude: 51.531676, longitude: 0.076983, category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
@@ -98,3 +99,7 @@ puts "Created the intiial follow seed."
 
 puts "All initial seeds completed."
 # FINISH OF THE INITIAL SEEDS
+
+
+
+
