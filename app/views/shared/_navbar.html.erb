@@ -1,7 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <%= link_to "MangeToo", root_path, class: "navbar-brand mangetoo-logo" %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,22 +10,22 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Bookmarks", bookmarks_path, class: "nav-link" %>
+          <%= link_to "Your Bookmarks", bookmarks_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Reviews", reviews_path, class: "nav-link" %>
+          <%= link_to "Your Reviews", reviews_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Visits", visits_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Fellow Foodies", follows_path, class: "nav-link" %>
+          <%= link_to "Your Visits", visits_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "MangeToo_DefaultUserImage.png", alt: "Image of a mangetout cartoon", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Add New Restaurant", "#", class: "dropdown-item" %>
+            <%= link_to "Fellow Foodies", follows_path, class: "dropdown-item" %>
+            <%= link_to "Account", "#", class: "dropdown-item" %>
+            <%= link_to "Settings", "#", class: "dropdown-item" %>
+            <%= link_to "Delete Account", "#", method: :delete, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

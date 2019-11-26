@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def index
     @restaurants = Restaurant.geocoded
     @markers = @restaurants.map do |restaurant|
@@ -7,6 +8,10 @@ class RestaurantsController < ApplicationController
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
       }
+    if params[:query].present?
+      @restaurants = Restaurant.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @restaurants = Restaurant.all
     end
   end
 
@@ -28,4 +33,5 @@ class RestaurantsController < ApplicationController
 
   def destroy
   end
+
 end
