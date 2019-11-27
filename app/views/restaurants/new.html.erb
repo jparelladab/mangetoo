@@ -1,1 +1,15 @@
-<h1>new.html.erb Restaurant</h1>
+<h1>New Restaurant</h1>
+
+<div class="container-form" >
+  <div id="new-restaurant-form"> <%= simple_form_for [@restaurant] do |f| %>
+    <%= f.input :name, :as => :string, input_html: { :style=> 'width: 400px;' }%>
+    <%= f.input :address, :as => :string, input_html: { :style=> 'width: 400px;' }%>
+    <%= f.input :city, :as => :string, input_html: { :style=> 'width: 400px;' } %>
+    <%= f.input :category, :as => :string, input_html: { :style=> 'width: 400px;' } %>
+    <%= f.input :website, :as => :string, input_html: { :style=> 'width: 400px;' } %>
+    <%= f.input :phone_number, :as => :string, input_html: { :style=> 'width: 400px;' } %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Add Restaurant", class: "bannerbtn" %>
+    <% end %>
+  </div>
+</div>
