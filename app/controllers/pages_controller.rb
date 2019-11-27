@@ -19,6 +19,10 @@ class PagesController < ApplicationController
       }
       @reviews_array << index_hash
     end
+    @restaurants = []
+    @reviews_array.map do |review_hash|
+      @restaurants << review_hash[:restaurant_instance]
+    end
   end
 
   private

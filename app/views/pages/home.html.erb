@@ -19,19 +19,20 @@
 <br>
 <br>
 
-  <div class="card-container">
-<% @reviews_array.each do |review_hash| %>
+<div class="card-container">
+  <% @reviews_array.each do |review_hash| %>
     <div class="card-home">
-      <%=image_tag("Headshot_1.jpg")%>
+      <%=image_tag("Headshot_2.jpg")%>
       <div class="card-home-infos">
         <div class="name_date_flex">
-        <h2><%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %></h2>
-        <h3> <%= review_hash[:review_date] %></h3>
+        <h3><%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %></h3>
+        <p class="home-date"> Review date: <%= review_hash[:review_date] %></p>
         </div>
-        <h3><%= review_hash[:restaurant_name] %></h3>
-        <p><%= review_hash[:review_content_truncated] %></p>
-      </div>
+        <h2><%= review_hash[:restaurant_name] %></h2>
+        <p><%= review_hash[:review_content_truncated] %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review_hash[:review_id] %>">See More</a>
+            <%= render partial: 'home_modal', locals: {review_hash: review_hash} %></p>
+         </div>
     </div>
-<% end %>
-  </div>
+  <% end %>
+</div>
 
