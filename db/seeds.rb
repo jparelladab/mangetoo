@@ -90,14 +90,14 @@ test_visit_eight.save
 puts "Visit seeds completed!"
 
 puts "Creating review initial seeds"
-Review.create(visit: test_visit_one, content: 'This was a really wonderful experience!!', rating: 5)
-Review.create(visit: test_visit_two, content: 'The Pho here really is a must-have. Highly recommend this place for anyone who likes Vietnamese food. One of the best and most authentic in London.', rating: 4)
-Review.create(visit: test_visit_three, content: 'The veal was really incredible. I would highly recommend coming here, but perhaps not on a Saturday night, as it can be very busy.', rating: 5)
-Review.create(visit: test_visit_four, content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5)
-Review.create(visit: test_visit_five, content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5)
-Review.create(visit: test_visit_six, content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4)
-Review.create(visit: test_visit_seven, content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5)
-Review.create(visit: test_visit_eight, content: 'Top rated sushi, beautifully presented ', rating: 4)
+Review.create(content: 'This was a really wonderful experience!!', rating: 5, visit_id: 1)
+Review.create(content: 'The Pho here really is a must-have. Highly recommend this place for anyone who likes Vietnamese food. One of the best and most authentic in London.', rating: 4, visit_id: 2)
+Review.create(content: 'The veal was really incredible. I would highly recommend coming here, but perhaps not on a Saturday night, as it can be very busy.', rating: 5, visit_id: 3)
+Review.create(content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5, visit_id: 4)
+Review.create(content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5, visit_id: 5)
+Review.create(content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4, visit_id: 6)
+Review.create(content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5, visit_id: 7)
+Review.create(content: 'Top rated sushi, beautifully presented ', rating: 4, visit_id: 8)
 puts "Created review initial seeds!"
 
 puts "Creating the bookmark initial seeds"

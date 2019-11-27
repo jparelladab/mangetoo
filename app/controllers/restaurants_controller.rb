@@ -18,13 +18,30 @@ class RestaurantsController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.new
   end
 
   def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+    end
   end
 
   def show
-    # @reviews = Review.where()
+    followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
+    @visit_id_from_followings = []
+    followings_id.each do |id|
+      @visit_id_from_followings << Visit.where(user_id: id, restaurant: @restaurant).map { |visit| visit.id}
+    end
+    @reviews = []
+    @visit_id_from_followings.each do |id|
+      if !Review.where(visit_id: id).first.nil?
+        @reviews << Review.where(visit_id: id).first
+      end
+    end
   end
 
   def edit
@@ -37,6 +54,10 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :city, :category, :website, :phone_number)
+  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:id])
