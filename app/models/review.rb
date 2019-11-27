@@ -5,4 +5,5 @@ class Review < ApplicationRecord
   # # CONSIDER WHETHER CONTENT SHOULD BE NECESSARY OR IF CAN JUST LEAVE RATING OR VICE VERSA
   # validates :content, presence: true
   # validates :rating, presence: true
+  validates :visit_id, uniqueness: true
 end

@@ -10,11 +10,11 @@
     <% end %>
   </div>
   <div class="reviews">
-
-
+    <% @reviews.each do |review| %>
+      <p><%= review.content %></p>
+      <p> <%= review.rating %></p>
+    <% end %>
   </div>
-
-
 
 
 </div>
