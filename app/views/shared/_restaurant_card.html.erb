@@ -9,11 +9,17 @@
     </div>
 
     <div class="restaurant_info_strip">
-      <p><%= restaurant.category %></p>
+      <p>
+        <%= restaurant.category %>
+      </p>
     </div>
 
     <div class="restaurant_info_strip">
-      <p><%= restaurant.city%> <br> <%= restaurant.address%> <br> <%= restaurant.phone_number %></p>
+      <p>
+        <%= image_tag("city.svg")%> <%= restaurant.city%> <br>
+        <%= image_tag("address.svg") %> <%= restaurant.address%> <br>
+        <%= image_tag("phone.svg") %> <%= restaurant.phone_number %>
+      </p>
     </div>
 
     <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
