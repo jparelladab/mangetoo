@@ -60,15 +60,15 @@
 <!--   </div> -->
     <div class="col-8">
       <div class="card-container-show">
-          <% @reviews_expanded.each do |review| %>
+          <% @reviews_from_followings.each do |review| %>
             <div class="card-show">
               <%=image_tag("Headshot_1.jpg")%>
                 <div class="card-show-infos">
                   <div class="name_date_flex-show">
-                    <h2> <%= review[:user_name] %> </h2>
-                    <h3> <%= review[:review_date] %> </h3>
+                    <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
+                    <h3> <%= review.visit.date %></h3>
                   </div>
-                  <p><%= review[:review_content_truncated] %></p>
+                  <p><%= truncate(review.content) %></p>
                 </div>
             </div>
           <% end %>
