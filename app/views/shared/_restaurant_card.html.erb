@@ -3,15 +3,23 @@
     <%= render 'shared/restaurant_carousel', restaurant: restaurant %>
   </div>
   <div class="restaurant_card_info">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-    <p><%= restaurant.address %></p>
-    <p><%= restaurant.city %></p>
-    <p><%= restaurant.category %></p>
-    <p><%= restaurant.website %></p>
-    <p><%= restaurant.phone_number %></p>
+
+    <div class="restaurant_info_strip">
+      <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p><%= restaurant.category %></p>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p><%= restaurant.address%>, <%= restaurant.phone_number %></p>
+    </div>
+
+    <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
+      <button type="button" class="btn btn-primary btn-reviewers">Reviewers</button>
+      <button type="button" class="btn btn-primary btn-details">See Details</button>
+    </div>
+
   </div>
 </div>
