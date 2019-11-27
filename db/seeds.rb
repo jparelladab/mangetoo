@@ -31,41 +31,41 @@ puts "Default user initial seeds created"
 
 
 puts "Creating restaurant initial seeds"
-five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', latitude: 51.4917, longitude: 0.1613, category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
+five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
 five_fields.save
-song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London E2 8DY', city: 'London', latitude: 51.531676, longitude: 0.076983, category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
+song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London E2 8DY', city: 'London', category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
 song_que.save
-st_john = Restaurant.new(name: 'St. John', address: '26 St John St, Barbican, London EC1M 4AY', city: 'London', latitude: 51.520511, longitude: 0.101480, category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848')
+st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, Barbican, London EC1M 4AY', city: 'London', category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848')
 st_john.save
-luca = Restaurant.new(name: 'Luca', address: '88 St John St, Farringdon, London EC1M 4EH', city: 'London', latitude: 51.522307, longitude: 0.101835, category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
+luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, Farringdon, London EC1M 4EH', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
 luca.save
-gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London EC2A 3QR', city: 'London', latitude: 51.525159, longitude: 0.081373, category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
+gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
 gloria.save
-shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, Farringdon, London EC1R 4QE', city: 'London', latitude: 51.526152, longitude: 0.108681, category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
+shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, Farringdon, London EC1R 4QE', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
 shawarma_bar.save
-noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London WC1N 3NB", city: 'London', latitude: 51.521905, longitude: 0.118740, category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963")
+noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London WC1N 3NB", city: 'London', category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963")
 noble_rot.save
-stendhal = Restaurant.new(name: 'Stendhal Milano', address: "Via Ancona, 1 Ang. Via, 20121 Milano MI, Italy", city: 'Milan', latitude: 45.473987, longitude: 9.187586, category: 'Italian', website: 'www.stendhalmilano.it', phone_number: "+39 02 657 2059")
+stendhal = Restaurant.new(name: 'Stendhal Milano', address: "Via Ancona, 1 Ang. Via, 20121 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.stendhalmilano.it', phone_number: "+39 02 657 2059")
 stendhal.save
-osteria_binari = Restaurant.new(name: 'Osteria Del Binari', address: "Via Tortona, 3, 20144 Milano MI, Italy", city: 'Milan', latitude: 45.453860, longitude: 9.168889, category: 'Italian', website: 'www.osteriadelbinari.com', phone_number: "+39 02 8940 9428")
+osteria_binari = Restaurant.new(name: 'Osteria Del Binari', address: "Via Tortona, 3, 20144 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.osteriadelbinari.com', phone_number: "+39 02 8940 9428")
 osteria_binari.save
-trattoria_pontini = Restaurant.new(name: 'Trattoria Bar Pontini', address: "Cannaregio, 1268, 30121 Venezia VE, Italy", city: 'Venice', latitude: 45.444057, longitude: 12.325372, category: 'Italian', website: '', phone_number: "+39 041 714123")
+trattoria_pontini = Restaurant.new(name: 'Trattoria Bar Pontini', address: "Cannaregio, 1268, 30121 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: '', phone_number: "+39 041 714123")
 trattoria_pontini.save
-trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', address: "Rio Terà de le Carampane, 1911, 30125 Venezia VE, Italy", city: 'Venice', latitude: 45.438648, longitude: 12.331095, category: 'Italian', website: 'www.antichecarampane.com', phone_number: "+39 041 524 0165")
+trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', address: "Rio Terà de le Carampane, 1911, 30125 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: 'www.antichecarampane.com', phone_number: "+39 041 524 0165")
 trattoria_carampane.save
-hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Rd, Farringdon, London EC1R 3AL", city: 'London', latitude: 51.524519, longitude: 0.110139, category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
+hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Rd, Farringdon, London EC1R 3AL", city: 'London', category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
 hammer_tongs.save
-scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', latitude: 51.5087, longitude: 0.1331, category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
+scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
 scully.save
-roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', latitude: 51.5182, longitude: 0.1521, category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
+roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
 roganic.save
-mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', latitude: 38.6910, longitude: 9.4300, category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
+mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
 mar_do_inferno.save
 la_colombe = Restaurant.new(name: "La Colombe", address: "Silvermist Wine Estate, Main Road, Constantia Nek, Cape Town, 7806, South Africa", city: 'Cape Town', category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
 la_colombe.save
 test_kitchen = Restaurant.new(name: "Test Kitchen", address: "375 Albert Rd, Woodstock, Cape Town, 7915, South Africa", city: 'Cape Town', category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
 test_kitchen.save
-koy_shunka = Restaurant.new(name: "Koy Shunka", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', latitude: 41.3858, longitude: 2.1754, category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
+koy_shunka = Restaurant.new(name: "Koy Shunka", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
 koy_shunka.save
 
 puts "Created restaurant initial seeds!"
