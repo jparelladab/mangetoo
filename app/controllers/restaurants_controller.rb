@@ -3,24 +3,34 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.geocoded
-    @markers = @restaurants.map do |restaurant|
+    if params[:query].present?
+      @restaurants = Restaurant.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @restaurants = Restaurant.all
+    end
+      @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
       }
     end
-    if params[:query].present?
-      @restaurants = Restaurant.where("city ILIKE ?", "%#{params[:query]}%")
-    else
-      @restaurants = Restaurant.all
-    end
+    @restaurants = Restaurant.all if @restaurants.empty?
   end
 
   def new
+    @restaurant = Restaurant.new
   end
 
   def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      flash[:notice] = "Bookmark successfully created"
+      redirect_to restaurant_path(@restaurant)
+    else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      render :new
+    end
   end
 
   def show
@@ -73,6 +83,10 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :city, :category, :website, :phone_number)
+  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:id])

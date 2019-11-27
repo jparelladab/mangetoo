@@ -2,3 +2,25 @@
 @import "home";
 @import "devise-sign-in";
 @import "show";
+
+#restaurant_index_container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: gray;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+#restaurant_index_cards_container {
+  background-color: white;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+#restaurants_index_map_container {
+  background-color: white;
+  width: 0px;
+  max-width: 50%;
+  min-width: 50%;
+}
+

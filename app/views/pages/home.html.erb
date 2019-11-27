@@ -20,59 +20,24 @@
 <br>
 
 <div class="card-container">
-    <div class="card-home">
-      <%=image_tag("Headshot_1.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
-
+  <% @reviews_array.each do |review_hash| %>
     <div class="card-home">
       <%=image_tag("Headshot_2.jpg")%>
       <div class="card-home-infos">
         <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
+        <h3><%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %></h3>
+        <p class="home-date"> Review date: <%= review_hash[:review_date] %></p>
         </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
+        <h2><%= review_hash[:restaurant_name] %></h2>
+        <p><%= review_hash[:review_content_truncated] %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review_hash[:review_id] %>">See More</a>
+            <%= render partial: 'home_modal', locals: {review_hash: review_hash} %></p>
+         </div>
     </div>
+  <% end %>
 
-    <div class="card-home">
-      <%=image_tag("Headshot_3.jpeg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
+    <% @friend_reviews.each do |r| %>
+    <%= r[0].content %>
 
-    <div class="card-home">
-      <%=image_tag("Headshot_4.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
+  <% end %>
 </div>
-
-
-<br>
-<br>
-
-<%= link_to "Restaurants Index", restaurants_path %>
-
 

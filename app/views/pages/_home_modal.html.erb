@@ -1,8 +1,8 @@
-<div class="modal fade" id="reviewIndexModal<%= review_hash[:review_id] %>" tabindex="-1" role="dialog" aria-labelledby="reviewIndexModalTitle" aria-hidden="true">
+<div class="modal fade home_modal" id="reviewHomeModal" <%= review_hash[:review_id] %>" tabindex="-1" role="dialog" aria-labelledby="reviewHomeModalTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex flex-column">
-        <h5 class="modal-title " id="reviewIndexModalTitle"><%= review_hash[:restaurant_name] %></h5>
+          <h5 class="modal-title-name " id="reviewIndexModalTitle"><%= review_hash[:restaurant_name] %></h5>
         <p><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>
         <div class="modal-review-details">
           <p>Rating: <%= review_hash[:review_rating]%> | Visited on: <%= review_hash[:visit_date] %> | Review from: <%= review_hash[:review_date] %></p>
@@ -11,7 +11,8 @@
       <div class="modal-body" style="font-size: 16px">
         <%= review_hash[:review_content] %>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer homepage-spacer-flex">
+       <p> <%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %> </p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

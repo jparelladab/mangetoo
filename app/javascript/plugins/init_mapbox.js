@@ -25,6 +25,8 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
     addMarkersToMap(map, markers);
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-left');
   }
 };
 const addMarkersToMap = (map, markers) => {
@@ -36,7 +38,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
       .addTo(map);

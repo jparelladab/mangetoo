@@ -1,0 +1,31 @@
+<div class="restaurant_card">
+  <div class="restaurant_card_carousel">
+    <%= render 'shared/restaurant_carousel', restaurant: restaurant %>
+  </div>
+  <div class="restaurant_card_info">
+
+    <div class="restaurant_info_strip">
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= restaurant.category %>
+      </p>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= image_tag("city.svg")%> <%= restaurant.city%> <br>
+        <%= image_tag("address.svg") %> <%= restaurant.address%> <br>
+        <%= image_tag("phone.svg") %> <%= restaurant.phone_number %>
+      </p>
+    </div>
+
+    <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
+      <button type="button" class="btn btn-primary btn-reviewers">Reviewers</button>
+      <button type="button" class="btn btn-primary btn-details">See Details</button>
+    </div>
+
+  </div>
+</div>

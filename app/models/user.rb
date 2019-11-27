@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :visits
   has_many :reviews, through: :visits
+  # has_many :followers
+  # has_many :following
   # UNCOMMENT THE VALIDATIONS BELOW LATER IN THE PROJECT
   # validates :first_name, presence: true
   # validates :last_name, presence: true

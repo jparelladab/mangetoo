@@ -20,7 +20,7 @@
             <p>Rating: <%= review_hash[:review_rating]%></p>
             <p>Visited on: <%= review_hash[:visit_date] %></p>
             <p>Review from: <%= review_hash[:review_date] %></p>
-            <a href="#" data-toggle="modal" data-target="#reviewIndexModal">See More</a>
+            <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewIndexModal<%= review_hash[:review_id] %>">See More</a>
             <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
           </div>
         </div>
