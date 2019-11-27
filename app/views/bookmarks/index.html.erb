@@ -8,7 +8,7 @@
   ></div>
   <div class="d-flex justify-content-between align-items-center flex-column">
     <% @bookmarked_restaurants.each do |restaurant| %>
-      <%= render 'shared/restaurant_card', restaurant: restaurant %>
+      <%= render 'bookmarks-restaurant-card', restaurant: restaurant %>
     <% end %>
   </div>
 </div>
