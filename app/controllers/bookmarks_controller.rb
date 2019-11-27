@@ -21,8 +21,13 @@ class BookmarksController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @current_user = current_user
     @bookmark = Bookmark.new(restaurant: @restaurant, user: @current_user)
-    # TEMPORARY REDIRECTION:
-    redirect_to restaurant_path(@restaurant) if @bookmark.save
-    # NEED TO ADD REDIRECT FUNCTIONALITY IF THE BOOKMARK SAVES!!
+    @bookmark.save
+    if @bookmark.save
+      flash[:notice] = "Bookmark successfully created"
+      redirect_to restaurant_path(@restaurant)
+    else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      render :new
+    end
   end
 end
