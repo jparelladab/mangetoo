@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "devise-sign-in";
+@import "show";
 
 #restaurant_index_container {
   display: flex;
@@ -22,3 +23,4 @@
   max-width: 50%;
   min-width: 50%;
 }
+
