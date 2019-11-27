@@ -1,0 +1,22 @@
+.restaurant_card {
+  background-color: white;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid pink;
+}
+
+.restaurant_card_carousel {
+  max-width: 50%;
+  min-width: 50%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.restaurant_card_info {
+  max-width: 50%;
+  min-width: 50%;
+  background-color: orange;
+  border: 1px solid black;
+  padding: 2.5%;
+}
