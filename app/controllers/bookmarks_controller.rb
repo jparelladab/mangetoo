@@ -1,6 +1,20 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.where(user: current_user)
+    @bookmarked_restaurants = []
+    @bookmarks.each do |bookmark|
+      restaurant = Restaurant.find(bookmark.restaurant_id)
+      @bookmarked_restaurants << restaurant
+    end
+
+    @markers = @bookmarked_restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
+        image_url: helpers.asset_url('MangeToo_DefaultUserImage.png')
+      }
+    end
   end
 
   def create
