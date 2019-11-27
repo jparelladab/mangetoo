@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     @reviews_array.map do |review_hash|
       @restaurants << review_hash[:restaurant_instance]
     end
+
+    my_friends = Follow.where(following_id: current_user.id)
+    my_friends_visits = my_friends.map { |f| User.find(f.follower_id).visits }
+    @friend_reviews = my_friends_visits.flatten!.map { |v| v.reviews }
   end
 
   private
