@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  //Optional Sticky Navbar
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {

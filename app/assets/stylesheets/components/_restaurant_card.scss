@@ -46,6 +46,12 @@
 
 .restaurant_info_strip > p {
   margin-left: 2.5%;
+  line-height: 2;
+}
+
+.restaurant_info_strip > p > img {
+  width: 5%;
+  height: auto;
 }
 
 .restaurant_info_strip_button {
@@ -64,7 +70,7 @@
 }
 
 .btn-group > button:hover {
-    background-color: $MangeToo-brightred;
+  background-color: $MangeToo-brightred;
 }
 
 .btn-reviewers {

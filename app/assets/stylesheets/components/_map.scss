@@ -7,8 +7,13 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.mapboxgl-canvas {
+}
+
 #map {
   box-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: white;
   border-radius: 10px;
+  position: sticky;
+  top: 80px;   //80px if Navbar is sticky, else: 8px.
 }
