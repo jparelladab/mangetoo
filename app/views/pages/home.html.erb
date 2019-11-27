@@ -19,60 +19,19 @@
 <br>
 <br>
 
-<div class="card-container">
+  <div class="card-container">
+<% @reviews_array.each do |review_hash| %>
     <div class="card-home">
       <%=image_tag("Headshot_1.jpg")%>
       <div class="card-home-infos">
         <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
+        <h2><%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %></h2>
+        <h3> <%= review_hash[:review_date] %></h3>
         </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
+        <h3><%= review_hash[:restaurant_name] %></h3>
+        <p><%= review_hash[:review_content_truncated] %></p>
       </div>
     </div>
-
-    <div class="card-home">
-      <%=image_tag("Headshot_2.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
-
-    <div class="card-home">
-      <%=image_tag("Headshot_3.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
-
-    <div class="card-home">
-      <%=image_tag("Headshot_4.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h2>First_name Last_Name</h2>
-        <h3>Date</h3>
-        </div>
-        <h3>Reviewed restaurant</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...</p>
-      </div>
-    </div>
-</div>
-
-
-<br>
-<br>
-
-<%= link_to "Restaurants Index", restaurants_path %>
-
+<% end %>
+  </div>
 

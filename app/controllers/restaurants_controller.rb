@@ -24,8 +24,10 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
+      flash[:notice] = "Bookmark successfully created"
       redirect_to restaurant_path(@restaurant)
     else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
       render :new
     end
   end
