@@ -5,7 +5,7 @@
   <div class="restaurant_card_info">
 
     <div class="restaurant_info_strip">
-      <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
     </div>
 
     <div class="restaurant_info_strip">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="restaurant_info_strip">
-      <p><%= restaurant.address%>, <%= restaurant.phone_number %></p>
+      <p><%= restaurant.city%> <br> <%= restaurant.address%> <br> <%= restaurant.phone_number %></p>
     </div>
 
     <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
