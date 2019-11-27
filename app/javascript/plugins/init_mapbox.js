@@ -25,6 +25,8 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
     addMarkersToMap(map, markers);
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-left');
   }
 };
 const addMarkersToMap = (map, markers) => {
