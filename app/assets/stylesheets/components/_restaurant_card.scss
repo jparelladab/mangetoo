@@ -1,0 +1,61 @@
+.restaurant_card {
+  background-color: white;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid pink;
+}
+
+.restaurant_card_carousel {
+  max-width: 50%;
+  min-width: 50%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.restaurant_card_info {
+  max-width: 50%;
+  min-width: 50%;
+  background-color: orange;
+  border: 1px solid black;
+  padding: 2.5%;
+}
+
+.restaurant_info_strip {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0%;
+}
+
+.restaurant_info_strip_button {
+  display: flex;
+  align-content: space-around;
+}
+
+.btn-group > button {
+  font-size: 1vw;
+  padding-right: 0%;
+  padding-left: 0%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #09B07E;
+  border: none;
+}
+
+.btn-reviewers {
+  margin-right: 5%;
+}
+
+.btn-details {
+  margin-left: 5%;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+  border-radius: 5px 5px 5px 5px;
+}
+
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
+  border-radius: 5px 5px 5px 5px;
+}

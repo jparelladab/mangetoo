@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
       restaurant = Restaurant.find(visit.restaurant_id)
       index_hash = {
         review_content_truncated: truncate(review.content),
+        review_id: review.id,
         review_content: review.content,
         review_rating: review.rating,
         review_date: review.created_at.strftime("%d/%m/%y"),
@@ -28,7 +29,8 @@ class ReviewsController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant })
+        infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
+        image_url: helpers.asset_url('MangeToo_DefaultUserImage.png')
       }
     end
   end
