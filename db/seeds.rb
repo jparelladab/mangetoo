@@ -33,17 +33,17 @@ puts "Default user initial seeds created"
 puts "Creating restaurant initial seeds"
 five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
 five_fields.save
-song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London E2 8DY', city: 'London', category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
+song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London, E2 8DY', city: 'London', category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
 song_que.save
-st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, Barbican, London EC1M 4AY', city: 'London', category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848')
+st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, Barbican, London, EC1M 4AY', city: 'London', category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848')
 st_john.save
-luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, Farringdon, London EC1M 4EH', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
+luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, Farringdon, London, EC1M 4EH', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
 luca.save
-gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
+gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London, EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
 gloria.save
-shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, Farringdon, London EC1R 4QE', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
+shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, Farringdon, London, EC1R 4QE', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
 shawarma_bar.save
-noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London WC1N 3NB", city: 'London', category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963")
+noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London, WC1N 3NB", city: 'London', category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963")
 noble_rot.save
 stendhal = Restaurant.new(name: 'Stendhal Milano', address: "Via Ancona, 1 Ang. Via, 20121 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.stendhalmilano.it', phone_number: "+39 02 657 2059")
 stendhal.save
@@ -53,11 +53,11 @@ trattoria_pontini = Restaurant.new(name: 'Trattoria Bar Pontini', address: "Cann
 trattoria_pontini.save
 trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', address: "Rio Terà de le Carampane, 1911, 30125 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: 'www.antichecarampane.com', phone_number: "+39 041 524 0165")
 trattoria_carampane.save
-hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Rd, Farringdon, London EC1R 3AL", city: 'London', category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
+hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Rd, Farringdon, London, EC1R 3AL", city: 'London', category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
 hammer_tongs.save
-scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London SW1Y 4AH", city: 'London', category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
+scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London, SW1Y 4AH", city: 'London', category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
 scully.save
-roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London W1U 3DB", city: 'London', category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
+roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London, W1U 3DB", city: 'London', category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
 roganic.save
 mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
 mar_do_inferno.save
