@@ -34,5 +34,10 @@
          </div>
     </div>
   <% end %>
+
+    <% @friend_reviews.each do |r| %>
+    <%= r[0].content %>
+
+  <% end %>
 </div>
 
