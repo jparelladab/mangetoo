@@ -1,6 +1,6 @@
 .restaurant_card {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 400px;
   display: flex;
   justify-content: flex-start;
   margin: 8px;
@@ -53,6 +53,7 @@
 .restaurant_info_strip > p > img {
   width: 5%;
   height: auto;
+  max-height: 400px;
 }
 
 .restaurant_info_strip_button {
@@ -98,4 +99,8 @@
   &:hover {
     text-decoration: none;
   }
+}
+
+img {
+  max-height: 400px;
 }
