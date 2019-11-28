@@ -19,25 +19,20 @@
 <br>
 <br>
 
-<div class="card-container">
-  <% @reviews_array.each do |review_hash| %>
-    <div class="card-home">
-      <%=image_tag("Headshot_2.jpg")%>
-      <div class="card-home-infos">
-        <div class="name_date_flex">
-        <h3><%= review_hash[:user_first_name] %> <%= review_hash[:user_last_name] %></h3>
-        <p class="home-date"> Review date: <%= review_hash[:review_date] %></p>
+  <div class="card-container">
+    <% @followings_reviews.each do |review| %>
+      <div class="card-home">
+        <%=image_tag("Headshot_2.jpg")%>
+        <div class="card-home-infos">
+          <div class="name_date_flex">
+            <h3><%= review.first.visit.user.first_name %> <%= review.first.visit.user.last_name %></h3>
+            <p class="home-date"> Review date: <%= review.first.visit.date %></p>
+          </div>
+          <h2><%= review.first.visit.restaurant.name %></h2>
+          <p><%= truncate(review.first.content) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.first.id %>">See More</a>
+            <%= render partial: 'home_modal', locals: {review: review} %></p>
         </div>
-        <h2><%= review_hash[:restaurant_name] %></h2>
-        <p><%= review_hash[:review_content_truncated] %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review_hash[:review_id] %>">See More</a>
-            <%= render partial: 'home_modal', locals: {review_hash: review_hash} %></p>
-         </div>
-    </div>
-  <% end %>
-
-    <% @friend_reviews.each do |r| %>
-    <%= r[0] %>
-
+      </div>
   <% end %>
 </div>
 
