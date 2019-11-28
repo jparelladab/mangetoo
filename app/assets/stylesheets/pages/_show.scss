@@ -1,9 +1,15 @@
-.main-image {
+.show {
+  margin-top: 30px;
+}
+
+.showpage-image {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  box-shadow: 5px 5px 25px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  margin-bottom: 15px;
+
 }
 
 .map-show #map{
@@ -15,11 +21,46 @@
 .restaurant-info {
   width: 100%;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 3px;
+  padding: 30px;
   margin: 10px auto;
+
 }
-.card-container-show {
-  margin-right: -15px;
-    margin-left: -15px;
-}
+
+.greenbtn {
+  background-color: #09B07E;
+  color: white;
+  border-radius: 2px;
+  padding: 7px;
+  width: 120px;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  text-align: center;
+ }
+
+ .greenbtn:hover {
+  background-color: #FF575C;
+  text-decoration: none;
+  color: white;
+ }
+
+.hollowbtn {
+  // background-color: #09B07E;
+  color: #09B07E;
+  border-radius: 2px;
+  padding: 7px;
+  width: 120px;
+  border: 2px solid #09B07E ;
+  font-weight: bold;
+  // box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  text-align: center;
+ }
+
+ .hollowbtn:hover {
+  background-color: #FF575C;
+  text-decoration: none;
+  color: white;
+  border: 2px solid #FF575C ;
+ }
+

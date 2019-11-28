@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container show">
 
   <div class="row">
     <div class="col-8">
@@ -23,9 +23,39 @@
             </a>
           </div>
       <% else %>
-        <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" class="main-image" alt="">
+        <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" class="showpage-image" alt="">
       <% end %>
       </div>
+      <div class="restaurant-info">
+        <h2><%= @restaurant.name %></h2>
+        <div class="content-info">
+          <p><%= @restaurant.address %></p>
+          <p><%= @restaurant.category %></p>
+          <p><%= @restaurant.website %></p>
+          <p><%= @restaurant.phone_number %></p>
+          <p><%= @avg_rating %></p>
+        </div>
+        <div class="buttons-info">
+          <a href="#" class="greenbtn">Book</a>
+          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'hollowbtn' %>
+        </div>
+      </div>
+
+      <div class="card-container-show">
+          <% @reviews_expanded.each do |review| %>
+            <div class="card-show">
+              <%=image_tag("Headshot_1.jpg")%>
+                <div class="card-show-infos">
+                  <div class="name_date_flex-show">
+                    <h2> <%= review[:user_name] %> </h2>
+                    <h3> <%= review[:review_date] %> </h3>
+                  </div>
+                  <p><%= review[:review_content] %></p>
+                </div>
+            </div>
+          <% end %>
+      </div>
+
     </div>
     <div class="col-4">
         <div
@@ -38,43 +68,7 @@
     </div>
   </div>
 
-<!--   <div class="row"> -->
-    <div class="col-8">
 
-      <div class="restaurant-info">
-        <h1><%= @restaurant.name %></h1>
-        <div class="content-info">
-          <p><%= @restaurant.address %></p>
-          <p><%= @restaurant.category %></p>
-          <p><%= @restaurant.website %></p>
-          <p><%= @restaurant.phone_number %></p>
-          <p><%= @avg_rating %></p>
-        </div>
-        <div class="buttons-info">
-          <a href="#" class="btn btn-primary">Book</a>
-          <a href="#" class="btn btn-primary">Bookmark</a>
-          <%= link_to 'Bookmark Restaurant', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'btn btn-secondary' %>
-        </div>
-      </div>
-    </div>
-<!--   </div> -->
-    <div class="col-8">
-      <div class="card-container-show">
-          <% @reviews_expanded.each do |review| %>
-            <div class="card-show">
-              <%=image_tag("Headshot_1.jpg")%>
-                <div class="card-show-infos">
-                  <div class="name_date_flex-show">
-                    <h2> <%= review[:user_name] %> </h2>
-                    <h3> <%= review[:review_date] %> </h3>
-                  </div>
-                  <p><%= review[:review_content_truncated] %></p>
-                </div>
-            </div>
-          <% end %>
-      </div>
-    </div>
-  </div>
 
 
 
