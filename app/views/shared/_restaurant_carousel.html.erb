@@ -1,0 +1,15 @@
+<div class="glider-contain">
+  <div id="gliderCarousel<%= restaurant.id %>" class="glider" data-id="<%= restaurant.id %>">
+        <% if restaurant.photos.attached? %>
+            <% restaurant.photos.each_with_index do |photo, i| %>
+                <%= cl_image_tag photo.key, class: "main-image d-block w-100" %>
+            <% end %>
+        <% else %>
+          <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" class="main-image" alt="">
+        <% end %>
+  </div>
+  <div role="tablist" id="gliderCarouselDots<%= restaurant.id %>" class="dots"></div>
+  <button role="button" aria-label="Previous" id="gliderCarouselPrev<%= restaurant.id %>" class="glider-prev">«</button>
+  <button role="button" aria-label="Next" id="gliderCarouselNext<%= restaurant.id %>" class="glider-next">»</button>
+</div>
+
