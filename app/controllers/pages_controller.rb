@@ -5,14 +5,13 @@ class PagesController < ApplicationController
     followings_visits = followings_id.map { |id| Visit.where(user_id: id) }
     followings_visits_ids = followings_visits.map { |visit| visit.ids }.flatten
     @followings_reviews = followings_visits_ids.map { |id| Review.where(visit_id: id) }
+    my_visits = Visit.where(user_id: current_user.id)
+    my_visits_ids = my_visits.map { |visit| visit.id }.flatten
+    my_reviews_arrelation = my_visits_ids.map { |id| Review.where(visit_id: id) }
+    @my_reviews = my_reviews_arrelation.map { |r| r.first}.compact
   end
 
 
   private
 
-  # def truncate(text, length = 100, truncate_string = "...")
-  #   return "No review written." if text.nil?
-  #   l = length - truncate_string.chars.to_a.size
-  #   (text.chars.to_a.size > length ? text.chars.to_a[0...l].join + truncate_string : text).to_s
-  # end
 end

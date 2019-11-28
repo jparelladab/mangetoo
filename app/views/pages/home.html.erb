@@ -34,5 +34,19 @@
         </div>
       </div>
   <% end %>
+  <% @my_reviews.each do |myrev| %>
+      <div class="card-home">
+        <%=image_tag("Headshot_2.jpg")%>
+        <div class="card-home-infos">
+          <div class="name_date_flex">
+            <h3><%= myrev.visit.user.first_name %> <%= myrev.visit.user.last_name %></h3>
+            <p class="home-date"> Review date: <%= myrev.visit.date %></p>
+          </div>
+          <h2><%= myrev.visit.restaurant.name %></h2>
+          <p><%= myrev.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= myrev.id %>"> See More</a>
+            <%= render partial: 'home_modal', locals: {review: myrev} %></p>
+        </div>
+      </div>
+  <% end %>
 </div>
 
