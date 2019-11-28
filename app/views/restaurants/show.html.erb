@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-8">
-      <div class="photo-carousel">
+      <div class="photo-carousel" id="show-restaurant-carousel">
         <%= render 'shared/restaurant_carousel', restaurant: @restaurant %>
       </div>
 
@@ -34,7 +34,7 @@
           <p><%= @avg_rating %></p>
         </div>
         <div class="content-info">
-          <p><a href="#"><%= image_tag("greenwebsite.svg") %> <%= @restaurant.website %></a></p>
+          <p><%= image_tag("greenwebsite.svg") %><a href="http://<% @restaurant.website %>" target="_blank"><%= @restaurant.website %></a></p>
           <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
           <p><%= @avg_rating %></p>
         </div>
