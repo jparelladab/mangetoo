@@ -1,0 +1,96 @@
+.bookmarks-restaurant-card {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 8px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.bookmarks-restaurant-card:first-child {
+   margin-top: 20px;
+ }
+
+ .bookmarks-restaurant-card:last-child {
+   margin-bottom: 30px;
+ }
+
+// .restaurant_card_carousel {
+//   max-width: 50%;
+//   min-width: 50%;
+//   background-color: yellow;
+// }
+
+// .restaurant_card_info {
+//   max-width: 50%;
+//   min-width: 50%;
+//   background-color: white;
+//   padding: 2.5%;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+// }
+
+// .restaurant_info_strip {
+//   min-width: 100%;
+//   max-width: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+//   padding: 0%;
+//   font-size: 0.8vw;
+// }
+
+// .restaurant_info_strip a {
+//   text-decoration: none;
+//   color: $MangeToo-green;
+// }
+
+// .restaurant_info_strip a:hover {
+//   color: $MangeToo-brightred;
+// }
+
+// .restaurant_info_strip > p {
+//   margin-left: 2.5%;
+//   line-height: 2;
+// }
+
+// .restaurant_info_strip > p > img {
+//   width: 5%;
+//   height: auto;
+// }
+
+// .restaurant_info_strip_button {
+//   display: flex;
+//   align-content: space-around;
+// }
+
+// .btn-group > button {
+//   font-size: 1vw;
+//   padding-right: 0%;
+//   padding-left: 0%;
+//   padding-top: 2%;
+//   padding-bottom: 2%;
+//   background-color: $MangeToo-green;
+//   border: none;
+// }
+
+// .btn-group > button:hover {
+//   background-color: $MangeToo-brightred;
+// }
+
+// .btn-reviewers {
+//   margin-right: 5%;
+//   margin-left: 2.5%;
+// }
+
+// .btn-details {
+//   margin-left: 5%;
+//   margin-right: 2.5%;
+// }
+
+// .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+//   border-radius: 5px;
+// }
+
+// .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
+//   border-radius: 5px;
+// }

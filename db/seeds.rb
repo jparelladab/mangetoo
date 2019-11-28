@@ -71,10 +71,26 @@ koy_shunka.save
 puts "Created restaurant initial seeds!"
 
 puts "Creating visit initial seeds"
+yesterday = Date.today - 1
+day_before_yesterday = Date.today - 2
+
 test_visit_one = Visit.new(date: Date.today, user: test_user_one, restaurant: five_fields, number_of_people: 4)
 test_visit_one.save
-test_visit_two = Visit.new(date: Date.today, user: test_user_one, restaurant: song_que, number_of_people: 2)
+test_visit_two = Visit.new(date: yesterday, user: test_user_one, restaurant: song_que, number_of_people: 2)
 test_visit_two.save
+test_visit_one_b = Visit.new(date: Date.today, user: test_user_one, restaurant: osteria_binari, number_of_people: 4)
+test_visit_one_b.save
+test_visit_two_b = Visit.new(date: yesterday, user: test_user_one, restaurant: koy_shunka, number_of_people: 2)
+test_visit_two_b.save
+test_visit_one_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: mar_do_inferno, number_of_people: 4)
+test_visit_one_c.save
+test_visit_two_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: trattoria_pontini, number_of_people: 2)
+test_visit_two_c.save
+test_visit_one_d = Visit.new(date: yesterday, user: test_user_one, restaurant: la_colombe, number_of_people: 4)
+test_visit_one_d.save
+test_visit_two_d = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: scully, number_of_people: 2)
+test_visit_two_d.save
+
 test_visit_three = Visit.new(date: Date.today, user: test_user_two, restaurant: five_fields, number_of_people: 8)
 test_visit_three.save
 test_visit_four = Visit.new(date: Date.today, user: test_user_two, restaurant: song_que, number_of_people: 5)
@@ -90,14 +106,14 @@ test_visit_eight.save
 puts "Visit seeds completed!"
 
 puts "Creating review initial seeds"
-Review.create(content: 'This was a really wonderful experience!!', rating: 5, visit_id: 1)
-Review.create(content: 'The Pho here really is a must-have. Highly recommend this place for anyone who likes Vietnamese food. One of the best and most authentic in London.', rating: 4, visit_id: 2)
-Review.create(content: 'The veal was really incredible. I would highly recommend coming here, but perhaps not on a Saturday night, as it can be very busy.', rating: 5, visit_id: 3)
-Review.create(content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5, visit_id: 4)
-Review.create(content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5, visit_id: 5)
-Review.create(content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4, visit_id: 6)
-Review.create(content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5, visit_id: 7)
-Review.create(content: 'Top rated sushi, beautifully presented ', rating: 4, visit_id: 8)
+Review.create(content: 'This was a really wonderful experience!!', rating: 5, visit: test_visit_one)
+Review.create(content: 'The Pho here really is a must-have. Highly recommend this place for anyone who likes Vietnamese food. One of the best and most authentic in London.', rating: 4, visit: test_visit_two)
+Review.create(content: 'The veal was really incredible. I would highly recommend coming here, but perhaps not on a Saturday night, as it can be very busy.', rating: 5, visit: test_visit_three)
+Review.create(content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5, visit: test_visit_four)
+Review.create(content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5, visit: test_visit_five)
+Review.create(content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4, visit: test_visit_six)
+Review.create(content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5, visit: test_visit_seven)
+Review.create(content: 'Top rated sushi, beautifully presented ', rating: 4, visit: test_visit_eight)
 puts "Created review initial seeds!"
 
 puts "Creating the bookmark initial seeds"

@@ -1,13 +1,74 @@
-<h1>Visits Index</h1>
+<div class="d-flex align-items-center flex-column">
+  <div
+  id="map"
+  style="width: 90%;
+  height: 500px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
-<% @visits.each do |visit| %>
-<div class="card">
-  <h2><%= visit.restaurant.name %></h2>
-  <h2><%= visit.restaurant.address %></h2>
-  <h2><%= visit.date %></h2>
-  <h2><%= visit.number_of_people %></h2>
-  <%= link_to "Write Review", new_visit_review_path(visit) %>
+  <div class="upcoming-visits-container d-flex align-items-center flex-column">
+    <h2>Upcoming Visits</h2>
+    <% if @upcoming_visits.any? %>
+      <% @upcoming_visits.each do |visit| %>
+        <div class="visits-index-card d-flex">
+          <div class="visits-index-card-image">
+          </div>
+          <div class="visits-index-card-body">
+            <div class="restaurant-details d-flex flex-column justify-content-center">
+              <p ><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant), class: "restaurant-name" %></p>
+              <p id="restaurant-address"><%= visit.restaurant.address %></p>
+            </div>
+            <div class="visit-details d-flex justify-content-around align-items-center">
+              <p class="visit-detail">Foodies: <%= visit.number_of_people %></p>
+              <p class="visit-detail"><%= visit.date.strftime("%d/%m/%y") %></p>
+            </div>
+          </div>
+          <div class="visits-index-card-review d-flex flex-column align-items-center justify-content-around p-3">
+            <p class="bannerbtn">Change</p>
+            <p class="bannerbtn">Cancel</p>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <p>-----</p>
+        <p>No upcoming visits! Take a look at where your friends have been recently!</p>
+        <p>-----</p>
+      <% end %>
+  </div>
+  <br>
+  <div class="previous-visit-container d-flex align-items-center flex-column">
+    <h2>Previous Visits</h2>
+    <% if @previous_visits.any? %>
+      <% @review_hash_array.each do |review_hash| %>
+        <% visit = review_hash[:visit] %>
+        <% review = review_hash[:review] %>
+        <div class="visits-index-card d-flex">
+          <div class="visits-index-card-image">
+          </div>
+          <div class="visits-index-card-body">
+            <div class="restaurant-details d-flex flex-column justify-content-center">
+              <p ><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant), class: "restaurant-name" %></p>
+              <p id="restaurant-address"><%= visit.restaurant.address %></p>
+            </div>
+            <div class="visit-details d-flex justify-content-around align-items-center">
+              <p class="visit-detail">Foodies: <%= visit.number_of_people %></p>
+              <p class="visit-detail"><%= visit.date.strftime("%d/%m/%y") %></p>
+            </div>
+          </div>
+          <div class="visits-index-card-review d-flex flex-column align-items-center justify-content-around p-3">
+            <% if review_hash[:review_included] %>
+              <p class="bannerbtn">See Review</p>
+            <% else %>
+              <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>-----</p>
+      <p>No previous visits!</p>
+      <p>-----</p>
+    <% end %>
+  </div>
 </div>
-<% end %>
-
-<%= link_to "Home Page", root_path %>
