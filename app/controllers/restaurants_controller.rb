@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      flash[:notice] = "Bookmark successfully created"
+      flash[:notice] = "Restaurant successfully created"
       redirect_to restaurant_path(@restaurant)
     else
       flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
@@ -107,7 +107,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :category, :website, :phone_number)
+    params.require(:restaurant).permit(:name, :address, :city, :category, :website, :phone_number, photos: [])
   end
 
   def set_restaurant
