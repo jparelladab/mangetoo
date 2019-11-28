@@ -1,30 +1,45 @@
 .show {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .showpage-image {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  box-shadow: 5px 5px 25px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
   border-radius: 3px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
 }
 
 .map-show #map{
-  height: 100px;
+  height: 300px;
   width: 100%;
   position: sticky;
 }
 
 .restaurant-info {
   width: 100%;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  height: 400px;
+  box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
   border-radius: 3px;
   padding: 30px;
-  margin: 10px auto;
+  margin-bottom: 30px;
+  overflow: hidden;
 
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.content-info {
+
+  img {
+  width: 7%;
+  height: auto;
+  margin-right: 5px;
+  }
 }
 
 .greenbtn {
@@ -37,6 +52,7 @@
   font-weight: bold;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
   text-align: center;
+  margin-top: 35px;
  }
 
  .greenbtn:hover {
@@ -55,6 +71,7 @@
   font-weight: bold;
   // box-shadow: 0 0 25px rgba(0,0,0,0.2);
   text-align: center;
+  margin-top: 35px;
  }
 
  .hollowbtn:hover {

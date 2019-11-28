@@ -41,6 +41,12 @@ class RestaurantsController < ApplicationController
     visit_from_followings = followings_id.map { |id| Visit.where(user_id: id, restaurant: @restaurant) }
     visit_ids_from_followings = visit_from_followings.map { |visit| visit.ids }.flatten
     @reviews_from_followings = visit_ids_from_followings.map { |id| Review.where(visit_id: id) }
+    @markers =
+      [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
+      }]
   end
 
   #   end

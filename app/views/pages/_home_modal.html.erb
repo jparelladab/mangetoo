@@ -5,14 +5,14 @@
           <h5 class="modal-title-name " id="reviewIndexModalTitle"><%= review.visit.restaurant.name %></h5>
         <p><%= review.visit.restaurant.address %><!-- , <%= review.visit.restaurant.city %> --></p>
         <div class="modal-review-details">
-          <p>Rating: <%= review.rating%> | Visited on: <%= review.visit.date %> | Review from: <%= review.created_at %></p>
+          <p>Rating: <%= review.rating%> | Visited on: <%= review.visit.date %> | Review from: <%= review.created_at.strftime("%d/%m/%y") %></p>
         </div>
       </div>
       <div class="modal-body" style="font-size: 16px">
         <%= review.content %>
       </div>
       <div class="modal-footer homepage-spacer-flex">
-       <p> <%= review.visit.user.first_name %> <%= review.visit.user.last_name %> </p>
+       <p>Review by: <%= review.visit.user.first_name %> <%= review.visit.user.last_name %> </p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
