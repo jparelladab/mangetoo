@@ -58,7 +58,9 @@
           </div>
           <div class="visits-index-card-review d-flex flex-column align-items-center justify-content-around p-3">
             <% if review_hash[:review_included] %>
-              <p class="bannerbtn">See Review</p>
+              <!-- <p class="bannerbtn">See Review</p> -->
+              <a href="#" class="bannerbtn" data-toggle="modal" data-target="#visitsIndexModal<%= review_hash[:review_id] %>">See Review</a>
+              <%= render partial: 'visits_index_modal', locals: {review_hash: review_hash} %>
             <% else %>
               <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn" %>
             <% end %>

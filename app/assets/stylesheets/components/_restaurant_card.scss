@@ -44,7 +44,7 @@
   color: $MangeToo-brightred;
 }
 
-.restaurant_info_strip > p {
+.restaurant_info_strip > p, .btn-link {
   margin-left: 2.5%;
   line-height: 2;
 }
@@ -89,4 +89,12 @@
 
 .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
   border-radius: 5px;
+}
+
+.btn-link {
+  color: white !important;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
