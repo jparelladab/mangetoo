@@ -1,0 +1,48 @@
+.new-review-carousel {
+  margin: 0 auto;
+}
+
+.review-form-container {
+  margin-top: 20px;
+  width: 60%;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 10px;
+  margin-bottom: 30px;
+  h3 {
+    color: $MangeToo-green;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .review-form-header {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgba(50,66,53,0.5);
+  }
+  .form-group {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .form-group > label {
+    display: none;
+  }
+  p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .bannerbtn {
+    margin: 0 auto;
+  }
+  .form-control.content-form {
+    margin-bottom: 20px;
+    margin-left: 0;
+    height: 100px;
+  }
+  .rating-select {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
