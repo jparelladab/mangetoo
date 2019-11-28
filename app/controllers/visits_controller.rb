@@ -20,6 +20,7 @@ class VisitsController < ApplicationController
           review_content: review.content,
           review_rating: review.rating,
           review_id: review.id,
+          review_date: review.created_at.strftime("%d/%m/%y"),
           visit: previous_visit,
           review_included: true
         }
