@@ -50,7 +50,7 @@
                     <h2> <%= review.first.visit.user.first_name + " " + review.first.visit.user.last_name %> </h2>
                     <h3> <%= review.first.visit.date %></h3>
                   </div>
-                  <p><%= truncate(review.first.content) %></p>
+                  <p><%= review.first.content.truncate(100) %></p>
                 </div>
             </div>
           <% end %>
