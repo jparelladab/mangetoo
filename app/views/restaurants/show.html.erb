@@ -1,30 +1,80 @@
-<h1>Restaurant showpage</h1>
-<div class="container-show">
-  <div class="main-photo">
-    <% if @restaurant.photos.attached? %>
-      <% @restaurant.photos.each do |photo| %>
-        <%= cl_photo_path @restaurant.photo.key %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-8">
+      <div class="photo-caoursel">
+        <% if @restaurant.photos.attached? %>
+          <div id="carousel-<%= @restaurant.id %>" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% @restaurant.photos.each_with_index do |photo, i| %>
+                <div class="carousel-item <%= 'active' if i == 0 %>">
+                  <%= cl_image_tag photo.key, class: "main-image d-block w-100" %>
+                </div>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-<%= @restaurant.id %>" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-<%= @restaurant.id %>" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+      <% else %>
+        <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" class="main-image" alt="">
       <% end %>
-    <% else %>
-      <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" alt="">
-    <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+    </div>
   </div>
-  <div class="reviews">
-    <% @reviews.each do |review| %>
-      <p><%= review.content %></p>
-      <p> <%= review.rating %></p>
-    <% end %>
+
+<!--   <div class="row"> -->
+    <div class="col-8">
+
+      <div class="restaurant-info">
+        <h1><%= @restaurant.name %></h1>
+        <div class="content-info">
+          <p><%= @restaurant.address %></p>
+          <p><%= @restaurant.category %></p>
+          <p><%= @restaurant.website %></p>
+          <p><%= @restaurant.phone_number %></p>
+          <p><%= @avg_rating %></p>
+        </div>
+        <div class="buttons-info">
+          <a href="#" class="btn btn-primary">Book</a>
+          <a href="#" class="btn btn-primary">Bookmark</a>
+          <%= link_to 'Bookmark Restaurant', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+<!--   </div> -->
+    <div class="col-8">
+      <div class="card-container-show">
+          <% @reviews_expanded.each do |review| %>
+            <div class="card-show">
+              <%=image_tag("Headshot_1.jpg")%>
+                <div class="card-show-infos">
+                  <div class="name_date_flex-show">
+                    <h2> <%= review[:user_name] %> </h2>
+                    <h3> <%= review[:review_date] %> </h3>
+                  </div>
+                  <p><%= review[:review_content_truncated] %></p>
+                </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 
 
-</div>
 
-<h1><%= @restaurant.name %></h1>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.city %></p>
-<p><%= @restaurant.category %></p>
-<p><%= @restaurant.website %></p>
-<p><%= @restaurant.phone_number %></p>
-
-
-<%= link_to 'Bookmark Restaurant', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'btn btn-secondary' %>

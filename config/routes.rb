@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :bookmarks, only: [:index]
+  resources :bookmarks, only: [:index, :destroy]
   resources :follows, only: [:index, :create, :destroy]
 end

@@ -1,6 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "devise-sign-in";
+@import "show";
+@import "visits-index";
 
 #restaurant_index_container {
   display: flex;
@@ -11,19 +13,17 @@
 }
 
 #restaurant_index_cards_container {
-  background-color: red;
+  background-color: white;
   max-width: 50%;
   min-width: 50%;
 }
 
 #restaurants_index_map_container {
-  background-color: blue;
+  background-color: white;
   width: 0px;
   max-width: 50%;
   min-width: 50%;
-  padding-bottom: 75%;
 }
-
 
 .input-small {
   width: 400px;
