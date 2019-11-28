@@ -14,6 +14,7 @@
       <% @upcoming_visits.each do |visit| %>
         <div class="visits-index-card d-flex">
           <div class="visits-index-card-image">
+            <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
           </div>
           <div class="visits-index-card-body">
             <div class="restaurant-details d-flex flex-column justify-content-center">
@@ -46,6 +47,7 @@
         <% review = review_hash[:review] %>
         <div class="visits-index-card d-flex">
           <div class="visits-index-card-image">
+            <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
           </div>
           <div class="visits-index-card-body">
             <div class="restaurant-details d-flex flex-column justify-content-center">
