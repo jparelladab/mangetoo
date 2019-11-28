@@ -36,12 +36,30 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @visit = Visit.find(params[:visit_id])
+    @restaurant = Restaurant.find(@visit.restaurant_id)
+    @review = Review.new
   end
 
   def create
+    @review = Review.new(review_params)
+    @visit = Visit.find(params[:visit_id])
+    @review.visit = @visit
+    if @review.save
+      flash[:notice] = "Thank you for your review!"
+      redirect_to visits_path
+    else
+      raise
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      redirect_to visits_path
+    end
   end
 
   private
+
+  def review_params
+    params.require(:review).permit(:visit_id, :content, :rating)
+  end
 
   def truncate(text, length = 100, truncate_string = "...")
     return "No review written." if text.nil?
