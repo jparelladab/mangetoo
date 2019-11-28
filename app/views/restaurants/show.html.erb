@@ -72,6 +72,9 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
     <!-- </div> -->
+        <% if current_user.admin %>
+          <%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant), style: "color: white" %>
+        <% end %>
     </div>
   </div>
 
