@@ -47,10 +47,10 @@
               <%=image_tag("Headshot_1.jpg")%>
                 <div class="card-show-infos">
                   <div class="name_date_flex-show">
-                    <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
-                    <h3> <%= review.visit.date %></h3>
+                    <h2> <%= review.first.visit.user.first_name + " " + review.first.visit.user.last_name %> </h2>
+                    <h3> <%= review.first.visit.date %></h3>
                   </div>
-                  <p><%= truncate(review.content) %></p>
+                  <p><%= truncate(review.first.content) %></p>
                 </div>
             </div>
           <% end %>
