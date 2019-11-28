@@ -10,9 +10,9 @@ class PagesController < ApplicationController
 
   private
 
-  def truncate(text, length = 100, truncate_string = "...")
-    return "No review written." if text.nil?
-    l = length - truncate_string.chars.to_a.size
-    (text.chars.to_a.size > length ? text.chars.to_a[0...l].join + truncate_string : text).to_s
-  end
+  # def truncate(text, length = 100, truncate_string = "...")
+  #   return "No review written." if text.nil?
+  #   l = length - truncate_string.chars.to_a.size
+  #   (text.chars.to_a.size > length ? text.chars.to_a[0...l].join + truncate_string : text).to_s
+  # end
 end
