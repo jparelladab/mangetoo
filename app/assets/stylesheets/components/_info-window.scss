@@ -1,0 +1,7 @@
+.category-tag > a {
+  color: $MangeToo-green;
+  &:hover {
+    text-decoration: none;
+    color: $MangeToo-brightred;
+  }
+}

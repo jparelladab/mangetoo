@@ -99,6 +99,13 @@ class RestaurantsController < ApplicationController
   end
 
   def update
+    if @restaurant.update(restaurant_params)
+      flash[:notice] = "Restaurant successfully updated"
+      redirect_to restaurant_path(@restaurant)
+    else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      render :edit
+    end
   end
 
   def destroy
