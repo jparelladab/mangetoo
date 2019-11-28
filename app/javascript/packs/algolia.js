@@ -5,7 +5,7 @@ const orderedList = (hits) => {
   return `<ol class="list-group">${content}</ol>`;
 };
 
-var client = algoliasearch('IXJHJTOOL7', '72f4a5a32d41e8b7dc3cea5ed765ef62');
+var client = algoliasearch(ENV['ALGOLIA_APPLICATION_ID'], ENV['ALGOLIA_API_KEY']);
 var index = client.initIndex('Restaurant');
 const input = document.querySelector("#restaurant_name");
 input.addEventListener("keyup", (event) => {
