@@ -23,22 +23,8 @@
             </a>
           </div>
       <% else %>
-        <img src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" class="showpage-image" alt="">
+        <img src="https://www.luxuryrestaurantguide.com/Pictures/973_FiveFieldsIMG_4280.jpg" class="showpage-image" alt="">
       <% end %>
-      </div>
-      <div class="restaurant-info">
-        <h2><%= @restaurant.name %></h2>
-        <div class="content-info">
-          <p><%= @restaurant.address %></p>
-          <p><%= @restaurant.category %></p>
-          <p><%= @restaurant.website %></p>
-          <p><%= @restaurant.phone_number %></p>
-          <p><%= @avg_rating %></p>
-        </div>
-        <div class="buttons-info">
-          <a href="#" class="greenbtn">Book</a>
-          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'hollowbtn' %>
-        </div>
       </div>
 
       <div class="card-container-show">
@@ -55,9 +41,29 @@
             </div>
           <% end %>
       </div>
-
     </div>
+
     <div class="col-4">
+      <div class="restaurant-info">
+        <h2><%= @restaurant.name %></h2>
+        <p><%= @avg_rating %></p>
+        <div class="content-info">
+          <p><%= image_tag("greenlocation.svg") %> <%= @restaurant.address %></p>
+          <p><%= image_tag("greencategory.svg") %> <%= @restaurant.category %></p>
+
+          <p><%= @avg_rating %></p>
+        </div>
+        <div class="content-info">
+          <p><%= image_tag("greenwebsite.svg") %> <%= @restaurant.website %></p>
+          <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
+          <p><%= @avg_rating %></p>
+        </div>
+        <div class="buttons-info">
+          <a href="#" class="greenbtn">Book</a>
+          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'hollowbtn' %>
+        </div>
+      </div>
+    <!-- <div class="col-4"> -->
         <div
           id="map"
           style="width: 100%;
@@ -65,6 +71,7 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
+    <!-- </div> -->
     </div>
   </div>
 
