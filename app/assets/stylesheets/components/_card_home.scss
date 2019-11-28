@@ -9,10 +9,6 @@
 
 }
 
-.name_date_flex {
-  display: flex;
-  justify-content: space-between;
-}
 
 .card-home {
   overflow: hidden;
@@ -21,9 +17,13 @@
   background: white;
   box-shadow: 10px 10px 25px rgba(0,0,0,0.2);
   display: flex;
-  flex-grow: 0;
   border-radius: 100px 5px 5px 100px;
 
+  .name_date_flex {
+    display: flex;
+    justify-content: space-between;
+
+  }
 
    img {
     height: 100%;
