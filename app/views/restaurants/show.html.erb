@@ -35,7 +35,8 @@
                     <h2> <%= review.first.visit.user.first_name + " " + review.first.visit.user.last_name %> </h2>
                     <h3> <%= review.first.visit.date %></h3>
                   </div>
-                  <p><%= review.first.content.truncate(100) %></p>
+                  <p><%= review.first.content.truncate(100) %><a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.first.id %>"> See More</a>
+                  <%= render partial: 'show_modal', locals: {review: review.first} %></p>
                 </div>
             </div>
           <% end %>
@@ -53,7 +54,7 @@
           <p><%= @avg_rating %></p>
         </div>
         <div class="content-info">
-          <p><%= image_tag("greenwebsite.svg") %> <%= @restaurant.website %></p>
+          <p><a href="#"><%= image_tag("greenwebsite.svg") %> <%= @restaurant.website %></a></p>
           <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
           <p><%= @avg_rating %></p>
         </div>

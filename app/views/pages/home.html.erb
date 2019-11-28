@@ -29,7 +29,7 @@
             <p class="home-date"> Review date: <%= review.first.visit.date %></p>
           </div>
           <h2><%= review.first.visit.restaurant.name %></h2>
-          <p><%= review.first.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.first.id %>">See More</a>
+          <p><%= review.first.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.first.id %>"> See More</a>
             <%= render partial: 'home_modal', locals: {review: review.first} %></p>
         </div>
       </div>
