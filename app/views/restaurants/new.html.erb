@@ -3,7 +3,9 @@
 <div class="container-form" >
   <div id="new-restaurant-form"> <%= simple_form_for [@restaurant] do |f| %>
     <%= f.input :name, :as => :string, input_html: { :style=> 'width: 400px;' }%>
-    <%= f.input :address, :as => :string, input_html: { :style=> 'width: 400px;' }%>
+    <div id="name-search-list">
+    </div>
+    <%= f.input :address, :as => :string %>
     <%= f.input :city, :as => :string, input_html: { :style=> 'width: 400px;' } %>
     <%= f.input :category, :as => :string, input_html: { :style=> 'width: 400px;' } %>
     <%= f.input :website, :as => :string, input_html: { :style=> 'width: 400px;' } %>
@@ -13,3 +15,6 @@
     <% end %>
   </div>
 </div>
+
+
+<%= javascript_pack_tag "algolia" %>

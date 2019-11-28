@@ -1,0 +1,16 @@
+.upcoming-visits-container, .previous-visit-container {
+  margin-top: 20px;
+  width: 90%;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 10px;
+  h2 {
+    color: $MangeToo-green;
+    font-weight: bold;
+  }
+}
+
+.previous-visit-container {
+  margin-bottom: 30px;
+}

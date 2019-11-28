@@ -1,0 +1,54 @@
+.visits-index-card {
+  width: 70%;
+  margin: 7px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 5px;
+  .visits-index-card-image {
+    width: 400px;
+    background-color: yellow;
+  }
+  .visits-index-card-body {
+    width: 40%;
+    text-align: center;
+    padding: 5px;
+  }
+  .visits-index-card-review {
+    width: 20%;
+    border-left-style: solid;
+    border-color: rgba(50, 66, 53, 0.7);
+    border-width: thin;
+    text-align: center;
+    padding-top: 5px;
+  }
+}
+
+.restaurant-details {
+  border-bottom-style: solid;
+  border-color: rgba(50, 66, 53, 0.7);
+  border-width: thin;
+  padding: 5px 10px 0 10px;
+  .restaurant-name {
+    font-size: 22px;
+    color: $MangeToo-green;
+    text-decoration: none;
+  }
+  #restaurant-address {
+    font-size: 14px;
+  }
+}
+
+.restaurant-name:hover {
+  color: $MangeToo-brightred;
+}
+
+.visit-details {
+  padding-top: 10px;
+  .visit-detail {
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
+    border-color: $MangeToo-green;
+    padding: 8px 16px;
+  }
+}
