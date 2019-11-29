@@ -21,7 +21,7 @@
 
   <div class="card-container">
     <% @followings_reviews.each do |review| %>
-      <% if !review.first.nil? %>
+      <% if !review.nil? %>
       <div class="card-home">
         <%=image_tag("Headshot_2.jpg")%>
         <div class="card-home-infos">
@@ -39,7 +39,7 @@
   <% @my_reviews.each do |myrev| %>
     <% unless myrev.nil? %>
       <div class="card-home">
-        <%=image_tag("Headshot_2.jpg")%>
+        <%=image_tag current_user.default_image %>
         <div class="card-home-infos">
           <div class="name_date_flex">
             <h3><%= myrev.visit.user.first_name %> <%= myrev.visit.user.last_name %></h3>
