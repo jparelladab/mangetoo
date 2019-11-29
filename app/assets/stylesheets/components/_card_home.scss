@@ -6,7 +6,7 @@
   grid-gap: 25px;
   margin-left: 25px;
   margin-right: 20px;
-
+  margin-bottom: 25px;
 
 }
 
@@ -24,6 +24,9 @@
     justify-content: space-between;
     width: 400px;
 
+    p {
+      padding-top: 5px;
+    }
   }
 
    img {
@@ -36,11 +39,17 @@
     right: 8px;
   }
 
-   h2 {
+   h2 a {
     font-size: 22px;
     font-weight: bold;
     margin: 10px 0;
-    color: $MangeToo-green
+    color: #09B07E;
+
+
+    &:hover {
+      color: #FF575C;
+      text-decoration: none;
+    }
   }
 
    h3 {

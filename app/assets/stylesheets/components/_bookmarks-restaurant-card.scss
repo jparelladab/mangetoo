@@ -5,14 +5,16 @@
   display: flex;
   justify-content: flex-start;
   margin: 8px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   background-color: white;
   border-radius: 10px;
-  height: 250px;
+  height: 260px;
+  border-radius: 3px;
   .restaurant_card_carousel {
-    height: 250px;
+    height: 260px;
     object-fit: cover;
     overflow: hidden;
+    border-radius: 3px 0 0 3px;
   }
 }
 
@@ -23,3 +25,31 @@
  .bookmarks-restaurant-card:last-child {
    margin-bottom: 30px;
  }
+
+.btn-reviewers {
+  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-top: 10px;
+}
+
+.btn-details {
+  margin-left: 5%;
+  margin-right: 2.5%;
+  margin-top: 10px;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+  border-radius: 5px;
+}
+
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
+  border-radius: 5px;
+}
+
+.btn-link {
+  color: white !important;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
