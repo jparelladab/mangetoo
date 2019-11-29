@@ -39,7 +39,7 @@ st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, Barbica
 st_john.save
 luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, Farringdon, London, EC1M 4EH', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
 luca.save
-gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London, EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
+gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London, EC2A 3QR', city: 'London', category: 'Italian', website: 'https://www.bigmammagroup.com/', phone_number: '')
 gloria.save
 shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, Farringdon, London, EC1R 4QE', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
 shawarma_bar.save
