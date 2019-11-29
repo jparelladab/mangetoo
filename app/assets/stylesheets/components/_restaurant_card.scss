@@ -1,14 +1,19 @@
+#restaurant_index_container {
+  margin: 25px 0;
+}
+
 .restaurant_card {
   max-width: 100%;
-  max-height: 250px;
+  max-height: 280px;
   display: flex;
   justify-content: flex-start;
   margin: 8px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   background-color: white;
-  border-radius: 10px;
+  border-radius: 3px;
+  margin: 0 25px 25px 0;
   img {
-  max-height: 250px;
+  max-height: 280px;
   overflow: hidden;
   object-fit: cover;
   }
@@ -39,6 +44,15 @@
   justify-content: flex-start;
   padding: 0%;
   font-size: 0.8vw;
+
+  h2 {
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
 .restaurant_info_strip a {
@@ -80,28 +94,64 @@
   background-color: $MangeToo-brightred;
 }
 
-.btn-reviewers {
-  margin-right: 5%;
-  margin-left: 2.5%;
-}
+// .btn-reviewers {
+//   margin-right: 5%;
+//   margin-left: 2.5%;
+// }
 
-.btn-details {
-  margin-left: 5%;
-  margin-right: 2.5%;
-}
+// .btn-details {
+//   margin-left: 5%;
+//   margin-right: 2.5%;
+// }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
-  border-radius: 5px;
-}
+// .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+//   border-radius: 5px;
+// }
 
-.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
-  border-radius: 5px;
-}
+// .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
+//   border-radius: 5px;
+// }
 
-.btn-link {
-  color: white !important;
+// .btn-link {
+//   color: white !important;
+//   text-decoration: none;
+//   &:hover {
+//     text-decoration: none;
+//   }
+// }
+.greenbtn {
+  background-color: #09B07E;
+  color: white;
+  border-radius: 2px;
+  padding: 7px;
+  width: 120px;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+ }
+
+ .greenbtn:hover {
+  background-color: #FF575C;
   text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-}
+  color: white;
+ }
+
+.hollowbtn {
+  // background-color: #09B07E;
+  color: #09B07E;
+  border-radius: 2px;
+  padding: 7px;
+  width: 120px;
+  border: 2px solid #09B07E ;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+ }
+
+ .hollowbtn:hover {
+  background-color: #FF575C;
+  text-decoration: none;
+  color: white;
+  border: 2px solid #FF575C ;
+ }
