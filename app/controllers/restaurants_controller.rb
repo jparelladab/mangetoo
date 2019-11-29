@@ -50,13 +50,13 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    # followings = Follow.where(follower_id: current_user.id)
-    # followings_visits = followings.map { |f| User.find(f.following_id).visits }
-    # @followings_reviews = followings_visits.flatten!.map { |v| v.reviews }
+
     followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
     visit_from_followings = followings_id.map { |id| Visit.where(user_id: id, restaurant: @restaurant) }
     visit_ids_from_followings = visit_from_followings.map { |visit| visit.ids }.flatten
-    @reviews_from_followings = visit_ids_from_followings.map { |id| Review.where(visit_id: id) }
+    @reviews_from_followings = visit_ids_from_followings.map { |id| Review.where(visit_id: id) }.flatten
+    my_visits = current_user.visits.where(restaurant_id: params[:id])
+    @my_reviews = my_visits.map {|v| v.reviews}.flatten
     @markers =
       [{
         lat: @restaurant.latitude,
