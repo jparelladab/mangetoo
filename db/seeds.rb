@@ -267,7 +267,7 @@ next_week = Date.today + 7
   ben_review_seven = Visit.new(date: next_week, user: ben, restaurant: gloria, number_of_people: 5)
   ben_review_seven.save
 
-  ben_review_eight = Visit.new(date: yesterday user: ben, restaurant: la_colombe, number_of_people: 15)
+  ben_review_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15)
   ben_review_eight.save
 
 
