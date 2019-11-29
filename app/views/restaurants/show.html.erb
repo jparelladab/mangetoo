@@ -2,28 +2,8 @@
 
   <div class="row">
     <div class="col-8">
-      <div class="photo-carousel">
-        <% if @restaurant.photos.attached? %>
-          <div id="carousel-<%= @restaurant.id %>" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <% @restaurant.photos.each_with_index do |photo, i| %>
-                <div class="carousel-item <%= 'active' if i == 0 %>">
-                  <%= cl_image_tag photo.key, class: "main-image d-block w-100" %>
-                </div>
-              <% end %>
-            </div>
-            <a class="carousel-control-prev" href="#carousel-<%= @restaurant.id %>" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-<%= @restaurant.id %>" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-      <% else %>
-        <img src="https://www.luxuryrestaurantguide.com/Pictures/973_FiveFieldsIMG_4280.jpg" class="showpage-image" alt="">
-      <% end %>
+      <div class="photo-carousel" id="show-restaurant-carousel">
+        <%= render 'shared/restaurant_carousel', restaurant: @restaurant %>
       </div>
 
       <div class="card-container-show">
@@ -54,7 +34,7 @@
           <p><%= @avg_rating %></p>
         </div>
         <div class="content-info">
-          <p><a href="#"><%= image_tag("greenwebsite.svg") %> <%= @restaurant.website %></a></p>
+          <p><%= image_tag("greenwebsite.svg") %><a href="http://<% @restaurant.website %>" target="_blank"><%= @restaurant.website %></a></p>
           <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
           <p><%= @avg_rating %></p>
         </div>
@@ -72,6 +52,9 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
     <!-- </div> -->
+        <% if current_user.admin %>
+          <%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant), style: "color: white" %>
+        <% end %>
     </div>
   </div>
 

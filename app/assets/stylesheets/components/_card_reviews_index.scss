@@ -10,18 +10,18 @@
   #address {
     font-size: 0.8rem;
   }
-  img {
-    height: 100%;
-    width: 250px;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 5px 0 0 5px;
-  }
   .review-body {
     padding: 7px 20px;
+    width: 60%;
   }
   h2 {
     padding-bottom: 10px;
+  }
+  .review-index-card-carousel {
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    max-width: 350px;
   }
 }
 
@@ -36,3 +36,4 @@
 .modal-review-details {
   padding: 0;
 }
+

@@ -19,10 +19,11 @@
       </a>
     </div>
   <% else %>
-    <img class="card-img-top" src="http://www.themeparkinsider.com/art/news/simpsons-pimento.jpg" alt="dinner set">
+    <%= image_tag "MangeToo_DefaultUserImage.png", alt: "Image of a mangetout cartoon", class: "card-img-top", style: "height: 150px; object-fit: contain; overflow: hidden" %>
+    <!-- <img src="https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" class="main-image card-img-top" alt=""> -->
   <% end %>
   <div class="card-body">
-    <h5 class="category_tag"> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
+    <h5 class="category-tag"> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
     <p class="card-title"><%= restaurant.address %></p>
 <!--     <p class="card-text"><%= restaurant.category %></p> -->
 <!--     <p class="card-text"><%= restaurant.total_rating %></p>

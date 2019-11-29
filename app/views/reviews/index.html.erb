@@ -2,7 +2,8 @@
   <div
   id="map"
   style="width: 90%;
-  height: 500px;"
+  height: 500px;
+  margin-top: 25px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
@@ -10,7 +11,7 @@
     <% @reviews_array.each do |review_hash| %>
       <div class="review-index-card d-flex flex-wrap-reverse flex-sm-nowrap">
         <div class="review-index-card-carousel">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", alt="Picture of restaurant table">
+          <%= render 'shared/restaurant_carousel', restaurant: review_hash[:restaurant_instance] %>
         </div>
         <div class="review-body">
           <h4><%= review_hash[:restaurant_name] %></h4>
