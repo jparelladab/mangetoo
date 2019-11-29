@@ -8,7 +8,7 @@
       <div class="modal-header d-flex flex-column">
         <p><%= review.visit.restaurant.address %></p>
         <div class="modal-review-details">
-          <p> Visited on: <%= review.visit.date %> | Review from: <%= review.created_at.strftime("%d/%m/%y") %></p>
+          <p> Visited on: <%= review.visit.date.strftime("%d/%m/%y") %> | Review from: <%= review.created_at.strftime("%d/%m/%y") %></p>
         </div>
       </div>
       <div class="modal-body" >
