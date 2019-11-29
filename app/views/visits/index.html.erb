@@ -9,7 +9,9 @@
   ></div>
 
   <div class="upcoming-visits-container d-flex align-items-center flex-column">
-    <h2>Upcoming Visits</h2>
+    <h2 class="visits-title">Upcoming Meals</h2>
+    <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
+    <br>
     <% if @upcoming_visits.any? %>
       <% @upcoming_visits.each do |visit| %>
         <div class="visits-index-card d-flex">
@@ -40,7 +42,9 @@
   </div>
   <br>
   <div class="previous-visit-container d-flex align-items-center flex-column">
-    <h2>Previous Visits</h2>
+    <h2 class=visits-title>Previous Meals</h2>
+    <h5 class=visits-title><em>See your past foodie experiences below - leave a review of your meal!</em></h5>
+    <br>
     <% if @previous_visits.any? %>
       <% @review_hash_array.each do |review_hash| %>
         <% visit = review_hash[:visit] %>
