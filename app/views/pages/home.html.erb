@@ -18,12 +18,12 @@
 
 <br>
 <br>
-<h3 id="home-title"><em>Welcome to your Foodie Feed! See your Fellow Foodies' latest reviews!</em></h3>
+<h3 id="home-title"><em>Welcome to your Foodie Feed! See your Fellow Foodies' latest reviews...</em></h3>
 <br>
 <br>
 
   <div class="card-container">
-    <% @followings_reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <% if !review.nil? %>
       <div class="card-home">
         <%=image_tag(review.visit.user.default_image)%>
@@ -36,24 +36,8 @@
           <p><%= review.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
             <%= render partial: 'home_modal', locals: {review: review} %></p>
         </div>
-      </div>
       <% end %>
-  <% end %>
-  <% @my_reviews.each do |myrev| %>
-    <% unless myrev.nil? %>
-      <div class="card-home">
-        <%=image_tag current_user.default_image %>
-        <div class="card-home-infos">
-          <div class="name_date_flex">
-            <h3><%= myrev.visit.user.first_name %> <%= myrev.visit.user.last_name %></h3>
-            <p class="home-date"> Review date: <%= myrev.visit.date %></p>
-          </div>
-          <h2><%= myrev.visit.restaurant.name %></h2>
-          <p><%= myrev.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= myrev.id %>"> See More</a>
-            <%= render partial: 'home_modal', locals: {review: myrev} %></p>
-        </div>
-      </div>
     <% end %>
-  <% end %>
+
 </div>
 

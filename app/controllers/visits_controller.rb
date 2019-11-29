@@ -11,6 +11,8 @@ class VisitsController < ApplicationController
         @upcoming_visits << visit
       end
     end
+    @upcoming_visits = @upcoming_visits.sort_by { |v| v[:date] }
+    # raise
 
     @review_hash_array = []
     @previous_visits.each do |previous_visit|
@@ -33,6 +35,7 @@ class VisitsController < ApplicationController
       end
       @review_hash_array << review_hash
     end
+    @previous_visits = @previous_visits.sort_by { |v| v[:date] }.reverse
 
     @restaurants = []
     @visits.map do |visit|
@@ -45,7 +48,6 @@ class VisitsController < ApplicationController
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
-        image_url: helpers.asset_url('MangeToo_DefaultUserImage.png')
       }
     end
   end

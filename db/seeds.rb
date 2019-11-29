@@ -21,7 +21,7 @@ test_user_three.save
 test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: true, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_four.save
 
-philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: true, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
+philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: true, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 philippa.save
 joan = User.new(first_name: 'Joan', last_name: 'Parellada', city: 'Barcelona', super_foodie: true, admin: true, email: 'joan@parellada.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 joan.save
@@ -237,10 +237,28 @@ next_week = Date.today + 7
     Review.create(content: 'Great wine bar and eatery. Fantastic selection of wines on offer and a really tasty menu of high-quality, well-cooked food. Very good value week-day set lunch menu too.', rating: 4, visit: test_visit_eight_d)
 
 # Philippa initial visit and review seeds
+  philippa_visit_one = Visit.new(date: day_before_yesterday, user: philippa, restaurant: st_john, number_of_people: 6)
+  philippa_visit_one.save
+    Review.create(content: 'Traditional British food at its best!', rating: 5, visit: philippa_visit_one)
+
+  philippa_visit_two = Visit.new(date: yesterday, user: philippa, restaurant: trattoria_carampane, number_of_people: 5)
+  philippa_visit_two.save
 
 # Joan initial visit and review seeds
+  joan_visit_one = Visit.new(date: last_week, user: joan, restaurant: koy_shunka, number_of_people: 6)
+  joan_visit_one.save
+    Review.create(content: 'Superb sushi! Come here next time when you come to Barcelona.', rating: 5, visit: joan_visit_one)
+
+  joan_visit_two = Visit.new(date: tomorrow, user: joan, restaurant: roganic, number_of_people: 5)
+  joan_visit_two.save
 
 # Jo initial visit and review seeds
+  jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6)
+  jo_visit_one.save
+    Review.create(content: 'Delicious meaty heaven! Introduced me to South African cusisine and now I can\'t get enough', rating: 5, visit: jo_visit_one)
+
+  jo_visit_two = Visit.new(date: next_week, user: jo, restaurant: roganic, number_of_people: 2)
+  jo_visit_two.save
 
 # Ben initial visit and review seeds
   ben_review_one = Visit.new(date: last_week, user: ben, restaurant: noble_rot, number_of_people: 8)
@@ -269,6 +287,12 @@ next_week = Date.today + 7
 
   ben_review_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15)
   ben_review_eight.save
+
+  ben_review_nine = Visit.new(date: Date.today, user: ben, restaurant: roganic, number_of_people: 15)
+  ben_review_nine.save
+
+  ben_review_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8)
+  ben_review_ten.save
 
 
 puts "Created initial visit and reviews seeds!"
@@ -302,10 +326,22 @@ puts "Creating the bookmark initial seeds"
   Bookmark.create(restaurant: trattoria_carampane, user: test_user_four)
 
 # Philippa bookmark seeds
+  Bookmark.create(restaurant: st_john, user: philippa)
+  Bookmark.create(restaurant: koy_shunka, user: philippa)
+  Bookmark.create(restaurant: trattoria_pontini, user: philippa)
+  Bookmark.create(restaurant: hammer_tongs, user: philippa)
 
 # Joan bookmark seeds
+  Bookmark.create(restaurant: scully, user: joan)
+  Bookmark.create(restaurant: gloria, user: joan)
+  Bookmark.create(restaurant: la_colombe, user: joan)
+  Bookmark.create(restaurant: hammer_tongs, user: joan)
 
 # Jo bookmark seeds
+  Bookmark.create(restaurant: five_fields, user: jo)
+  Bookmark.create(restaurant: shawarma_bar, user: jo)
+  Bookmark.create(restaurant: la_colombe, user: jo)
+  Bookmark.create(restaurant: stendhal, user: jo)
 
 # Ben bookmark seeds
   Bookmark.create(restaurant: scully, user: ben)
