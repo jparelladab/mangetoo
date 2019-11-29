@@ -36,14 +36,14 @@
         <% end %>
       <% else %>
         <p>-----</p>
-        <p>No upcoming visits! Take a look at where your friends have been recently!</p>
+        <p>No upcoming visits! Perhaps you could take a look at where your friends have been recently?</p>
         <p>-----</p>
       <% end %>
   </div>
   <br>
   <div class="previous-visit-container d-flex align-items-center flex-column">
     <h2 class=visits-title>Previous Meals</h2>
-    <h5 class=visits-title><em>See your past foodie experiences below - leave a review of your meal!</em></h5>
+    <h5 class=visits-title><em>See your past foodie experiences below:</em></h5>
     <br>
     <% if @previous_visits.any? %>
       <% @review_hash_array.each do |review_hash| %>
