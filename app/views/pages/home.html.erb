@@ -21,6 +21,7 @@
 
   <div class="card-container">
     <% @followings_reviews.each do |review| %>
+      <% if !review.first.nil? %>
       <div class="card-home">
         <%=image_tag("Headshot_2.jpg")%>
         <div class="card-home-infos">
@@ -33,8 +34,10 @@
             <%= render partial: 'home_modal', locals: {review: review.first} %></p>
         </div>
       </div>
+      <% end %>
   <% end %>
   <% @my_reviews.each do |myrev| %>
+    <% unless myrev.nil? %>
       <div class="card-home">
         <%=image_tag("Headshot_2.jpg")%>
         <div class="card-home-infos">
@@ -47,6 +50,7 @@
             <%= render partial: 'home_modal', locals: {review: myrev} %></p>
         </div>
       </div>
+    <% end %>
   <% end %>
 </div>
 
