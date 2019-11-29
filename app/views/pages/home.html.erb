@@ -23,37 +23,22 @@
 <br>
 
   <div class="card-container">
-    <% @followings_reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <% if !review.nil? %>
-      <div class="card-home">
-        <%=image_tag("Headshot_2.jpg")%>
-        <div class="card-home-infos">
-          <div class="name_date_flex">
-            <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
-            <p class="home-date"> Review date: <%= review.visit.date.strftime("%d/%m/%y") %></p>
-          </div>
-          <h2><%= review.visit.restaurant.name %></h2>
-          <p><%= review.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
-            <%= render partial: 'home_modal', locals: {review: review} %></p>
+        <div class="card-home">
+          <%=image_tag("Headshot_2.jpg")%>
+            <div class="card-home-infos">
+              <div class="name_date_flex">
+                <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
+                <p class="home-date"> Review date: <%= review.created_at.strftime("%d/%m/%y") %></p>
+              </div>
+              <h2><%= review.visit.restaurant.name %></h2>
+              <p><%= review.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
+              <%= render partial: 'home_modal', locals: {review: review} %></p>
+            </div>
         </div>
-      </div>
       <% end %>
-  <% end %>
-  <% @my_reviews.each do |myrev| %>
-    <% unless myrev.nil? %>
-      <div class="card-home">
-        <%=image_tag current_user.default_image %>
-        <div class="card-home-infos">
-          <div class="name_date_flex">
-            <h3><%= myrev.visit.user.first_name %> <%= myrev.visit.user.last_name %></h3>
-            <p class="home-date"> Review date: <%= myrev.visit.date %></p>
-          </div>
-          <h2><%= myrev.visit.restaurant.name %></h2>
-          <p><%= myrev.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= myrev.id %>"> See More</a>
-            <%= render partial: 'home_modal', locals: {review: myrev} %></p>
-        </div>
-      </div>
     <% end %>
-  <% end %>
+
 </div>
 
