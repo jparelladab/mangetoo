@@ -1,12 +1,17 @@
 .restaurant_card {
   max-width: 100%;
-  max-height: 400px;
+  max-height: 250px;
   display: flex;
   justify-content: flex-start;
   margin: 8px;
   box-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: white;
   border-radius: 10px;
+  img {
+  max-height: 250px;
+  overflow: hidden;
+  object-fit: cover;
+  }
 }
 
 .restaurant_card:first-child {
@@ -16,7 +21,7 @@
 .restaurant_card_carousel {
   max-width: 50%;
   min-width: 50%;
-  background-color: yellow;
+  // background-color: yellow;
 }
 
 .restaurant_card_info {
@@ -99,8 +104,4 @@
   &:hover {
     text-decoration: none;
   }
-}
-
-img {
-  max-height: 400px;
 }
