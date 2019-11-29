@@ -22,10 +22,13 @@
       </p>
     </div>
 
-    <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
+   <!--  <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
       <button type="button" class="btn btn-primary btn-reviewers">Reviewers</button>
-      <button type="button" class="btn btn-primary btn-details"><%= link_to 'See Details', restaurant_path(restaurant), class: "btn-link" %></button>
-    </div>
-
+      <button type="button" class="btn btn-primary btn-details"><%= link_to 'See Details', restaurant_path(restaurant), class: "hollowbtn btn-link" %></button>
+    </div> -->
+      <div class="buttons-info">
+          <%= link_to 'See Details', restaurant_path(restaurant), class: 'greenbtn' %>
+          <a href="#" class="hollowbtn">Reviews: <%= 8 %> </a>
+        </div>
   </div>
 </div>

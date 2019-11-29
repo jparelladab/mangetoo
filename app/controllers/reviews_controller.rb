@@ -31,7 +31,6 @@ class ReviewsController < ApplicationController
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
-        image_url: helpers.asset_url('MangeToo_DefaultUserImage.png')
       }
     end
   end

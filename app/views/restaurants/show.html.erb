@@ -1,4 +1,4 @@
-<div class="container show">
+<div class="container", id="show">
 
   <div class="row">
     <div class="col-8">
@@ -7,7 +7,6 @@
       </div>
 
       <div class="card-container-show">
-
           <% @reviews.each do |review| %>
             <div class="card-show">
               <%=image_tag("Headshot_1.jpg")%>
@@ -16,7 +15,7 @@
                     <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
                     <h3> <%= review.visit.date.strftime("%d/%m/%y") %></h3>
                   </div>
-                  <p><%= review.content.truncate(100) %><a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
+                  <p><%= review.content.truncate(100) %><a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewShowModal<%= review.id %>"> See More</a>
                   <%= render partial: 'show_modal', locals: {review: review} %></p>
                 </div>
             </div>

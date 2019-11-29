@@ -27,3 +27,17 @@
   visibility: hidden;
 }
 
+.mapboxgl-marker {
+  background-image: url('MangeToo_MapMarker.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-marker > svg {
+  visibility: hidden;
+}

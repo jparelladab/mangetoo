@@ -1,15 +1,15 @@
-<div class="modal fade" id="reviewIndexModal" tabindex="-1" role="dialog" aria-labelledby="reviewIndexModalTitle" aria-hidden="true">
+<div class="modal fade" id="reviewShowModal<%= review.id %>" tabindex="-1" role="dialog" aria-labelledby="reviewShowModalTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex flex-column">
-        <h5 class="modal-title " id="reviewIndexModalTitle"><%= review[:restaurant_name] %></h5>
-        <p><%= review[:restaurant_address] %>, <%= review[:restaurant_city] %></p>
+        <h5 class="modal-title " id="reviewShowModalTitle"><%= review.visit.restaurant.name %></h5>
+        <p><%= review.visit.restaurant.address %>, <%= review.visit.restaurant.city %></p>
         <div class="modal-review-details">
-          <p>Rating: <%= review[:review_rating]%> | Visited on: <%= review[:visit_date] %> | Review from: <%= review[:review_date] %></p>
+          <p>Rating: <%= review.rating%> | Visited on: <%= review.visit.date.strftime("%d/%m/%y") %> | Review from: <%= review.created_at.strftime("%d/%m/%y") %></p>
         </div>
       </div>
       <div class="modal-body" style="font-size: 16px">
-        <%= review[:review_content] %>
+        <%= review.content %>
       </div>
       <div class="modal-footer">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
