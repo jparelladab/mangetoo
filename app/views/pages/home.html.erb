@@ -1,12 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
   <br>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center home-search">
       <div class = "col-8"> <%= form_tag restaurants_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Search by city" %>
+          placeholder: "Search for a city to see your Fellow Foodies' top eateries..." %>
       </div>
       <div>
         <%= submit_tag "Search", class: "bannerbtn" %>
@@ -16,6 +16,9 @@
   </div>
 </div>
 
+<br>
+<br>
+<h3 id="home-title"><em>Welcome to your Foodie Feed! See your Fellow Foodies' latest reviews!</em></h3>
 <br>
 <br>
 
