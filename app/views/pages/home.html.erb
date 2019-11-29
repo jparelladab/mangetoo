@@ -25,12 +25,12 @@
         <%=image_tag("Headshot_2.jpg")%>
         <div class="card-home-infos">
           <div class="name_date_flex">
-            <h3><%= review.first.visit.user.first_name %> <%= review.first.visit.user.last_name %></h3>
-            <p class="home-date"> Review date: <%= review.first.visit.date %></p>
+            <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
+            <p class="home-date"> Review date: <%= review.visit.date %></p>
           </div>
-          <h2><%= review.first.visit.restaurant.name %></h2>
-          <p><%= review.first.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.first.id %>"> See More</a>
-            <%= render partial: 'home_modal', locals: {review: review.first} %></p>
+          <h2><%= review.visit.restaurant.name %></h2>
+          <p><%= review.content.truncate(100) %> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
+            <%= render partial: 'home_modal', locals: {review: review} %></p>
         </div>
       </div>
   <% end %>

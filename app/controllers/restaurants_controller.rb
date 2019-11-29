@@ -2,11 +2,18 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @restaurants = Restaurant.geocoded
+    followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
+    followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
+    followings_restaurants = followings_visits.map {|v| v.restaurant.id}
+    my_visits = Visit.where(user_id: current_user.id)
+    my_restaurants = my_visits.map {|v| v.restaurant.id}
+    all_restaurants_id = my_restaurants | followings_restaurants
+    restaurants = all_restaurants_id.map { |id| Restaurant.where(id: id) }.flatten
+
     if params[:query].present?
-      @restaurants = Restaurant.where("city ILIKE ?", "%#{params[:query]}%")
+      @restaurants = restaurants.select { |rest| rest[:city].downcase == params[:query].downcase }
     else
-      @restaurants = Restaurant.all
+      @restaurants = restaurants
     end
       @markers = @restaurants.map do |restaurant|
       {
