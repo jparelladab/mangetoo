@@ -9,25 +9,33 @@ User.destroy_all
 
 puts "Creating seeds"
 
+yesterday = Date.today - 1
+day_before_yesterday = Date.today - 2
+last_week = Date.today - 7
+tomorrow = Date.today + 1
+next_week = Date.today + 7
+
 # USER SEEDS
 
 puts "Creating user initial seeds"
+
 test_user_one = User.new(first_name: 'James', last_name: 'Johnson', city: 'London', super_foodie: false, admin: true, email: 'james@johnson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+
 test_user_one.save
-test_user_two = User.new(first_name: 'Sarah', last_name: 'Brewster', city: 'London', super_foodie: true, admin: true, email: 'sarah@brewster.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
+test_user_two = User.new(first_name: 'Sarah', last_name: 'Brewster', city: 'London', super_foodie: true, admin: true, email: 'sarah@brewster.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80', last_seen_at: day_before_yesterday)
 test_user_two.save
 test_user_three = User.new(first_name: 'John', last_name: 'Oliver', city: 'London', super_foodie: false, admin: true, email: 'john@oliver.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_three.save
-test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: true, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: true, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: last_week)
 test_user_four.save
 
-philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: true, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: true, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: day_before_yesterday)
 philippa.save
-joan = User.new(first_name: 'Joan', last_name: 'Parellada', city: 'Barcelona', super_foodie: true, admin: true, email: 'joan@parellada.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+joan = User.new(first_name: 'Joan', last_name: 'Parellada', city: 'Barcelona', super_foodie: true, admin: true, email: 'joan@parellada.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: yesterday)
 joan.save
-jo = User.new(first_name: 'Jo', last_name: 'Pearson', city: 'London', super_foodie: true, admin: true, email: 'jo@pearson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1559548331-f9cb98001426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+jo = User.new(first_name: 'Jo', last_name: 'Pearson', city: 'London', super_foodie: true, admin: true, email: 'jo@pearson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1559548331-f9cb98001426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80', last_seen_at: yesterday)
 jo.save
-ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super_foodie: true, admin: true, email: 'benjamin@baker.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1495078065017-564723e7e3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')
+ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super_foodie: true, admin: true, email: 'benjamin@baker.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1495078065017-564723e7e3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', last_seen_at: day_before_yesterday)
 ben.save
 
 # SuperFoodie seeds
@@ -146,12 +154,6 @@ puts "Created restaurant initial seeds!"
 # VISIT AND REVIEW SEED
 
 puts "Creating visit and associated reviews initial seeds"
-
-yesterday = Date.today - 1
-day_before_yesterday = Date.today - 2
-last_week = Date.today - 7
-tomorrow = Date.today + 1
-next_week = Date.today + 7
 
 # Test User One visits and reviews
   test_visit_one = Visit.new(date: last_week, user: test_user_one, restaurant: five_fields, number_of_people: 4)
@@ -362,7 +364,3 @@ puts "Created initial bookmark seeds"
 
 # FINISH OF THE INITIAL SEEDS
 puts "All initial seeds completed."
-
-
-
-

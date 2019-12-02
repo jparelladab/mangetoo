@@ -9,7 +9,7 @@
       <div class="card-container-show">
           <% @reviews.each do |review| %>
             <div class="card-show">
-              <%=image_tag("Headshot_1.jpg")%>
+              <%=image_tag(review.visit.user.default_image)%>
                 <div class="card-show-infos">
                   <div class="name_date_flex-show">
                     <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
@@ -22,6 +22,8 @@
           <% end %>
       </div>
     </div>
+
+
 
     <div class="col-4">
       <div class="restaurant-info">
@@ -39,8 +41,8 @@
           <p><%= @avg_rating %></p>
         </div>
         <div class="buttons-info">
-          <a href="#" class="greenbtn">Book</a>
-          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'hollowbtn' %>
+          <a href="#" class="showgreenbtn">Book</a>
+          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'showhollowbtn' %>
         </div>
       </div>
     <!-- <div class="col-4"> -->
