@@ -1,11 +1,10 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.where(user: current_user)
-    @bookmarked_restaurants = []
-    @bookmarks.each do |bookmark|
-      restaurant = Restaurant.find(bookmark.restaurant_id)
-      @bookmarked_restaurants << restaurant
-    end
+    @bookmarked_restaurants = @bookmarks.map { |b| b.restaurant }
+    followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
+    @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
+    # followings_reviews = followings_visits.where
 
     @markers = @bookmarked_restaurants.map do |restaurant|
       {
