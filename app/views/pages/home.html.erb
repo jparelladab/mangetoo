@@ -30,6 +30,9 @@
           <div class="card-home-infos">
             <div class="name_date_flex">
               <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
+              <% if review.visit.date.strftime("%d/%m/%y") < current_user.last_seen_at.strftime("%d/%m/%y") %>
+                <div class="new_review">New!</div>
+              <% end %>
               <p class="home-date"> Review date: <%= review.visit.date.strftime("%d/%m/%y") %></p>
             </div>
             <h2><%= link_to review.visit.restaurant.name, restaurant_path(review.visit.restaurant) %></h2>
