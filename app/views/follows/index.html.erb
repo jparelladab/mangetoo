@@ -1,5 +1,37 @@
-<h1>Follows Index</h1>
+<div class="foodies-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1553321846-ad6616f5d1db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
+  <div class="container">
 
+  </div>
+</div>
 
-<%= link_to "Home Page", root_path %>
+<div class="foodies-header">
+  <h2>My Fellow Foodies</h2>
+</div>
 
+<div class="foodies-card-container">
+  <% @fellow_foodies.each do |fellow_foodie| %>
+    <div class="card-foodies">
+      <%=image_tag(fellow_foodie.default_image)%>
+      <div class="card-foodies-infos">
+        <h4><%= fellow_foodie.first_name %> <%= fellow_foodie.last_name %></h4>
+        <p><%= fellow_foodie.city %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="foodies-header">
+  <h2>All MangeToo Foodies</h2>
+</div>
+
+<div class="foodies-card-container">
+  <% @all_foodies.each do |foodie| %>
+    <div class="card-foodies">
+      <%=image_tag(foodie.default_image)%>
+      <div class="card-foodies-infos">
+        <h4><%= foodie.first_name %> <%= foodie.last_name %></h4>
+        <p><%= foodie.city %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
