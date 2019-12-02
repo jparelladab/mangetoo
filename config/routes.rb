@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   end
   resources :visits, only: [:update, :destroy]
 
+  resources :users, only: [] do
+    resources :follows, only: [:create]
+  end
 
-
+  resources :follows, only: [:index, :destroy]
   resources :bookmarks, only: [:index, :destroy]
-  resources :follows, only: [:index, :create, :destroy]
 end
