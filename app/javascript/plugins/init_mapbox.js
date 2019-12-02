@@ -9,12 +9,11 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  console.log("HELLO");
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/jparelladab/ck3ftiy7h06ez1crxaal46zpn'
+      style: 'mapbox://styles/yellowestyellow/ck3oc0jgk048j1co5vbcqdbbi'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -31,18 +30,27 @@ const initMapbox = () => {
 };
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const element = document.createElement('div');
     element.className = 'marker';
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '25px';
-    element.style.height = '25px';
+    element.style.width = '50px';
+    element.style.height = '50px';
+    element.addEventListener('click', function () {
+    map.flyTo({
+    center: [ marker.lng, marker.lat ],
+    zoom: 18
+    });
+    });
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
+      .setPopup(popup)
       .addTo(map);
     });
+
   };
 
 export { initMapbox };
+
+
