@@ -22,10 +22,14 @@
       </p>
     </div>
 
-    <div class="btn-group restaurant_info_strip restaurant_info_strip_button">
-      <button type="button" class="btn btn-primary btn-reviewers">Reviewers</button>
-      <button type="button" class="btn btn-primary btn-details"><%= link_to 'See Details', restaurant_path(restaurant), class: "btn-link" %></button>
+    <div class="buttons-info-bookmark">
+      <a href="#" class="greenbtn-bookmark" data-toggle="modal" data-target="#bookmarkModalReviews<%= restaurant.id %>">Reviews</a>
+        <%= render partial: 'modal_restaurant_reviews', locals: {restaurant: restaurant, followings_visits: @followings_visits} %>
+      <%= link_to 'See Details', restaurant_path(restaurant), class: "hollowbtn-bookmark" %>
     </div>
 
   </div>
 </div>
+
+
+
