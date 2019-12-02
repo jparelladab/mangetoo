@@ -12,11 +12,11 @@ puts "Creating seeds"
 # USER SEEDS
 
 puts "Creating user initial seeds"
-test_user_one = User.new(first_name: 'James', last_name: 'Johnson', city: 'London', super_foodie: true, admin: true, email: 'james@johnson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+test_user_one = User.new(first_name: 'James', last_name: 'Johnson', city: 'London', super_foodie: false, admin: true, email: 'james@johnson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_one.save
-test_user_two = User.new(first_name: 'Sarah', last_name: 'Brewster', city: 'London', super_foodie: true, admin: true, email: 'sarah@brewster.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
+test_user_two = User.new(first_name: 'Sarah', last_name: 'Brewster', city: 'London', super_foodie: false, admin: true, email: 'sarah@brewster.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80')
 test_user_two.save
-test_user_three = User.new(first_name: 'John', last_name: 'Oliver', city: 'London', super_foodie: true, admin: true, email: 'john@oliver.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+test_user_three = User.new(first_name: 'John', last_name: 'Oliver', city: 'London', super_foodie: false, admin: true, email: 'john@oliver.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_three.save
 test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: true, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_four.save

@@ -11,10 +11,19 @@
 <div class="foodies-card-container">
   <% @fellow_foodies.each do |fellow_foodie| %>
     <div class="card-foodies">
-      <%=image_tag(fellow_foodie.default_image)%>
+      <div class="foodie-avatar">
+        <%= image_tag(fellow_foodie.default_image) %>
+      </div>
       <div class="card-foodies-infos">
-        <h4><%= fellow_foodie.first_name %> <%= fellow_foodie.last_name %></h4>
-        <p><%= fellow_foodie.city %></p>
+        <div class="name-header">
+          <h4><%= fellow_foodie.first_name %> <%= fellow_foodie.last_name %></h4>
+          <% if fellow_foodie.super_foodie %>
+          <%= image_tag("MangeToo_MapMarker.png") %>
+          <% end %>
+        </div>
+        <div class="foodie-city">
+          <p><%= image_tag("city.svg")%> <%= fellow_foodie.city %></p>
+        </div>
       </div>
     </div>
   <% end %>
@@ -27,10 +36,19 @@
 <div class="foodies-card-container">
   <% @all_foodies.each do |foodie| %>
     <div class="card-foodies">
-      <%=image_tag(foodie.default_image)%>
+      <div class="foodie-avatar">
+        <%=image_tag(foodie.default_image)%>
+      </div>
       <div class="card-foodies-infos">
-        <h4><%= foodie.first_name %> <%= foodie.last_name %></h4>
-        <p><%= foodie.city %></p>
+        <div class="name-header">
+          <h4><%= foodie.first_name %> <%= foodie.last_name %></h4>
+          <% if foodie.super_foodie %>
+            <img src="../../assets/images/MangeToo_MapMarker.png" alt="" class="mangetoo-icon">
+          <% end %>
+        </div>
+        <div class="foodie-city">
+          <p><%= image_tag("city.svg")%> <%= foodie.city %></p>
+        </div>
       </div>
     </div>
   <% end %>
