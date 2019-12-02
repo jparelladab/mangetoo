@@ -366,6 +366,17 @@ puts "Creating visit and associated reviews initial seeds"
 
   # Nigella Lawson
 
+  nigella_visit_one = Visit.new(date: yesterday, user: nigella_lawson, restaurant: st_john, number_of_people: 2)
+  nigella_visit_one.save
+    Review.create(content: "Truly delicious! You may need to be quite adventurous in what parts of the animal you are happy to eat, but if you are, then you are in for a treat!", rating: 5, visit: nigella_visit_one)
+
+  nigella_visit_two = Visit.new(date: day_before_yesterday, user: nigella_lawson, restaurant: trattoria_pontini, number_of_people: 4)
+  nigella_visit_two.save
+    Review.create(content: "Come here and you see why the locals love it so much. Off the main tourist track, but well worth the visit.", rating: 4, visit: nigella_visit_two)
+
+  nigella_visit_three = Visit.new(date: yesterday, user: nigella_lawson, restaurant: luca, number_of_people: 2)
+  nigella_visit_three.save
+    Review.create(content: 'Gorgeous-looking restaurant with food to match. It has become a stalwart for me when eating out.', rating: 5, visit: nigella_visit_three)
 
 
 
