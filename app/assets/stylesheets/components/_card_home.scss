@@ -3,46 +3,79 @@
   // justify-content: space-around;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 25px;
-  margin-left: 25px;
-  margin-right: 20px;
-  margin-bottom: 25px;
+  grid-gap: 10px;
+  margin-left: 35px;
+  margin-right: 5px;
+  margin-bottom: 30px;
 
 }
 
 .card-home {
-  // overflow: hidden;
-  height: 180px;
-  width: 98%;
+  overflow: hidden;
+  height: 260px;
+  width: 95%;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
-  border-radius: 100px 5px 5px 100px;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  position: relative;
 
-  .name_date_flex {
+  .user-flexbox {
     display: flex;
-    justify-content: space-between;
-    width: 400px;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: auto;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding-top: 5px;
+
+    h3 {
+      margin-top: 16px;
+      font-size: 16px;
+      flex-grow: 1;
+    }
+
+    .avatar {
+      border: none;
+      margin-left: 5px;
+      padding-top: 3px;
+    }
+
+    .avatar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
     p {
       padding-top: 5px;
     }
+
+    .date-grid {
+     // display: grid;
+     // grid-template-columns: 1fr;
+     // grid-gap: 0px;
+     // margin-left: 100px;
+    }
   }
+
 
    img {
     height: 100%;
-    width: 180px;
+    width: 270px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 3px 0 0 3px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     position: relative;
     right: 8px;
   }
 
    h2 a {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 0px 0;
     color: #09B07E;
 
 
@@ -55,8 +88,9 @@
    h3 {
     font-size: 19px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 50px;
     font-weight: lighter;
+
    }
 
    p {
@@ -71,6 +105,7 @@
     }
   }
 
+
   .home-date {
     font-size: 0.7rem;
     font-weight: lighter;
@@ -79,7 +114,15 @@
   .card-home-infos {
     // padding: 12px 12px;
     margin: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
+}
+
+.home-review-content {
+  text-align: left;
+  padding-top: 10px;
 }
 
 .new_review {
@@ -109,5 +152,7 @@
 //     grid-template-columns: 1fr;
 //   }
 // }
+
+
 
 

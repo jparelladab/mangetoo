@@ -1,30 +1,49 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 50px 0;
-  height: 200px;
+  padding: 45px 0;
+  height: 425px;
 
  .container {
   width: 60%;
  }
+}
 
+#banner-heading {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
 }
 
  .bannerbtn {
-  background-color: #09B07E;
+  background-color: #FF575C;
   color: white;
   border-radius: 2px;
-  padding: 7px;
+  padding: 9px 20px;
   width: 120px;
   border: none;
   font-weight: bold;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  margin-right: 10px;
  }
 
  .bannerbtn:hover {
-  background-color: #FF575C;
+  background-color: #09B07E;
   text-decoration: none;
   color: white;
+ }
+
+ .form-control {
+  margin-top: 20px;
+  width: 450px;
+  padding: 20px 10px;
+  position: absolute;
+  left: 2%;
+
  }
 
 
