@@ -7,13 +7,19 @@
 <div class="foodies-header">
   <h2>My Fellow Foodies</h2>
 </div>
-
+<% if @fellow_foodies.any? %>
 <div class="foodies-card-container">
   <% @fellow_foodies.each do |fellow_foodie| %>
     <div class="card-foodies">
+      <% if fellow_foodie.super_foodie %>
+      <div class="superfoodie-avatar">
+        <%= image_tag(fellow_foodie.default_image) %>
+      </div>
+      <% else %>
       <div class="foodie-avatar">
         <%= image_tag(fellow_foodie.default_image) %>
       </div>
+      <% end %>
       <div class="card-foodies-infos">
         <div class="name-header d-flex">
           <h4><%= fellow_foodie.first_name %> <%= fellow_foodie.last_name %></h4>
@@ -23,24 +29,33 @@
         </div>
         <div class="foodie-details">
           <p><%= image_tag("city.svg")%> <%= fellow_foodie.city %></p>
-          <p><%= image_tag("city.svg")%> Restaurants: <%= fellow_foodie.visits.count %></p>
-          <p><%= image_tag("city.svg")%> Reviews: <%= fellow_foodie.reviews.count %></p>
+          <p><%= image_tag("category.svg")%> Restaurants: <%= fellow_foodie.visits.count %></p>
+          <p><%= image_tag("notepad.svg")%> Reviews: <%= fellow_foodie.reviews.count %></p>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+<% else %>
+  <p id="no-fellow-foodies">Follow some foodies! Take a look at MangeToo's foodie network below!</p>
+<% end %>
 
 <div class="foodies-header">
   <h2>All MangeToo Foodies</h2>
 </div>
-
+<% if @all_foodies_without_fellow_foodies.any? %>
 <div class="foodies-card-container">
   <% @all_foodies_without_fellow_foodies.each do |foodie| %>
     <div class="card-foodies">
+      <% if foodie.super_foodie %>
+      <div class="superfoodie-avatar">
+        <%= image_tag(foodie.default_image) %>
+      </div>
+      <% else %>
       <div class="foodie-avatar">
         <%=image_tag(foodie.default_image)%>
       </div>
+      <% end %>
       <div class="card-foodies-infos">
         <div class="name-header d-flex">
           <h4><%= foodie.first_name %> <%= foodie.last_name %></h4>
@@ -50,13 +65,18 @@
         </div>
         <div class="foodie-details">
           <p><%= image_tag("city.svg")%> <%= foodie.city %></p>
-          <p><%= image_tag("city.svg")%> Restaurants: <%= foodie.visits.count %></p>
-          <p><%= image_tag("city.svg")%> Reviews: <%= foodie.reviews.count %></p>
-        </div>
-        <div class="add-foodie">
-          <%= link_to "+", follows_path, method: "post", class: "add" %>
+          <p><%= image_tag("category.svg")%> Restaurants: <%= foodie.visits.count %></p>
+          <p><%= image_tag("notepad.svg")%> Reviews: <%= foodie.reviews.count %></p>
+          <div class="add-foodie">
+            <%= link_to user_follows_path(foodie), method: 'post', class: "add" do %>
+              <i class="fas fa-plus-circle"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+<% else %>
+  <p id="no-more-foodies">You know everyone on the MangeToo network!</p>
+<% end %>

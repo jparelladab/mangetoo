@@ -32,10 +32,15 @@
     height: 20px;
     }
   }
-  .add {
+  .add-foodie {
     position: absolute;
-    right: 5;
-    bottom: 5;
+    right: -3px;
+    bottom: 0px;
+    background-color: white;
+    i {
+      font-size: 30px;
+      color: $MangeToo-green;
+    }
   }
 }
 
@@ -49,5 +54,21 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     position: relative;
     right: 8px;
+  }
+}
+
+.superfoodie-avatar {
+  img {
+    height: 100%;
+    width: 120px;
+    min-width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    position: relative;
+    right: 8px;
+    border-style: solid;
+    border-width: medium;
+    border-color: $MangeToo-green;
   }
 }

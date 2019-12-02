@@ -31,6 +31,8 @@ ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super
 ben.save
 
 # SuperFoodie seeds
+jamie_oliver = User.new(first_name: 'Jamie', last_name: 'Oliver', city: 'London', super_foodie: true, admin: false, email: 'jamie@oliver.com', password: 'password', default_image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkpq4jO3T2LBfHBEctDdAuJQnQhYyLFajD9N75E2srRXQasrcrug&s')
+jamie_oliver.save
 
 puts "Created user initial seeds"
 
