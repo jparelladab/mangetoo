@@ -1,0 +1,80 @@
+.flatpickr-calendar.inline {
+  font-family: $body-font;
+  .flatpickr-months .flatpickr-month {
+    background: $MangeToo-green !important;
+  }
+
+  .flatpickr-weekdays {
+    background: $MangeToo-green !important;
+  }
+
+  span.flatpickr-weekday {
+    background: $MangeToo-green !important;
+  }
+
+  .flatpickr-current-month .flatpickr-monthDropdown-months {
+    background: $MangeToo-green !important;
+  }
+
+  .flatpickr-day.selected {
+    background: $MangeToo-green !important;
+  }
+}
+
+#new-booking-form {
+
+  #booking-form-foodie-selector {
+    width: 98px;
+    background-color: #e9ecef;
+  }
+
+  #new-booking-modal-content {
+    width: 700px;
+  }
+
+  label {
+    display: none;
+  }
+
+  p {
+    color: $MangeToo-green;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .form-group {
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+#new-booking-form-submit {
+    margin: 0 auto;
+}
+
+#new-booking-button {
+    text-align: center;
+  }
+
+
+#bookingModalTitle {
+  margin: 0 auto;
+}
+
+.booking-modal-image {
+  // max-width: 500px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#booking-modal-header {
+  position: relative;
+}
+
+#booking-modal-close-symbol {
+  position: absolute;
+  right: 3px;
+  top: -3px;
+}
