@@ -1,2 +1,2 @@
-function vote () {
-}
+// function vote () {
+// }

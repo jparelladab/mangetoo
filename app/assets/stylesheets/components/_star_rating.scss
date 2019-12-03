@@ -1,20 +1,22 @@
-.rating {
-  color:#02dbdd;
-  font: 700 26px/normal 'Montserrat', sans-serif;
-  text-transform:uppercase;
-  display:block;
-  cursor:pointer;
-    margin-right:100px;
-}
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
+// .rating {
+//   color:#02dbdd;
+//   font: 700 26px/normal 'Montserrat', sans-serif;
+//   text-transform:uppercase;
+//   display:block;
+//   cursor:pointer;
+//     margin-right:100px;
+// }
+// .rating {
+//   unicode-bidi: bidi-override;
+//   direction: rtl;
+// }
+// .rating > span {
+//   display: inline-block;
+//   position: relative;
+//   width: 1.1em;
+// }
+
+
 // .rating > span:hover:before,
 // .rating > span:hover ~ span:before {
 //    content: "\2605";
