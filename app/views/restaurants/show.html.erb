@@ -42,7 +42,7 @@
         </div>
         <div class="buttons-info">
           <!-- <a href="#" class="showgreenbtn">Book</a> -->
-          <button type="button" class="bannerbtngreen" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
+          <button type="button" class="showgreenbtn" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
             Book
           </button>
           <%= render partial: 'booking_modal', locals: {restaurant: @restaurant} %>
