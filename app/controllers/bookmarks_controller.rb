@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
+        infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant })
       }
     end
   end
@@ -19,13 +19,18 @@ class BookmarksController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @current_user = current_user
     @bookmark = Bookmark.new(restaurant: @restaurant, user: @current_user)
-    @bookmark.save
     if @bookmark.save
       flash[:notice] = "Bookmark successfully created"
-      redirect_to restaurant_path(@restaurant)
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant) }
+        format.js
+      end
     else
       flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
-      render :new
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.js
+      end
     end
   end
 

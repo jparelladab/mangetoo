@@ -46,7 +46,11 @@
             Book
           </button>
           <%= render partial: 'booking_modal', locals: {restaurant: @restaurant} %>
-          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'showhollowbtn' %>
+          <% if @user_bookmarked_restaurants.include?(@restaurant) %>
+            <span class="showhollowbtngreyed">Bookmarked</span>
+          <% else %>
+            <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', remote: true, class: 'showhollowbtn' %>
+          <% end %>
         </div>
       </div>
     <!-- <div class="col-4"> -->

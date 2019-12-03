@@ -64,6 +64,8 @@ class RestaurantsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
       }]
     @visit = Visit.new
+    user_bookmarks = Bookmark.where(user: current_user)
+    @user_bookmarked_restaurants = user_bookmarks.map { |b| b.restaurant }
   end
 
   def edit
