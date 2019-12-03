@@ -3,11 +3,17 @@
   color: $MangeToo-green;
   text-align: center;
   // font-weight: bold;
-  padding: 30px;
+  padding-top: 20px;
+}
+
+#home-subtitle {
+  color: $MangeToo-green;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .home-search {
-  height: 1rem;
+
   .form-control {
     font-size: 16px;
     color: rgba(9,176,126, 0.9);

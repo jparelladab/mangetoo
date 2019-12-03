@@ -1,35 +1,42 @@
 <div class="banner" style="background-image: linear-gradient(rgba(30,30,30,0.7),rgba(30,30,30,0.7)), url(https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
-  <br>
-      <h3 id="banner-heading">Search a city for recommended restaurants</h3>
+    <h3 id="banner-heading">Search a city for recommended restaurants</h3>
     <div class="d-flex justify-content-center home-search">
-      <div class = "col-7"> <%= form_tag restaurants_path, method: :get do %>
+      <%= form_tag restaurants_path, method: :get do %>
         <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "City name" %>
-      </div>
-      <div>
+        params[:query],
+        class: "banner-form-control",
+        placeholder: "City name" %>
         <%= submit_tag "Search", class: "bannerbtn" %>
-      </div>
       <% end %>
     </div>
   </div>
 </div>
 
 <br>
-<h3 id="home-title">Latest reviews added by your fellow foodies</h3>
+<h2 id="home-title">Latest reviews</h2>
+<h5 id="home-subtitle"><em>See the latest reviews added by your fellow foodies</em></h5>
 <br>
 
   <div class="card-container">
     <% @reviews.each do |review| %>
       <% if !review.nil? %>
       <div class="card-home">
-        <%=image_tag ("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80")%>
+        <% if review.visit.restaurant.photos.attached?  %>
+          <% review.visit.restaurant.photos.each do |photo| %>
+
+          <%= cl_image_tag photo.key %>
+          <% end %>
+          <% else %>
+          <%= image_tag ("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80") %>
+        <% end %>
         <div class="card-home-infos">
-          <h2><%= link_to review.visit.restaurant.name, restaurant_path(review.visit.restaurant) %></h2>
+          <div class="d-flex">
+            <h2><%= link_to review.visit.restaurant.name, restaurant_path(review.visit.restaurant) %></h2>
+          <!-- <p class="star-rating">⭐️⭐️⭐️⭐️</p> -->
+        </div>
           <%= review.visit.restaurant.city%>
-          <p class = "home-review-content"><em>"<%= review.content.truncate(100) %>"</em> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
+          <p class = "home-review-content"><em>" <%= review.content.truncate(100) %> " -</em> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> See More</a>
             <%= render partial: 'home_modal', locals: {review: review} %></p>
           <div class="user-flexbox">
             <div class="avatar"><%=image_tag(review.visit.user.default_image)%></div>
@@ -37,7 +44,7 @@
             <div class="date-grid">
             <p class="home-date reviewdate"> Review date: <%= review.created_at.strftime("%d/%m/%y")%></p>
             <p class="home-date visitdate"> Visited date: <%= review.visit.date.strftime("%d/%m/%y") %></p>
-            <div class="new_review">New!</div>
+            <!-- <div class="new-review">New!</div> -->
           </div>
          </div>
         </div>
