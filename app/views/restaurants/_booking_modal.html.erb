@@ -1,0 +1,33 @@
+<div class="modal fade" id="bookingModal<%= @restaurant.id %>" tabindex="-1" role="dialog" aria-labelledby="bookingModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="new-booking-modal-content">
+      <div class="modal-header" id="booking-modal-header">
+        <h5 class="modal-title" id="bookingModalTitle">Booking for <%= restaurant.name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="booking-modal-close-symbol">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="new-booking-form">
+          <%= simple_form_for [restaurant, @visit] do |f| %>
+          <div class="booking-form-selectors d-flex justify-content-around">
+            <div class="booking-form-date-selector d-flex flex-column justify-content-start mb-5">
+              <p>Choose a date for your booking:</p>
+              <%= f.input :date, as: :string, input_html: { class: "datepicker" } %>
+            </div>
+            <br>
+            <div class="booking-form-number-foodies-selector d-flex flex-column justify-content-start mb-3">
+              <p>Number of foodies:</p>
+              <%= f.input :number_of_people, :as => :integer, input_html: { id: "booking-form-foodie-selector" } %>
+            </div>
+          </div>
+          <div id="new-booking-button">
+            <%= f.submit "Book", class: "bannerbtngreen", id: "new-booking-form-submit" %>
+            <%= link_to "", visits_path, id: "go-to-visits-link", class: "hidden" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

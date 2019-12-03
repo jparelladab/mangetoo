@@ -63,6 +63,7 @@ class RestaurantsController < ApplicationController
         lng: @restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
       }]
+    @visit = Visit.new
   end
 
   def edit

@@ -53,11 +53,28 @@ class VisitsController < ApplicationController
   end
 
   def create
+    @visit = Visit.new(visit_params)
+    @visit.date = Date.parse params[:visit][:date]
+    @visit.user_id = current_user.id
+    @visit.restaurant = Restaurant.find(params[:restaurant_id])
+    if @visit.save
+      flash[:notice] = "Booking successfully created"
+    else
+      raise
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      redirect_to restaurant_path(restaurant)
+    end
   end
 
   def update
   end
 
   def destroy
+  end
+
+  private
+
+  def visit_params
+    params.require(:visit).permit(:number_of_people, :restaurant_id)
   end
 end

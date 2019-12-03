@@ -41,7 +41,11 @@
           <p><%= @avg_rating %></p>
         </div>
         <div class="buttons-info">
-          <a href="#" class="showgreenbtn">Book</a>
+          <!-- <a href="#" class="showgreenbtn">Book</a> -->
+          <button type="button" class="bannerbtngreen" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
+            Book
+          </button>
+          <%= render partial: 'booking_modal', locals: {restaurant: @restaurant} %>
           <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'showhollowbtn' %>
         </div>
       </div>
