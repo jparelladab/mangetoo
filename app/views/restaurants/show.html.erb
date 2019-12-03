@@ -13,10 +13,10 @@
                 <div class="card-show-infos">
                   <div class="name_date_flex-show">
                     <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
-                    <h3> <%= review.visit.date.strftime("%d/%m/%y") %></h3>
                   </div>
                   <p><%= review.content.truncate(100) %><a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewShowModal<%= review.id %>"> See More</a>
                   <%= render partial: 'show_modal', locals: {review: review} %></p>
+                  <p class = "show-review-date"> Review date: <%= review.visit.date.strftime("%d/%m/%y") %></p>
                 </div>
             </div>
           <% end %>
