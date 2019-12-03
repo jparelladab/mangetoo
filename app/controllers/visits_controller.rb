@@ -3,7 +3,8 @@ class VisitsController < ApplicationController
     @visits = Visit.where(user: current_user)
     @upcoming_visits = []
     @previous_visits = []
-
+    followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
+    @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
     @visits.each do |visit|
       if visit.date < Date.today
         @previous_visits << visit
