@@ -1,0 +1,12 @@
+function updateButton() {
+  const bookmarkButton= document.querySelector('.showhollowbtn');
+  bookmarkButton.classList.remove("showhollowbtn");
+  bookmarkButton.classList.add("showhollowbtngreyed") = newClass;
+}
+
+
+<% if @bookmark.errors.any? %>
+  <% flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team." %>
+<% else %>
+  updateButton();
+<% end %>
