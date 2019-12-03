@@ -1,35 +1,49 @@
-<div class="d-flex align-items-center flex-column">
-  <div
-  id="map"
-  style="width: 90%;
-  height: 450px;
-  margin-top: 25px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-  <br>
-  <h2 class="reviews-title">Reviewed Restaurants</h2>
-  <h5 class="reviews-title"><em>Any reviews you have written will appear here :-)</em></h5>
-  <div class="d-flex justify-content-between align-items-center flex-column">
+<div class="bookmarks-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Shinjuku_Restaurant_%28Unsplash%29.jpg/800px-Shinjuku_Restaurant_%28Unsplash%29.jpg);">
+  <div class="container bookmarks-banner-heading">
+    <h3>Reviewed Restaurants</h3>
+    <h5>Any reviews you have written will appear here</h5>
+  </div>
+</div>
+
+
+<div id="restaurant_index_container">
+
+  <div id="restaurant_index_cards_container">
     <% @reviews_array.each do |review_hash| %>
       <div class="review-index-card d-flex flex-wrap-reverse flex-sm-nowrap">
         <div class="review-index-card-carousel">
           <%= render 'shared/restaurant_carousel', restaurant: review_hash[:restaurant_instance] %>
         </div>
         <div class="review-body">
-          <h4><%= review_hash[:restaurant_name] %></h4>
+          <!-- <h4><%= review_hash[:restaurant_name] %></h4> -->
+          <div class="restaurant_info_strip">
+            <h2><%= link_to review_hash[:restaurant_name], restaurant_path(review_hash[:restaurant_instance]) %></h2>
+          </div>
           <p id="address"><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>
-          <p><%= review_hash[:review_content_truncated] %></p>
+          <p><%= review_hash[:review_content_truncated] %>
+            <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewIndexModal<%= review_hash[:review_id] %>">See More</a>
+            <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
+          </p>
           <div class="d-flex justify-content-between review-details flex-wrap">
             <p>Rating: <%= review_hash[:review_rating]%></p>
             <p>Visited on: <%= review_hash[:visit_date] %></p>
             <p>Review from: <%= review_hash[:review_date] %></p>
-            <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewIndexModal<%= review_hash[:review_id] %>">See More</a>
-            <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
+
           </div>
         </div>
       </div>
     <% end %>
   </div>
+
+  <div id="restaurants_index_map_container" class="map-index">
+    <div class="index-map"> <%= render 'shared/map' %> </div>
+  </div>
+
 </div>
+
+
+
+
+
+
 
