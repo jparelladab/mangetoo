@@ -5,7 +5,7 @@
         <h5 class="modal-title " id="visitsIndexModalTitle">Your review of <%= review_hash[:visit].restaurant.name %>:</h5>
         <br>
         <div class="modal-review-details">
-          <p>Rating: <%= review_hash[:review_rating]%> | Visited on: <%= review_hash[:visit].date.strftime("%d/%m/%y") %> | Review from: <%= review_hash[:review_date] %></p>
+          <p>Rating:  <i class="fas fa-star"></i> <%= review_hash[:review_rating]%> | Visited on: <%= review_hash[:visit].date.strftime("%d/%m/%y") %> | Review from: <%= review_hash[:review_date] %></p>
         </div>
       </div>
       <div class="modal-body" style="font-size: 16px">
