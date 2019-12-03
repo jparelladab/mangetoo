@@ -2,3 +2,26 @@
   color: $MangeToo-green;
   text-align: center;
 }
+
+.bookmarks-index-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: gray;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.bookmarks-cards-container {
+  background-color: white;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+
+.bookmarks-map-container {
+  background-color: white;
+  width: 0px;
+  max-width: 50%;
+  min-width: 50%;
+}
+
