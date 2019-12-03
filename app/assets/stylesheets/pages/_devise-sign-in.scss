@@ -5,59 +5,120 @@
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+#mangetoo-logo2 {
+  font-family: $MangeToo-logofont;
+  font-size: 90px;
+  color: $MangeToo-green !important;
+  letter-spacing: 2px;
+  padding: 30px;
+  position: relative;
+  top: 20px;
+  left: 150px;
+  text-shadow: 0px 0px 1px white;
+
+
+    h3 {
+      color: white;
+      position: relative;
+      font-size: 36px;
+      bottom: 90px;
+      text-shadow: none;
+      letter-spacing: 3px;
+      padding-top: 15px;
+
+    }
+
+    img {
+      position: relative;
+      bottom: 85px;
+      left: 230px;
+    }
 }
 
 .sign-in-card {
   background-color: rgba(251,251,251,0.95);
   border-radius: 10px;
-  padding: 10px;
-  #mangetoo-logo {
-    font-family: $MangeToo-logofont;
-    font-size: 90px;
-    color: $MangeToo-green !important;
-    letter-spacing: 2px;
-    padding: 30px;
-    position: relative;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  position: relative;
+  right: 150px;
+
+  h3 {
+    text-align: center;
+    color: $MangeToo-green;
   }
+
+  // #mangetoo-logo {
+  //   font-family: $MangeToo-logofont;
+  //   font-size: 90px;
+  //   color: $MangeToo-green !important;
+  //   letter-spacing: 2px;
+  //   padding: 30px;
+  //   position: relative;
+  // }
   .form-check-label {
     color: $MangeToo-green !important;
   }
+
   .form-actions {
     justify-content: center;
     text-align: center;
-  .btn {
-    border: $MangeToo-green 1px solid;
-    margin-top: 5px;
-    width: 200px;
-    height: 50px;
-    background-color: $MangeToo-green;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-  }
+    min-width: 400px;
+    padding: 10px;
+
+    .btn {
+      border: $MangeToo-brightred 1px solid;
+      width: 200px;
+      height: 50px;
+      background-color: $MangeToo-brightred;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+    }
   }
 }
 
-.mangetoo-image {
-  position: absolute;
-  right: 30px;
-  bottom: 0;
-}
+.hvr-float {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+      .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+
+// .mangetoo-image {
+//   position: absolute;
+//   right: 30px;
+//   bottom: 0;
+// }
 .form-group {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 
 .optional {
   font-family: $body-font;
   color: $MangeToo-green;
-  padding: 0;
+  padding: 5px;
   font-weight: bold;
 }
 
 .sign-in-links {
   color: $MangeToo-green !important;
   margin-left: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  padding-left: 5px;
 }
