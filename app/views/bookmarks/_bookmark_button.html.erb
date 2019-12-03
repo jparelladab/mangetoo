@@ -1,0 +1,5 @@
+<% if current_user.restaurants.include?(restaurant) %>
+  <span class="showhollowbtngreyed">Bookmarked</span>
+<% else %>
+  <%= link_to 'Bookmark', restaurant_bookmarks_path(restaurant), method: 'post', remote: true, class: 'showhollowbtn' %>
+<% end %>

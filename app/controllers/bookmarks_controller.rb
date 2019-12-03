@@ -20,7 +20,7 @@ class BookmarksController < ApplicationController
     @current_user = current_user
     @bookmark = Bookmark.new(restaurant: @restaurant, user: @current_user)
     if @bookmark.save
-      flash[:notice] = "Bookmark successfully created"
+      # flash[:notice] = "Bookmark successfully created"
       respond_to do |format|
         format.html { redirect_to restaurant_path(@restaurant) }
         format.js
