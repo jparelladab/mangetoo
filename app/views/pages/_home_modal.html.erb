@@ -3,7 +3,13 @@
     <div class="modal-content">
         <div class="title_rating">
           <h5 class="modal-title" id="reviewHomeModalTitle"><%= review.visit.restaurant.name %></h5>
-          <p>Rating: <%= review.rating%> </p>
+          <h5 class="modal-title-name " id="reviewHomeModalTitle"><%= review.visit.restaurant.name %></h5>
+          <div class="star-container">
+            <% count_gold = review.rating %>
+            <% count_grey = (5 - count_gold) %>
+            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+          </div>
         </div>
       <div class="modal-header d-flex flex-column">
         <p><%= review.visit.restaurant.address %></p>

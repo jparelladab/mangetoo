@@ -24,7 +24,8 @@
 
       <div class="buttons-info">
           <%= link_to 'See Details', restaurant_path(restaurant), class: 'greenbtn' %>
-          <a href="#" class="hollowbtn">Reviewers </a>
+          <a href="#" class="hollowbtn" data-toggle="modal" data-target="#restaurantModalReviews<%= restaurant.id %>">Reviews </a>
+            <%= render partial: 'reviews_modal', locals: {restaurant: restaurant, followings_visits: @followings_visits} %>
         </div>
   </div>
 </div>
