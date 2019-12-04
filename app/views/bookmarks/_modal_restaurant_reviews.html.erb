@@ -20,9 +20,10 @@
 
           <div class="modal-body" style="font-size: 16px">
             <% if !v.reviews.first.nil? %>
+            <!-- <div class="modal-avatar"><%=image_tag(v.user.default_image)%></div> -->
               <p> <u> <%= v.user.first_name %> <%= v.user.last_name %></u>. Visited on: <%= v.date.strftime("%d/%m/%y") %> |
               Review from: <%= v.reviews.first.created_at.strftime("%d/%m/%y") %></p>
-              <%= v.reviews.first.content %>
+              <em>"<%= v.reviews.first.content %>"</em>
             <% end %>
         </div>
         <% end %>
