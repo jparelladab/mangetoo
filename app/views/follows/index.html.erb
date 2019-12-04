@@ -10,7 +10,7 @@
 <% if @fellow_foodies.any? %>
 <div class="foodies-card-container">
   <% @fellow_foodies.each do |fellow_foodie| %>
-    <div class="card-foodies">
+    <div class="card-foodies foodies-hvr-grow">
       <% if fellow_foodie.super_foodie %>
       <div class="superfoodie-avatar">
         <%= image_tag(fellow_foodie.default_image) %>

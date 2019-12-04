@@ -1,5 +1,6 @@
-<div class="d-flex align-items-center flex-column">
-  <div class="photo-carousel new-review-carousel">
+<!-- <div class="d-flex align-items-center justify-content-space-between"> -->
+  <div class = "new-review-flexbox">
+  <div class = "photo-carousel new-review-carousel">
     <%= render 'shared/restaurant_carousel', restaurant: @restaurant %>
   </div>
   <div class="review-form-container d-flex flex-column">
@@ -7,15 +8,13 @@
     <br>
     <div id="new-review-form">
       <%= simple_form_for(@review, url: visit_reviews_path(@visit)) do |f| %>
-        <%= f.input :content, :as => :text, placeholder: "Write your review here...", input_html: { class: "content-form" } %>
-          <div class="rating-select d-flex justify-content-center">
-            <p>Rate <%= @restaurant.name %>*:</p>
-            <%= f.input :rating, :as => :integer, input_html: { :style=> 'width: 10%;' } %>
-          </div>
-          <small class="form-text text-muted">*Rating must be between 1-5.</small>
-          <div class="review-btn d-flex justify-content-center">
-            <%= f.submit "Add Review", class: "bannerbtngreen" %>
-          </div>
+        <div id = "new-review-input">
+          <%= f.input :content, :as => :text, placeholder: "Write your review here...", input_html: { class: "content-form" } %>
+        </div>
+        <div class="rating-select d-flex justify-content-space-between">
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        </div>
+        <%= f.submit "Add Review", class: "bannerbtn" %>
       <% end %>
     </div>
   </div>

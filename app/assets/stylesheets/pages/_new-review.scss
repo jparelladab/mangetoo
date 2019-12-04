@@ -1,28 +1,44 @@
+.new-review-flexbox {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+
+}
+
 .new-review-carousel {
-  width: 60%;
-  height: 400px;
+  width: 45%;
+  height: 450px;
   margin: 0 auto;
 }
 
 .review-form-container {
-  margin-top: 20px;
-  width: 60%;
+  margin-top: 30px;
+  // margin-right: 30px;
+  width: 45%;
+  min-height: 450px;
   box-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: white;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 20px 10px;
   margin-bottom: 30px;
   h3 {
     color: $MangeToo-green;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     padding-bottom: 15px;
+    margin-left: 15px;
   }
   .review-form-header {
-    border-bottom-style: solid;
-    border-bottom-width: thin;
-    border-bottom-color: rgba(50,66,53,0.5);
+    // border-bottom-style: solid;
+    // border-bottom-width: thin;
+    // border-bottom-color: rgba(50,66,53,0.5);
   }
+
+  #new-review-input {
+    width: 95%;
+    margin-left: 15px;
+  }
+
   .form-group {
     width: 100%;
     margin: 0 auto;
@@ -32,19 +48,20 @@
   }
   p {
     padding-top: 5px;
-    padding-bottom: 5px;
+    // padding-bottom: 5px;
+    padding-right: 15px;
   }
   .bannerbtn {
-    margin: 0 auto;
+    margin-left: 16px;
   }
   .form-control.content-form {
     margin-bottom: 20px;
-    margin-left: 0;
-    height: 100px;
+    padding: 10px 0 0 10px;
+    height: 140px;
   }
   .rating-select {
     margin-bottom: 20px;
-    margin-top: 10px;
+    padding: 10px 0 0px 16px;
   }
 }
 
