@@ -1,24 +1,28 @@
-<div class="sign-in-image" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(20,20,20,0.6)), url(https://images.unsplash.com/photo-1546195643-70f48f9c5b87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+<div class="sign-in-image" style="">
 
-
-  <div id = "mangetoo-logo2">
-     <p>MangeToo</p>
-      <!-- <div id="mangetoo-image"> -->
-      <%= image_tag "MangeToo_MangeTooImage.png", alt: "Image of a mangetout cartoon", width: 180, class: "mangetoo-image" %>
-      <!-- </div> -->
-      <h3 class = "col-6">Your little black book of restaurants, based on reviews from people you trust </h3>
+  <div class="banner-flex">
+    <%= image_tag "mt_logo.png", alt: "alttext", class: "home-page-logo" %>
+    <div id = "mangetoo-logo2">
+        <h3>The essential little black book for globetrotting foodies</h3>
+    </div>
+    <div class="user-flex" id="button-box">
+      <div class="sign-up-button"><%= render "devise/shared/links"%></div>
+      <div class="">
+        <a href="#" class="login-link" data-toggle="modal" data-target="#modalLoginForm">Log in</a>
+      </div>
+    </div>
+    <%= render partial: 'devise/shared/login_modal' %>
   </div>
+</div>
 
-
-
-
-
-  <div class="user-flex" id="button-box">
-    <a href="#" class="login-btn" data-toggle="modal" data-target="#modalLoginForm">Log in</a>
-    <div class="sign-up-button"><%= render "devise/shared/links"%></div>
+<div class="how-it-works">
+  <h3>How it works</h3>
+  <div class="description-grid">
+    <div class="icon-description"><%= image_tag "followers.jpg" %><p>Follow your friends and food experts to see restaurants they recommend.</p></div>
+    <div class="icon-description"><%= image_tag "review.jpg" %><p>Read their trusted reviews about restaurants they visited.</p></div>
+    <div class="icon-description"><%= image_tag "search.jpg" %><p>Find restaurants around the globe based on trusted reviews. You also have the option to book.</p></div>
+    <div class="icon-description"><%= image_tag "bookmark.jpg" %><p>Save a restaurant to your bookmarks page that you want to visit later on.</p></div>
   </div>
-
-  <%= render partial: 'devise/shared/login_modal' %>
 </div>
 
 
