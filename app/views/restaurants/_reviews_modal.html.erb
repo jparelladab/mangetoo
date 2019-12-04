@@ -18,10 +18,12 @@
         <% followings_visits.select { |v| v.restaurant_id == restaurant.id }.each do |v| %>
 
           <div class="modal-body" style="font-size: 16px">
-            <% if !v.reviews.first.nil? %>
+            <% if v.reviews.first.nil? %>
+              <p>Your Fellow Foodies haven't left a review yet - be the first to do so!</p>
+            <% else %>
               <p> <u> <%= v.user.first_name %> <%= v.user.last_name %></u>. Visited on: <%= v.date.strftime("%d/%m/%y") %> |
               Review from: <%= v.reviews.first.created_at.strftime("%d/%m/%y") %></p>
-              <%= v.reviews.first.content %>
+              <em>"<%= v.reviews.first.content %>"</em>
             <% end %>
         </div>
         <% end %>
