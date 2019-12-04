@@ -1,83 +1,37 @@
-<div class="d-flex align-items-center flex-column">
-  <div
-  id="map"
-  style="width: 90%;
-  height: 450px;
-  margin-top: 25px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-
-  <div class="upcoming-visits-container d-flex align-items-center flex-column">
-    <h2 class="visits-title">Upcoming Meals</h2>
-    <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
-    <br>
-    <% if @upcoming_visits.any? %>
-      <% @upcoming_visits.each do |visit| %>
-        <div class="visits-index-card d-flex">
-          <div class="visits-index-card-image">
-            <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
-          </div>
-          <div class="visits-index-card-body">
-            <div class="restaurant-details d-flex flex-column justify-content-center">
-              <p ><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant), class: "restaurant-name" %></p>
-              <p id="restaurant-address"><%= visit.restaurant.address %></p>
-            </div>
-            <div class="visit-details d-flex justify-content-around align-items-center">
-              <p class="visit-detail">Foodies: <%= visit.number_of_people %></p>
-              <p class="visit-detail"><%= visit.date.strftime("%d/%m/%y") %></p>
-            </div>
-          </div>
-          <div class="visits-index-card-review d-flex flex-column align-items-center justify-content-around p-3">
-            <p class="bannerbtn">Change</p>
-            <p class="bannerbtn">Cancel</p>
-          </div>
-        </div>
-        <% end %>
-      <% else %>
-        <p>-----</p>
-        <p>No upcoming visits! Perhaps you could take a look at where your friends have been recently?</p>
-        <p>-----</p>
-      <% end %>
-  </div>
-  <br>
-  <div class="previous-visit-container d-flex align-items-center flex-column">
-    <h2 class=visits-title>Previous Meals</h2>
-    <h5 class=visits-title><em>See your past foodie experiences below:</em></h5>
-    <br>
-    <% if @previous_visits.any? %>
-      <% @review_hash_array.each do |review_hash| %>
-        <% visit = review_hash[:visit] %>
-        <% review = review_hash[:review] %>
-        <div class="visits-index-card d-flex">
-          <div class="visits-index-card-image">
-            <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
-          </div>
-          <div class="visits-index-card-body">
-            <div class="restaurant-details d-flex flex-column justify-content-center">
-              <p ><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant), class: "restaurant-name" %></p>
-              <p id="restaurant-address"><%= visit.restaurant.address %></p>
-            </div>
-            <div class="visit-details d-flex justify-content-around align-items-center">
-              <p class="visit-detail">Foodies: <%= visit.number_of_people %></p>
-              <p class="visit-detail"><%= visit.date.strftime("%d/%m/%y") %></p>
-            </div>
-          </div>
-          <div class="visits-index-card-review d-flex flex-column align-items-center justify-content-around p-3">
-            <% if review_hash[:review_included] %>
-              <!-- <p class="bannerbtn">See Review</p> -->
-              <a href="#" class="bannerbtn" data-toggle="modal" data-target="#visitsIndexModal<%= review_hash[:review_id] %>">See Review</a>
-              <%= render partial: 'visits_index_modal', locals: {review_hash: review_hash} %>
-            <% else %>
-              <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn" %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <p>-----</p>
-      <p>No previous visits!</p>
-      <p>-----</p>
-    <% end %>
+<div class="bookmarks-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/2019-11/Greenhouse-restaurant---Photo-by-kayleigh-harrington-on-Unsplash.jpg?itok=qEC_b0Cg);">
+  <div class="container bookmarks-banner-heading">
+    <h3>Foodie Adventures</h3>
+    <h5>Keep track of your foodie adventures - see your personal foodie map here!</h5>
   </div>
 </div>
+
+  <div id="restaurant_index_container">
+    <% if @upcoming_visits.any? %>
+      <div id="restaurant_index_cards_container">
+        <div class="cards-title-meals">
+          <h2 class="visits-title">Upcoming Meals</h2>
+          <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
+        </div>
+        <% @upcoming_visits.map {|v| v.restaurant}.each do |restaurant| %>
+          <%= render 'upcoming_visit_card', restaurant: restaurant, followings_visits: @followings_visits %>
+        <% end %>
+        <div class="cards-title-meals">
+          <h2 class=visits-title>Previous Meals</h2>
+          <h5 class=visits-title><em>See your past foodie experiences below</em></h5>
+        </div>
+        <% @previous_visits.each do |v| %>
+          <%= render 'previous_visit_card', visit: v, previous_visits: @previous_visits %>
+        <% end %>
+      </div>
+
+    <% else %>
+      <p>-----</p>
+      <p>No upcoming visits! Perhaps you could take a look at where your friends have been recently?</p>
+      <p>-----</p>
+    <% end %>
+
+    <div id="restaurants_index_map_container" class="map-index">
+      <div class="index-map"> <%= render 'shared/map' %> </div>
+    </div>
+
+  </div>
