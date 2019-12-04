@@ -2,8 +2,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="title_and_rating">
-        <h5 class="modal-title " id="reviewIndexModalTitle"><%= review_hash[:restaurant_name] %></h5>
-        <p>Rating: <%= review_hash[:review_rating] %> </p>
+        <div class="modal-header-and-stars"> <h5 class="modal-title " id="reviewIndexModalTitle"><%= review_hash[:restaurant_name] %></h5>
+          <div class="star-container">
+            <% count_gold = review_hash[:review_rating] %>
+            <% count_grey = (5 - count_gold) %>
+            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+          </div>
+        </div>
       </div>
       <div class="modal-header d-flex flex-column">
         <p><%= review_hash[:restaurant_address] %>, <%= review_hash[:restaurant_city] %></p>

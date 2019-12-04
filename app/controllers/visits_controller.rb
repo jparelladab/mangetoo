@@ -61,7 +61,17 @@ class VisitsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
+    if @visit.update(visit_params)
+      flash[:notice] = "Visit successfully updated"
+      redirect_to restaurant_path(@restaurant)
+    else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      render :edit
+    end
   end
 
   def destroy
