@@ -1,37 +1,27 @@
 <div class="sign-in-image" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(20,20,20,0.6)), url(https://images.unsplash.com/photo-1546195643-70f48f9c5b87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
 
+
   <div id = "mangetoo-logo2">
      <p>MangeToo</p>
       <!-- <div id="mangetoo-image"> -->
       <%= image_tag "MangeToo_MangeTooImage.png", alt: "Image of a mangetout cartoon", width: 180, class: "mangetoo-image" %>
       <!-- </div> -->
-      <h3 class = "col-6">Your global little black  book of restaurants based on reviews of your own trusted network </h3>
+      <h3 class = "col-6">Your little black book of restaurants, based on reviews from people you trust </h3>
   </div>
 
 
 
-  <div class="sign-in-card">
-    <h3>Login</h3>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }, class: "signin-input" %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" }, class: "signin-input" %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
 
-      <div class="form-actions hvr-float">
-        <%= f.button :submit, "LOG IN" %>
-      </div>
-    <% end %>
 
-    <%= render "devise/shared/links", class: "sign-in-links" %>
+  <div class="user-flex" id="button-box">
+    <a href="#" class="login-btn" data-toggle="modal" data-target="#modalLoginForm">Log in</a>
+    <div class="sign-up-button"><%= render "devise/shared/links"%></div>
   </div>
+
+  <%= render partial: 'devise/shared/login_modal' %>
 </div>
+
+
 
 
 
