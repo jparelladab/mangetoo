@@ -2,8 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex flex-column">
-        <h5 class="modal-title " id="visitsIndexModalTitle">Your review of <%= visit.restaurant.name %>:</h5>
-        <br>
+        <h5 class="modal-title " id="visitsIndexModalTitle"> <%= visit.restaurant.name %></h5>
         <div class="modal-review-details">
           <% if visit.reviews.first.nil? %>
           <p>Rating: <%= visit.reviews.first.rating %> | Visited on: <%= visit.date.strftime("%d/%m/%y") %> | Review from: <%= visit.reviews.first.date %></p>
@@ -12,7 +11,16 @@
       </div>
       <div class="modal-body" style="font-size: 16px">
         <% if !visit.reviews.first.nil? %>
+        <h5>Your review: </h5>
+        <br>
         <%= visit.reviews.first.content %>
+          <div class="star-container">
+            <br>
+            <% count_gold = visit.reviews.first.rating %>
+            <% count_grey = (5 - count_gold) %>
+            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+          </div>
          <% end %>
       </div>
       <div class="modal-footer">

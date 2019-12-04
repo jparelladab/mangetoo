@@ -15,11 +15,19 @@
     <div class="card-foodies foodies-hvr-grow">
       <% if fellow_foodie.super_foodie %>
       <div class="superfoodie-avatar">
-        <%= image_tag(fellow_foodie.default_image) %>
+        <% if fellow_foodie.photo.attached? %>
+          <%= cl_image_tag fellow_foodie.photo.key, alt: "Image of user" %>
+        <% else %>
+          <%= image_tag(fellow_foodie.default_image) %>
+        <% end %>
       </div>
       <% else %>
       <div class="foodie-avatar">
-        <%= image_tag(fellow_foodie.default_image) %>
+        <% if fellow_foodie.photo.attached? %>
+          <%= cl_image_tag fellow_foodie.photo.key, alt: "Image of user" %>
+        <% else %>
+          <%= image_tag(fellow_foodie.default_image) %>
+        <% end %>
       </div>
       <% end %>
       <div class="card-foodies-infos">
@@ -52,11 +60,19 @@
     <div class="card-foodies foodies-hvr-grow">
       <% if foodie.super_foodie %>
       <div class="superfoodie-avatar">
-        <%= image_tag(foodie.default_image) %>
+        <% if foodie.photo.attached? %>
+          <%= cl_image_tag foodie.photo.key, alt: "Image of user" %>
+        <% else %>
+          <%= image_tag(foodie.default_image) %>
+        <% end %>
       </div>
       <% else %>
       <div class="foodie-avatar">
-        <%=image_tag(foodie.default_image)%>
+        <% if foodie.photo.attached? %>
+          <%= cl_image_tag foodie.photo.key, alt: "Image of user" %>
+        <% else %>
+          <%=image_tag(foodie.default_image)%>
+        <% end %>
       </div>
       <% end %>
       <div class="card-foodies-infos">
