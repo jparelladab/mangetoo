@@ -1,0 +1,16 @@
+function updateButton() {
+  // const bookmarkButton = document.getElementById("show-bookmark-button")
+  // const bookmarkButton = document.querySelector('.showhollowbtn');
+  // bookmarkButton.classList.remove("showhollowbtn");
+  // bookmarkButton.classList.add("showhollowbtngreyed");
+  const bookmarkButtonContainer = document.querySelector('.bookmark-button-container');
+  bookmarkButtonContainer.innerHTML = `<%= j render 'bookmarks/bookmark_button', restaurant: @restaurant, user_bookmarked_restaurants: @user_bookmarked_restaurants %>`
+
+}
+
+
+<% if @bookmark.errors.any? %>
+  <% flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team." %>
+<% else %>
+  updateButton();
+<% end %>

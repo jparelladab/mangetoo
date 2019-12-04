@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookmarks
+  has_many :restaurants, through: :bookmarks
   has_many :visits
   has_many :reviews, through: :visits
   # has_many :followers

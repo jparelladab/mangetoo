@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
   has_many :bookmarks
+  has_many :users, through: :bookmarks
   has_many :visits
   has_many_attached :photos
   geocoded_by :address

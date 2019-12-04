@@ -87,11 +87,25 @@
   border: 2px solid #FF575C ;
  }
 
+.showhollowbtngreyed {
+  // background-color: #09B07E;
+  color: gray;
+  border-radius: 2px;
+  padding: 7px;
+  width: 120px;
+  height: 42px;
+  border: 2px solid gray ;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+ }
+
 .show-review-date {
   // text-align: right;
   // font-weight: lighter;
   // font-size: 8px;
 }
+
 
 
 @media(max-width: 1492px) {

@@ -42,11 +42,15 @@
         </div>
         <div class="buttons-info">
           <!-- <a href="#" class="showgreenbtn">Book</a> -->
-          <button type="button" class="showgreenbtn" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
-            Book
-          </button>
+          <div class="book-button-container">
+            <button type="button" class="showgreenbtn" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
+              Book
+            </button>
+          </div>
           <%= render partial: 'booking_modal', locals: {restaurant: @restaurant} %>
-          <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: 'post', class: 'showhollowbtn' %>
+          <div class="bookmark-button-container d-flex">
+            <%= render 'bookmarks/bookmark_button', restaurant: @restaurant, user_bookmarked_restaurants: @user_bookmarked_restaurants %>
+          </div>
         </div>
       </div>
     <!-- <div class="col-4"> -->
@@ -63,8 +67,4 @@
         <% end %>
     </div>
   </div>
-
-
-
-
 
