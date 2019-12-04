@@ -7,6 +7,7 @@
 
 <div class="foodies-header">
   <h3>My Fellow Foodies</h3>
+  <h5><em>Your personal foodie network</em></h5>
 </div>
 <% if @fellow_foodies.any? %>
 <div class="foodies-card-container">
@@ -43,11 +44,12 @@
 
 <div class="foodies-header">
   <h3>All MangeToo Foodies</h3>
+  <h5><em>Find more foodies to follow from the MangeToo network</em></h5>
 </div>
 <% if @all_foodies_without_fellow_foodies.any? %>
 <div class="foodies-card-container">
   <% @all_foodies_without_fellow_foodies.each do |foodie| %>
-    <div class="card-foodies">
+    <div class="card-foodies foodies-hvr-grow">
       <% if foodie.super_foodie %>
       <div class="superfoodie-avatar">
         <%= image_tag(foodie.default_image) %>
