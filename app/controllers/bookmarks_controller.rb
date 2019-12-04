@@ -4,7 +4,11 @@ class BookmarksController < ApplicationController
     @bookmarked_restaurants = @bookmarks.map { |b| b.restaurant }
     followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
     @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
-    # followings_reviews = followings_visits.where
+
+    my_visits = Visit.where(user_id: current_user.id)
+    @all_visits = []
+    @followings_visits.each { |fv| @all_visits << fv }
+    my_visits.each { |mv| @all_visits << mv }
 
     @markers = @bookmarked_restaurants.map do |restaurant|
       {
