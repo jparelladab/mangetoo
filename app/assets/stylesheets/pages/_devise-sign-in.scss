@@ -1,13 +1,33 @@
 // BACKGROUND IMAGE, LOGO AND INFO
 
 .sign-in-image {
-  height: 100vh;
+  height: 85vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), url('https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(120,120,120,0.2)), url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), asset_url('banner.png');
+  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), asset_url('peachbanner1.png');
+}
+
+.home-page-logo {
+  width: 150px;
+  position: absolute;
+  bottom: 330px;
+  left: 30px;
+}
+
+.banner-flex {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 140px 0 0 80px;
   justify-content: space-between;
+  // padding-left: 50px;
+  position: relative;
+  height: 450px;
 }
 
 
@@ -16,72 +36,73 @@
   font-size: 90px;
   color: $MangeToo-green !important;
   letter-spacing: 2px;
-  padding: 30px;
-  position: relative;
-  top: 20px;
-  left: 150px;
-  text-shadow: 0px 0px 1px white;
+  padding-bottom: 30px;
+  // position: relative;
+  // top: 20px;
+  // left: 150px;
+  width: 40%;
+
 
 
   h3 {
-    color: white;
-    position: relative;
-    font-size: 36px;
+    color: rgba(251,251,251,0.95);
+    width: 70%;
+    font-size: 44px;
     bottom: 90px;
     text-shadow: none;
     letter-spacing: 3px;
-    padding-top: 15px;
-
+    padding: 15px 0 25px 0;
+    font-weight: bolder;
   }
 
-  img {
-    position: relative;
-    bottom: 85px;
-    left: 230px;
-  }
+  // img {
+  //   position: relative;
+  //   bottom: 85px;
+  //   left: 230px;
+  // }
 }
 
 // BUTTON BOX FOR LOGIN AND SIGN UP
 
-#button-box {
-    background-color: rgba(250, 250, 250, 0.8);
-    border-radius: 5px;
-    padding: 50px 50px 60px 50px;
-    position: relative;
-    right: 270px;
-  }
+// #button-box {
+//     // background-color: rgba(250, 250, 250, 0.8);
+//     // border-radius: 5px;
+//     // padding: 50px 50px 60px 50px;
+//     // position: relative;
+//     // right: 270px;
+//   }
 
 .user-flex {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  right: 250px;
+  align-items: center;
+  // flex-direction: column;
+  // position: relative;
+  // right: 250px;
 
-  .login-btn {
+  .login-link {
       width: 200px;
       height: 50px;
-      background-color: $MangeToo-brightred;
-      border-radius: 3px;
+      // background-color: $MangeToo-brightred;
+      // border-radius: 3px;
       color: white;
-      font-size: 17px;
+      font-size: 24px;
       font-weight: bold;
-      text-decoration: none;
-      padding-top: 10px;
-      margin-bottom: 60px;
-      text-align: center;
-
+      padding-top: 50px;
   }
 
   .sign-up-button a{
-    // width: 200px;
-    // height: 50px;
+    width: 200px;
+    height: 80px;
     background-color: $MangeToo-green;
     border-radius: 3px;
     color: white;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: bold;
     text-decoration: none;
-    padding: 13px 73px;
+    padding: 20px 60px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    display: inline-block;
 
   }
 }
@@ -159,5 +180,57 @@
         -webkit-transform: translateY(-8px);
         transform: translateY(-8px);
       }
+
+// HOW IT WORKS SECTION
+
+.how-it-works {
+
+  h3 {
+    color: $MangeToo-green;
+    font-weight: bolder;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 35px;
+  }
+}
+
+.description-grid {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.icon-description {
+  text-align: center;
+  margin: 30px;
+  box-shadow: 0 0 5px rgba(20, 20, 20, 0.5);
+  width: 20%;
+
+  img {
+    width: 40%;
+    height: auto;
+    padding-top: 20px;
+  }
+
+
+  .fas {
+    color: $MangeToo-green;
+    font-size: 85px;
+    padding-top: 30px;
+  }
+
+  p {
+    color: rgba(80, 80, 80, 0.9);
+    font-size: 20px;
+    padding: 15px 15px 0 15px;
+  }
+
+
+}
+
+
+
+
+
 
 

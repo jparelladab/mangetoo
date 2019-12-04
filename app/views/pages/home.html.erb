@@ -33,9 +33,7 @@
           <div class="d-flex">
             <div class="modal-header-and-stars">
               <h2><%= link_to review.visit.restaurant.name, restaurant_path(review.visit.restaurant) %></h2>
-          </div>
-
-
+            </div>
           </div>
           <%= review.visit.restaurant.city%>
           <p class = "home-review-content"><em>" <%= review.content.truncate(100) %> " -</em> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> Read more</a>
