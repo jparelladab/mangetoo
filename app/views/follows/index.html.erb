@@ -1,11 +1,13 @@
-<div class="foodies-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1553321846-ad6616f5d1db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
-  <div class="container">
-
+<div class="foodies-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://images.unsplash.com/photo-1553321846-ad6616f5d1db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
+  <div class="container foodies-banner-heading">
+    <h3>Foodie Network</h3>
+    <h5>See your Fellow Foodies here and follow new foodies!</h5>
   </div>
 </div>
 
 <div class="foodies-header">
-  <h2>My Fellow Foodies</h2>
+  <h3>My Fellow Foodies</h3>
+  <h5><em>Your personal foodie network</em></h5>
 </div>
 <% if @fellow_foodies.any? %>
 <div class="foodies-card-container">
@@ -41,12 +43,13 @@
 <% end %>
 
 <div class="foodies-header">
-  <h2>All MangeToo Foodies</h2>
+  <h3>All MangeToo Foodies</h3>
+  <h5><em>Find more foodies to follow from the MangeToo network</em></h5>
 </div>
 <% if @all_foodies_without_fellow_foodies.any? %>
 <div class="foodies-card-container">
   <% @all_foodies_without_fellow_foodies.each do |foodie| %>
-    <div class="card-foodies">
+    <div class="card-foodies foodies-hvr-grow">
       <% if foodie.super_foodie %>
       <div class="superfoodie-avatar">
         <%= image_tag(foodie.default_image) %>

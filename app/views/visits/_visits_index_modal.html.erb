@@ -1,15 +1,19 @@
-<div class="modal fade" id="visitsIndexModal<%= review_hash[:review_id] %>" tabindex="-1" role="dialog" aria-labelledby="visitsIndexModalTitle" aria-hidden="true">
+<div class="modal fade" id="visitsIndexModal<%= visit.restaurant_id %>" tabindex="-1" role="dialog" aria-labelledby="visitsIndexModalTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex flex-column">
-        <h5 class="modal-title " id="visitsIndexModalTitle">Your review of <%= review_hash[:visit].restaurant.name %>:</h5>
+        <h5 class="modal-title " id="visitsIndexModalTitle">Your review of <%= visit.restaurant.name %>:</h5>
         <br>
         <div class="modal-review-details">
-          <p>Rating:  <i class="fas fa-star"></i> <%= review_hash[:review_rating]%> | Visited on: <%= review_hash[:visit].date.strftime("%d/%m/%y") %> | Review from: <%= review_hash[:review_date] %></p>
+          <% if visit.reviews.first.nil? %>
+          <p>Rating: <%= visit.reviews.first.rating %> | Visited on: <%= visit.date.strftime("%d/%m/%y") %> | Review from: <%= visit.reviews.first.date %></p>
+          <% end %>
         </div>
       </div>
       <div class="modal-body" style="font-size: 16px">
-        <%= review_hash[:review_content] %>
+        <% if !visit.reviews.first.nil? %>
+        <%= visit.reviews.first.content %>
+         <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

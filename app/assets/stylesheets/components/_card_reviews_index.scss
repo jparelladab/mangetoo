@@ -1,6 +1,6 @@
 .review-index-card {
   // width: 70%;
-  margin: 7px;
+  margin-bottom: 20px;
   box-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: white;
   border-radius: 5px;
@@ -25,9 +25,9 @@
   }
 }
 
-.review-index-card:first-child {
-  margin-top: 20px;
-}
+// .review-index-card:first-child {
+//   margin-top: 20px;
+// }
 
 .review-index-card:last-child {
   margin-bottom: 30px;

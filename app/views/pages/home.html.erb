@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(20,20,20,0.5),rgba(20,20,20,0.5)), url(https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
-    <h3 id="banner-heading">Search a city for recommended restaurants</h3>
+    <h3 id="banner-heading">Search by city for Fellow Foodies' recommendations</h3>
     <div class="d-flex justify-content-center home-search">
       <%= form_tag restaurants_path, method: :get do %>
         <%= text_field_tag :query,
@@ -14,8 +14,8 @@
 </div>
 
 <br>
-<h2 id="home-title">Latest reviews</h2>
-<h5 id="home-subtitle"><em>See the latest reviews added by your fellow foodies</em></h5>
+<h2 id="home-title">Latest Reviews</h2>
+<h5 id="home-subtitle"><em>See the latest reviews added by your Fellow Foodies!</em></h5>
 <br>
 
   <div class="card-container">

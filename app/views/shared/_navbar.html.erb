@@ -21,7 +21,7 @@
           <%= image_tag current_user.default_image, alt: "Image of a mangetout cartoon", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "All Restaurants", restaurants_path, class: "dropdown-item" %>
-            <%= link_to "Fellow Foodies", follows_path, class: "dropdown-item" %>
+            <%= link_to "Foodie Network", follows_path, class: "dropdown-item" %>
             <%= link_to "New Restaurant", new_restaurant_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

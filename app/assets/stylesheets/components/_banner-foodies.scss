@@ -1,6 +1,14 @@
 .foodies-banner {
   background-size: cover;
   background-position: center;
-  padding: 50px 0;
-  height: 350px;
+  padding: 30px 0;
+  // height: 350px;
+}
+
+.foodies-banner-heading {
+  color: white;
+  text-align: center;
+  h5 {
+    font-weight: lighter;
+  }
 }

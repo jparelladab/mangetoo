@@ -1,3 +1,18 @@
+.modal-header-and-stars {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  line-height: 200%;
+}
+
+.gold-star {
+  color: gold;
+}
+
+.grey-star {
+  color: #DCDCDC;
+}
+
 .modal-content {
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
   border: none;

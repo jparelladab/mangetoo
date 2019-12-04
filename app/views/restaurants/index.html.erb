@@ -1,3 +1,15 @@
+<div class="bookmarks-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Shinjuku_Restaurant_%28Unsplash%29.jpg/800px-Shinjuku_Restaurant_%28Unsplash%29.jpg);">
+  <div class="container bookmarks-banner-heading">
+    <% if params[:query].present? %>
+      <h3>Restaurants in <%= @city %></h3>
+      <h5>See the restaurants in <%= @city %> visited by your Fellow Foodies!</h5>
+    <% else %>
+      <h3>All Restaurants</h3>
+      <h5>See all the restaurants visited by your Fellow Foodies!</h5>
+    <% end %>
+  </div>
+</div>
+
 <div id="restaurant_index_container">
 
   <div id="restaurant_index_cards_container">

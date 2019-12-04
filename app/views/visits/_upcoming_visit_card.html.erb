@@ -1,0 +1,32 @@
+<div class="restaurant_card">
+  <div class="restaurant_card_carousel">
+    <%= render 'shared/restaurant_carousel', restaurant: restaurant %>
+  </div>
+  <div class="restaurant_card_info">
+
+    <div class="restaurant_info_strip">
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= restaurant.category %>
+      </p>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= image_tag("city.svg")%> <%= restaurant.city%> <br>
+        <%= image_tag("address.svg") %> <%= restaurant.address%> <br>
+
+
+      </p>
+    </div>
+
+    <div class="buttons-info" style="justify-content: center">
+      <a href="#" class="hollowbtn" data-toggle="modal" data-target="#bookmarkModalReviews<%= restaurant.id %>">Reviews</a>
+        <%= render partial: 'modal_restaurant_reviews', locals: {restaurant: restaurant, followings_visits: @followings_visits} %>
+    </div>
+
+  </div>
+</div>
