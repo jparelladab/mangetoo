@@ -17,6 +17,12 @@
                 <div class="card-show-infos">
                   <div class="name_date_flex-show">
                     <h2> <%= review.visit.user.first_name + " " + review.visit.user.last_name %> </h2>
+                    <div class="star-container">
+                      <% count_gold = review.rating %>
+                      <% count_grey = (5 - count_gold) %>
+                      <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+                      <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+                    </div>
                   </div>
                   <p><em>"<%= review.content.truncate(100) %>"</em><a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewShowModal<%= review.id %>"> See More</a>
                   <%= render partial: 'show_modal', locals: {review: review} %></p>
