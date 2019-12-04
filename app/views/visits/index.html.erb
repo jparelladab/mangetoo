@@ -12,8 +12,8 @@
           <h2 class="visits-title">Upcoming Meals</h2>
           <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
         </div>
-        <% @upcoming_visits.map {|v| v.restaurant}.each do |restaurant| %>
-          <%= render 'upcoming_visit_card', restaurant: restaurant, followings_visits: @followings_visits %>
+        <% @upcoming_visits.each do |v| %>
+          <%= render 'upcoming_visit_card', visit: v, restaurant: v.restaurant, followings_visits: @followings_visits %>
         <% end %>
         <div class="cards-title-meals">
           <h2 class=visits-title>Previous Meals</h2>

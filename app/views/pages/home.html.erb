@@ -15,7 +15,7 @@
 
 <br>
 <h2 id="home-title">Latest Reviews</h2>
-<h5 id="home-subtitle"><em>See the latest reviews added by your Fellow Foodies!</em></h5>
+<h5 id="home-subtitle"><em>Welcome, <%= current_user.first_name.capitalize %>! See the latest reviews added by your Fellow Foodies!</em></h5>
 <br>
 
 <div class="card-container">
@@ -38,7 +38,11 @@
             <%= render partial: 'home_modal', locals: {review: review} %></p>
           <div class="user-flexbox">
             <div class="avatar">
-              <%=image_tag(review.visit.user.default_image)%>
+              <% if review.visit.user.photo.attached? %>
+                <%= cl_image_tag review.visit.user.photo.key, alt: "Image of user" %>
+              <% else %>
+                <%=image_tag(review.visit.user.default_image)%>
+              <% end %>
             </div>
               <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
             <div class="date-grid">
