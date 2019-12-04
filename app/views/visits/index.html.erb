@@ -1,18 +1,29 @@
-<div class="bookmarks-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://pbs.twimg.com/media/DXClW1qW0AAZ9Nd.jpg);">
+<div class="bookmarks-banner" style="background-image: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url(https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/2019-11/Greenhouse-restaurant---Photo-by-kayleigh-harrington-on-Unsplash.jpg?itok=qEC_b0Cg);">
   <div class="container bookmarks-banner-heading">
-    <h3>Track your Foodie Adventures</h3>
-    <h5>Upcoming and Previous Meals</h5>
+    <h3>Foodie Adventures</h3>
+    <h5>Keep track of your foodie adventures - see your personal foodie map here!</h5>
   </div>
 </div>
 
   <div id="restaurant_index_container">
-
     <% if @upcoming_visits.any? %>
       <div id="restaurant_index_cards_container">
+        <div class="cards-title-meals">
+          <h2 class="visits-title">Upcoming Meals</h2>
+          <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
+        </div>
         <% @upcoming_visits.map {|v| v.restaurant}.each do |restaurant| %>
-          <%= render 'visit_card', restaurant: restaurant, review_hash_array: @review_hash_array %>
+          <%= render 'upcoming_visit_card', restaurant: restaurant, followings_visits: @followings_visits %>
+        <% end %>
+        <div class="cards-title-meals">
+          <h2 class=visits-title>Previous Meals</h2>
+          <h5 class=visits-title><em>See your past foodie experiences below</em></h5>
+        </div>
+        <% @previous_visits.each do |v| %>
+          <%= render 'previous_visit_card', visit: v, previous_visits: @previous_visits %>
         <% end %>
       </div>
+
     <% else %>
       <p>-----</p>
       <p>No upcoming visits! Perhaps you could take a look at where your friends have been recently?</p>

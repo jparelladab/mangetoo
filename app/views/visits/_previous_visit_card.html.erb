@@ -1,0 +1,34 @@
+<div class="restaurant_card">
+  <div class="restaurant_card_carousel">
+    <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
+  </div>
+  <div class="restaurant_card_info">
+
+    <div class="restaurant_info_strip">
+      <h2><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h2>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= visit.restaurant.category %>
+      </p>
+    </div>
+
+    <div class="restaurant_info_strip">
+      <p>
+        <%= image_tag("city.svg")%> <%= visit.restaurant.city%> <br>
+        <%= image_tag("address.svg") %> <%= visit.restaurant.address%> <br>
+      </p>
+    </div>
+
+    <div class="buttons-info" style="justify-content: center">
+      <% if visit.reviews.first.nil? %>
+        <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn" %>
+      <% else %>
+        <a href="#" class="hollowbtn" data-toggle="modal" data-target="#visitsIndexModal<%= visit.restaurant_id %>">My Reviews</a>
+        <%= render partial: 'visits_index_modal', locals: { visit: visit } %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
