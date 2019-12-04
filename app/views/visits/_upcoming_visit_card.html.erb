@@ -16,16 +16,22 @@
 
     <div class="restaurant_info_strip">
       <p>
-        <%= image_tag("city.svg")%> <%= restaurant.city%> <br>
-        <%= image_tag("address.svg") %> <%= restaurant.address%> <br>
+        <%= image_tag("city.svg") %> <%= restaurant.city %> <br>
+        <%= image_tag("address.svg") %> <%= restaurant.address %> <br>
+        <%= image_tag("foodies.svg") %> <%= visit.number_of_people %> <br>
+        <%= image_tag("calendar.svg") %> <%= visit.date %> <br>
 
 
       </p>
     </div>
 
-    <div class="buttons-info" style="justify-content: center">
-      <a href="#" class="hollowbtn" data-toggle="modal" data-target="#bookmarkModalReviews<%= restaurant.id %>">Reviews</a>
-        <%= render partial: 'modal_restaurant_reviews', locals: {restaurant: restaurant, followings_visits: @followings_visits} %>
+    <div class="buttons-info">
+      <%= link_to visits_path, class: "hollowbtn" do %>
+        <i class="fas fa-edit"></i> Change
+      <% end %>
+      <%= link_to visits_path, class: "hollowbtn" do %>
+        <i class="fas fa-trash-alt"></i> Cancel
+      <% end %>
     </div>
 
   </div>
