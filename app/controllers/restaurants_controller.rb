@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
 
     if params[:query].present?
       @restaurants = restaurants.select { |rest| rest[:city].downcase == params[:query].downcase }
+      @city = params[:query].split(" ").map { |w| w.capitalize}.join(" ")
     else
       @restaurants = restaurants
     end
