@@ -51,6 +51,9 @@ jo.save
 ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super_foodie: false, admin: true, email: 'benjamin@baker.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1495078065017-564723e7e3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', last_seen_at: day_before_yesterday)
 ben.save
 
+marc = User.new(first_name: 'Marc', last_name: 'Font', city: 'Vic', super_foodie: false, admin: false, email: 'marc@font.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1517932509923-3b465ef866fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80', last_seen_at: last_week)
+marc.save
+
 # SuperFoodie seeds
 jamie_oliver = User.new(first_name: 'Jamie', last_name: 'Oliver', city: 'London', super_foodie: true, admin: false, email: 'jamie@oliver.com', password: 'password', default_image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkpq4jO3T2LBfHBEctDdAuJQnQhYyLFajD9N75E2srRXQasrcrug&s')
 jamie_oliver.save
@@ -109,6 +112,8 @@ Follow.create('follower_id': joan.id, 'following_id': test_user_four.id)
 Follow.create('follower_id': joan.id, 'following_id': philippa.id)
 Follow.create('follower_id': joan.id, 'following_id': jo.id)
 Follow.create('follower_id': joan.id, 'following_id': ben.id)
+Follow.create('follower_id': joan.id, 'following_id': nigella_lawson.id)
+Follow.create('follower_id': joan.id, 'following_id': mark.id)
 # Jo following all test users
 Follow.create('follower_id': jo.id, 'following_id': test_user_one.id)
 Follow.create('follower_id': jo.id, 'following_id': test_user_two.id)
@@ -201,6 +206,18 @@ drogheria_milanese = Restaurant.new(name: "Drogheria Milanese", address: "Via Co
 drogheria_milanese.save
 el_porteno = Restaurant.new(name: "El Porteño Darsena", address: "Viale Gian Galeazzo, 25, 20136 Milano MI, Italy", city: 'Milan', category: 'Argentinian', website: 'www.elporteno.it', phone_number: '+39 02 5843 7593')
 el_porteno.save
+
+paul_bocuse = Restaurant.new(name: "Paul Bocuse", address: "40 Rue de la Plage, 69660 Collonges-au-Mont-d'Or, France", city: "Lyon", category: "French", website: "http://www.bocuse.fr", phone_number: '+33 4 72 42 90 90')
+paul_bocuse.save
+fouquets = Restaurant.new(name: "Fouquet's", address: '99 Av. des Champs-Élysées, 75008 Paris, France', city: 'Paris', category: 'French', website: 'https://www.hotelsbarriere.com/content/dam/hotels/PAR/push-document/restaurants-&-bars/menus/fouquets-paris-menu-ete-2018-fr.pdf', phone_number: '+33 1 40 69 60 50')
+fouquets.save
+schwarzwaldstube = Restaurant.new(name: 'Schwarzwaldstube', address: 'Tonbachstraße 237, 72270 Baiersbronn, Germany', city: 'Baiersbronn', category: 'German', website: 'https://www.traube-tonbach.de/en/restaurants-bar/schwarzwaldstube/', phone_number: '+49 7442 492665')
+schwarzwaldstube.save
+ueberfahrt = Restaurant.new(name: 'Überfahrt', address: 'Überfahrtstraße 10, 83700 Rottach-Egern, Germany', city: 'Rottach-Egern', category: 'German', website: 'https://www.althoffcollection.com/de/althoff-seehotel-ueberfahrt/menues-entdecken', phone_number: '+49 8022 6692922')
+ueberfahrt.save
+the_table = Restaurant.new(name: 'The Table', addres: 'Shanghaiallee 15, 20457 Hamburg, Germany', city: 'Hamburg', category: 'Haute Cuisine', website: 'https://thetable-hamburg.de/', phone_number: '+49 40 22867422')
+the_table.save
+vendome = Restaurant.new(name: 'Vendôme', address: 'Althoff Grandhotel Schloss Bensberg, Kadettenstraße, 51429 Bergisch Gladbach, Germany', city: 'Bergisch Gladbach', category: 'Haute Cuisine', website: 'https://www.althoffcollection.com/en/althoff-grandhotel-schloss-bensberg/restaurant-vendome', phone_number: '+49 2204 42906')
 
 puts "Created restaurant initial seeds!"
 
@@ -308,6 +325,10 @@ puts "Creating visit and associated reviews initial seeds"
   joan_visit_two = Visit.new(date: tomorrow, user: joan, restaurant: roganic, number_of_people: 5)
   joan_visit_two.save
 
+  joan_visit_three = Visit.new(date: Date.today-rand(1000), user: joan, restaurant: paul_bocuse, number_of_people: 4)
+  joan_visit_three.save
+  Review.create(content: 'Going to Paul Bocuse is an unforgettable experience. The place, the food and the service. Excellent.', rating: 5, visit: joan_visit_three)
+
 # Jo initial visit and review seeds
   jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6)
   jo_visit_one.save
@@ -348,6 +369,9 @@ puts "Creating visit and associated reviews initial seeds"
 
   ben_review_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8)
   ben_review_ten.save
+
+  marc_visit_one = Visit.new(date: Date.today-rand(1000), user: marc, restaurant: the_table, number_of_people: 6)
+  marc_visit_one.save
 
   # SuperFoodie visits
 
@@ -472,6 +496,8 @@ puts "Creating the bookmark initial seeds"
   Bookmark.create(restaurant: gloria, user: joan)
   Bookmark.create(restaurant: la_colombe, user: joan)
   Bookmark.create(restaurant: hammer_tongs, user: joan)
+  Bookmark.create(restaurant: vendome, user: joan)
+  Bookmark.create(restaurant: fouquets, user: joan)
 
 # Jo bookmark seeds
   Bookmark.create(restaurant: five_fields, user: jo)
