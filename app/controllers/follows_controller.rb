@@ -1,8 +1,8 @@
 class FollowsController < ApplicationController
   def index
     # Current User fellow foodies
-    current_user_followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
-    @fellow_foodies = current_user_followings_id.map { |followings_id| User.where(id: followings_id) }.flatten.reject { |f| f == current_user }.shuffle!
+    current_user_followings_id = Follow.where(follower_id: current_user.id).sort_by { |f| f[:created_at] }.reverse.map { |user| user.following_id }
+    @fellow_foodies = current_user_followings_id.map { |followings_id| User.where(id: followings_id) }.flatten.reject { |f| f == current_user }
     #  All MangeToo foodies
     @all_foodies = User.all
     @all_foodies_without_fellow_foodies = @all_foodies.reject { |af| @fellow_foodies.include?(af) || af == current_user }.shuffle!
