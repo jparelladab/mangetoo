@@ -20,14 +20,27 @@ next_week = Date.today + 7
 puts "Creating user initial seeds"
 
 test_user_one = User.new(first_name: 'James', last_name: 'Johnson', city: 'London', super_foodie: false, admin: true, email: 'james@johnson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
-
 test_user_one.save
 test_user_two = User.new(first_name: 'Sarah', last_name: 'Brewster', city: 'London', super_foodie: false, admin: true, email: 'sarah@brewster.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1158&q=80', last_seen_at: day_before_yesterday)
 test_user_two.save
 test_user_three = User.new(first_name: 'John', last_name: 'Oliver', city: 'London', super_foodie: false, admin: true, email: 'john@oliver.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 test_user_three.save
-test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: false, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: last_week)
+test_user_four = User.new(first_name: 'Lucy', last_name: 'Smythe', city: 'London', super_foodie: false, admin: true, email: 'lucy@smythe.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', last_seen_at: last_week)
 test_user_four.save
+test_user_five = User.new(first_name: 'Robert', last_name: 'Strew', city: 'London', super_foodie: false, admin: false, email: 'robert@strew.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', last_seen_at: last_week)
+test_user_five.save
+test_user_six = User.new(first_name: 'Hannah', last_name: 'Claridge', city: 'London', super_foodie: false, admin: false, email: 'hannah@claridge.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1567250671670-05e36d8ca38e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', last_seen_at: last_week)
+test_user_six.save
+test_user_seven = User.new(first_name: 'Briony', last_name: 'Piper', city: 'London', super_foodie: false, admin: false, email: 'briony@piper.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1562003389-902303a38425?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+test_user_seven.save
+test_user_eight = User.new(first_name: 'Donald', last_name: 'Jones', city: 'London', super_foodie: false, admin: false, email: 'donald@jones.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+test_user_eight.save
+test_user_nine = User.new(first_name: 'Rhys', last_name: 'Williams', city: 'London', super_foodie: false, admin: false, email: 'rhys@williams.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1482264851290-446b18e3ee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+test_user_nine.save
+test_user_nine = User.new(first_name: 'Claire', last_name: 'Andrews', city: 'London', super_foodie: false, admin: false, email: 'claire@andrews.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+test_user_nine.save
+test_user_ten = User.new(first_name: 'Henry', last_name: 'Mores', city: 'London', super_foodie: false, admin: false, email: 'henry@mores.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+test_user_ten.save
 
 philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: false, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: day_before_yesterday)
 philippa.save
@@ -120,25 +133,75 @@ puts "Created the intiial follow seed."
 
 puts "Creating restaurant initial seeds"
 
-five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082').save
-song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London, E2 8DY', city: 'London', category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222').save
-st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848').save
-luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000').save
-gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London, EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '').save
-shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726").save
-noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London, WC1N 3NB", city: 'London', category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963").save
-stendhal = Restaurant.new(name: 'Stendhal Milano', address: "Via Ancona 1, Milan, Lombardia, Italy", city: 'Milan', category: 'Italian', website: 'www.stendhalmilano.it', phone_number: "+39 02 657 2059").save
-osteria_binari = Restaurant.new(name: 'Osteria Del Binari', address: "Via Tortona, 3, 20144 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.osteriadelbinari.com', phone_number: "+39 02 8940 9428").save
-trattoria_pontini = Restaurant.new(name: 'Trattoria Bar Pontini', address: "Cannaregio, 1268, 30121 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: '', phone_number: "+39 041 714123").save
-trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', address: "Rio Terà de le Carampane, 1911, 30125 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: 'www.antichecarampane.com', phone_number: "+39 041 524 0165").save
-hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Road, London Borough of Islington, England, United Kingdom", city: 'London', category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884").save
-scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London, SW1Y 4AH", city: 'London', category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840').save
-roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London, W1U 3DB", city: 'London', category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260').save
-mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218').save
-la_colombe = Restaurant.new(name: "La Colombe", address: "7806 Hout Bay Main Road, Hout Bay, Western Cape, South Africa", city: 'Cape Town', category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390').save
-test_kitchen = Restaurant.new(name: "Test Kitchen", address: "375 Albert Rd, Woodstock, Cape Town, 7915, South Africa", city: 'Cape Town', category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337').save
-koy_shunka = Restaurant.new(name: "Koy Shunka", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939').save
-senyor_parellada = Restaurant.new(name: "Senyor Parellada", address: "Carrer de l'Argenteria, 37, 08003 Barcelona, Spain", city: 'Barcelona', category: 'Catalan', website: 'www.senyorparellada.com', phone_number: '+34 933 10 50 94').save
+five_fields = Restaurant.new(name: 'The Five Fields', address: '8-9, Blacklands Terrace, Chelsea, London SW3 2SP', city: 'London', category: 'Modern British', website: 'www.fivefieldsrestaurant.com', phone_number: '020 7838 1082')
+five_fields.save
+song_que = Restaurant.new(name: 'Sông Quê Café', address: '134 Kingsland Rd, Hackney, London, E2 8DY', city: 'London', category: 'Vietnamese', website: 'www.songque.co.uk', phone_number: '020 7613 3222')
+song_que.save
+st_john = Restaurant.new(name: 'St. John', address: '26 St. John Street, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Modern British', website: 'www.stjohnrestaurant.com', phone_number: '020 7251 0848')
+st_john.save
+luca = Restaurant.new(name: 'Luca', address: '88 St. John Street, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Italian', website: 'www.luca.restaurant', phone_number: '020 3859 3000')
+luca.save
+gloria = Restaurant.new(name: 'Gloria', address: '54-56 Great Eastern St, Hackney, London, EC2A 3QR', city: 'London', category: 'Italian', website: 'www.bigmammagroup.com/en/trattorias/gloria', phone_number: '')
+gloria.save
+shawarma_bar = Restaurant.new(name: 'Berber & Q - Shawarma Bar', address: '46 Exmouth Market, London Borough of Islington, England, United Kingdom', city: 'London', category: 'Middle Eastern', website: 'www.shawarmabar.co.uk', phone_number: "020 7837 1726")
+shawarma_bar.save
+noble_rot = Restaurant.new(name: 'Noble Rot Wine Bar & Restaurant', address: "51 Lamb's Conduit St, Holborn, London, WC1N 3NB", city: 'London', category: 'Modern British', website: 'www.noblerot.co.uk', phone_number: "020 7242 8963")
+noble_rot.save
+stendhal = Restaurant.new(name: 'Stendhal Milano', address: "Via Ancona 1, Milan, Lombardia, Italy", city: 'Milan', category: 'Italian', website: 'www.stendhalmilano.it', phone_number: "+39 02 657 2059")
+stendhal.save
+osteria_binari = Restaurant.new(name: 'Osteria Del Binari', address: "Via Tortona, 3, 20144 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.osteriadelbinari.com', phone_number: "+39 02 8940 9428")
+osteria_binari.save
+trattoria_pontini = Restaurant.new(name: 'Trattoria Bar Pontini', address: "Cannaregio, 1268, 30121 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: '', phone_number: "+39 041 714123")
+trattoria_pontini.save
+trattoria_carampane = Restaurant.new(name: 'Trattoria Antiche Carampane', address: "Rio Terà de le Carampane, 1911, 30125 Venezia VE, Italy", city: 'Venice', category: 'Italian', website: 'www.antichecarampane.com', phone_number: "+39 041 524 0165")
+trattoria_carampane.save
+hammer_tongs = Restaurant.new(name: 'Hammer & Tongs', address: "171 Farringdon Road, London Borough of Islington, England, United Kingdom", city: 'London', category: 'South African', website: 'www.hammertongs.co.uk', phone_number: "020 3774 2884")
+hammer_tongs.save
+scully = Restaurant.new(name: "Scully St James's", address: "4 ST James's Market, St James's, London, SW1Y 4AH", city: 'London', category: 'Asian Fusion', website: 'www.scullyrestaurant.com', phone_number: '+44 20 3911 6840')
+scully.save
+roganic = Restaurant.new(name: "Roganic", address: "5-7 Blandford Street, Marylebone, London, W1U 3DB", city: 'London', category: 'Modern British', website: 'www.roganic.uk', phone_number: '+44 20 3370 6260')
+roganic.save
+mar_do_inferno = Restaurant.new(name: "Restaurant Mar do Inferno", address: "Av. Rei Humberto II de Italia, 2750-800, Cascais", city: 'Cascais', category: 'Seafood', website: 'www.mardoinferno.pt', phone_number: '+351 21 483 2218')
+mar_do_inferno.save
+la_colombe = Restaurant.new(name: "La Colombe", address: "7806 Hout Bay Main Road, Hout Bay, Western Cape, South Africa", city: 'Cape Town', category: 'Mondern French', website: 'www.lacolombe.co.za', phone_number: '+27 21 794 2390')
+la_colombe.save
+test_kitchen = Restaurant.new(name: "Test Kitchen", address: "375 Albert Rd, Woodstock, Cape Town, 7915, South Africa", city: 'Cape Town', category: 'Latin South African', website: 'www.thetestkitchen.co.za', phone_number: '+27 21 447 2337')
+test_kitchen.save
+koy_shunka = Restaurant.new(name: "Koy Shunka", address: "Carrer d'en Copons, 7, 08002, Barcelona", city: 'Barcelona', category: 'Japanese', website: 'www.koyshunka.com', phone_number: '+34 9341 27939')
+koy_shunka.save
+senyor_parellada = Restaurant.new(name: "Senyor Parellada", address: "Carrer de l'Argenteria, 37, 08003 Barcelona, Spain", city: 'Barcelona', category: 'Catalan', website: 'www.senyorparellada.com', phone_number: '+34 933 10 50 94')
+senyor_parellada.save
+au_passage = Restaurant.new(name: "Restaurant Au Passage", address: "1bis Passage Saint-Sébastien, 75011 Paris, France", city: 'Paris', category: 'French', website: 'www.restaurant-aupassage.fr', phone_number: '+33 1 43 55 07 52')
+au_passage.save
+du_pain_et_des_idees = Restaurant.new(name: "Du Pain et des Idées", address: "34 Rue Yves Toudic, 75010 Paris, France", city: 'Paris', category: 'Bakery', website: 'www.dupainetdesidees.com', phone_number: '+33 1 42 40 44 52')
+du_pain_et_des_idees.save
+bistrot_paul_bert = Restaurant.new(name: "Bistrot Paul Bert", address: "18 Rue Paul Bert, 75011 Paris, France", city: 'Paris', category: 'French', website: '', phone_number: '+33 1 43 72 24 01')
+bistrot_paul_bert.save
+jean_georges = Restaurant.new(name: "Jean-Georges", address: "1 Central Park West, New York, NY 10023, United States", city: 'New York', category: 'French', website: 'www.jean-georges.com', phone_number: '+1 212-299-3900')
+jean_georges.save
+bohemian = Restaurant.new(name: "Bohemian", address: "57 Great Jones St, New York, NY 10012, United States", city: 'New York', category: 'Japanese', website: 'www.playearth.jp/eng/bohemian_ny/', phone_number: '')
+bohemian.save
+bens_pizza = Restaurant.new(name: "Famous Ben's Pizza", address: "177 Spring St, New York, NY 10012, United States", city: 'New York', category: 'Pizza', website: 'www.famousbenspizzanyc.com', phone_number: '+1 212-966-4494')
+bens_pizza.save
+le_bernardin = Restaurant.new(name: "Le Bernardin", address: "155 W 51st St, New York, NY 10019, United States", city: 'New York', category: 'Seafood', website: 'www.le-bernardin.com', phone_number: '+1 212-554-1515')
+le_bernardin.save
+white_rabbit = Restaurant.new(name: "White Rabbit", address: "Smolenskaya Square, 3, Moscow, Russia, 121099", city: 'Moscow', category: 'Russian', website: 'www.whiterabbitmoscow.ru', phone_number: '+7 495 510-51-01')
+white_rabbit.save
+cafe_pushkin = Restaurant.new(name: "Cafe Pushkin", address: "Tverskoy Blvd, 26А, Moscow, Russia, 125009", city: 'Moscow', category: 'Russian', website: 'www.cafe-pushkin.ru', phone_number: '+7 495 739-00-33')
+cafe_pushkin.save
+chemodan = Restaurant.new(name: "Chemodan", address: "Gogolevsky Blvd, 25, стр. 1, Moscow, Russia, 119019", city: 'Moscow', category: 'Russian', website: 'www.chemodan-msk.ru', phone_number: '+7 495 695-38-19')
+chemodan.save
+ratana = Restaurant.new(name: "Ratanà", address: "Via Gaetano de Castillia, 28, 20124 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.ratana.it', phone_number: '+39 02 8712 8855')
+ratana.save
+luini = Restaurant.new(name: "Panzerotti Luini", address: "Via Santa Radegonda, 16, 20121 Milano MI, Italy", city: 'Milan', category: 'Bakery', website: 'www.luini.it', phone_number: '+39 02 8646 1917')
+luini.save
+cracco = Restaurant.new(name: "Cracco", address: "Corso Vittorio Emanuele II, 20121 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.ristorantecracco.it', phone_number: '+39 02 876774')
+cracco.save
+drogheria_milanese = Restaurant.new(name: "Drogheria Milanese", address: "Via Conca del Naviglio, 7, 20123 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.drogheriemilanesi.it', phone_number: '+39 02 5811 4843')
+drogheria_milanese.save
+el_porteno = Restaurant.new(name: "El Porteño Darsena", address: "Viale Gian Galeazzo, 25, 20136 Milano MI, Italy", city: 'Milan', category: 'Argentinian', website: 'www.elporteno.it', phone_number: '+39 02 5843 7593')
+el_porteno.save
+
 puts "Created restaurant initial seeds!"
 
 # VISIT AND REVIEW SEED
@@ -146,171 +209,224 @@ puts "Created restaurant initial seeds!"
 puts "Creating visit and associated reviews initial seeds"
 
 # Test User One visits and reviews
-  test_visit_one = Visit.new(date: last_week, user: test_user_one, restaurant: five_fields, number_of_people: 4).save
+  test_visit_one = Visit.new(date: last_week, user: test_user_one, restaurant: five_fields, number_of_people: 4)
+  test_visit_one.save
   Review.create(content: 'This was a really wonderful experience!!', rating: 5, visit: test_visit_one)
 
-  test_visit_two = Visit.new(date: yesterday, user: test_user_one, restaurant: song_que, number_of_people: 2).save
+  test_visit_two = Visit.new(date: yesterday, user: test_user_one, restaurant: song_que, number_of_people: 2)
+  test_visit_two.save
   Review.create(content: 'The Pho here really is a must-have. Highly recommend this place for anyone who likes Vietnamese food. One of the best and most authentic in London.', rating: 4, visit: test_visit_two)
 
-  test_visit_one_b = Visit.new(date: Date.today, user: test_user_one, restaurant: osteria_binari, number_of_people: 4).save
+  test_visit_one_b = Visit.new(date: Date.today, user: test_user_one, restaurant: osteria_binari, number_of_people: 4)
+  test_visit_one_b.save
       # No review created
 
-  test_visit_two_b = Visit.new(date: yesterday, user: test_user_one, restaurant: koy_shunka, number_of_people: 2).save
+  test_visit_two_b = Visit.new(date: yesterday, user: test_user_one, restaurant: koy_shunka, number_of_people: 2)
+  test_visit_two_b.save
   Review.create(content: 'This was a really wonderful experience!! Highly recommend this place to everyone.', rating: 5, visit: test_visit_two_b)
 
-  test_visit_one_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: mar_do_inferno, number_of_people: 4).save
-  Review.create(content: 'Delicious! A must-do when you are here!', rating: 5, visit: test_visit_one_c).save
+  test_visit_one_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: mar_do_inferno, number_of_people: 4)
+  test_visit_one_c.save
+  Review.create(content: 'Delicious! A must-do when you are here!', rating: 5, visit: test_visit_one_c)
 
-  test_visit_two_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: trattoria_pontini, number_of_people: 2).save
+  test_visit_two_c = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: trattoria_pontini, number_of_people: 2)
+  test_visit_two_c.save
   Review.create(content: 'Great value, family-run trattoria off the usual tourist track. You could easily miss this place on a trip to Venice, but you should trust the quality of the food over the surroundings. You can need to wait in line for a while though and speaking Italian will certainly help with communication.', rating: 4, visit: test_visit_two_c)
 
-  test_visit_one_d = Visit.new(date: yesterday, user: test_user_one, restaurant: la_colombe, number_of_people: 4).save
+  test_visit_one_d = Visit.new(date: yesterday, user: test_user_one, restaurant: la_colombe, number_of_people: 4)
+  test_visit_one_d.save
   Review.create(content: 'Superb! Not cheap, but the amazing food is worth the expense.', rating: 5, visit: test_visit_one_d)
 
-  test_visit_two_d = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: scully, number_of_people: 2).save
+  test_visit_two_d = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: scully, number_of_people: 2)
+  test_visit_two_d.save
   Review.create(content: 'Superb! Not cheap, but the amazing food is worth the expense.', rating: 5, visit: test_visit_two_d)
 
 # Test User Two visits and reviews
-  test_visit_three = Visit.new(date: yesterday, user: test_user_two, restaurant: five_fields, number_of_people: 8).save
+  test_visit_three = Visit.new(date: yesterday, user: test_user_two, restaurant: five_fields, number_of_people: 8)
+  test_visit_three.save
   Review.create(content: 'The veal was really incredible. I would highly recommend coming here, but perhaps not on a Saturday night, as it can be very busy.', rating: 5, visit: test_visit_three)
 
-  test_visit_four = Visit.new(date: Date.today, user: test_user_two, restaurant: st_john, number_of_people: 5).save
+  test_visit_four = Visit.new(date: Date.today, user: test_user_two, restaurant: st_john, number_of_people: 5)
+  test_visit_four.save
     # No review
 
-  test_visit_four_b = Visit.new(date: last_week, user: test_user_two, restaurant: song_que, number_of_people: 5).save
+  test_visit_four_b = Visit.new(date: last_week, user: test_user_two, restaurant: song_que, number_of_people: 5)
+  test_visit_four_b.save
   Review.create(content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5, visit: test_visit_four_b)
 
 # Test User Three visits and reviews
-  test_visit_five = Visit.new(date: last_week, user: test_user_three, restaurant: five_fields, number_of_people: 6).save
+  test_visit_five = Visit.new(date: last_week, user: test_user_three, restaurant: five_fields, number_of_people: 6)
+  test_visit_five.save
   Review.create(content: 'We had a superb meal here. Definitely should be on your foodie agenda in London. We had the steak followed by tiramisu, both highly recommended.', rating: 5, visit: test_visit_five)
 
-  test_visit_six = Visit.new(date: yesterday, user: test_user_three, restaurant: song_que, number_of_people: 4).save
+  test_visit_six = Visit.new(date: yesterday, user: test_user_three, restaurant: song_que, number_of_people: 4)
+  test_visit_six.save
   Review.create(content: "No frills, but really flavoursome pho. Can't say that I have had better pho in London.", rating: 4, visit: test_visit_six)
 
-  test_visit_six_b = Visit.new(date: day_before_yesterday, user: test_user_three, restaurant: roganic, number_of_people: 4).save
+  test_visit_six_b = Visit.new(date: day_before_yesterday, user: test_user_three, restaurant: roganic, number_of_people: 4)
+  test_visit_six_b.save
   Review.create(content: "Good, though could be fresher. Certainly good for a mid-week lunch, though probably wouldn't come for a special event.", rating: 3, visit: test_visit_six_b)
 
-  test_visit_six_c = Visit.new(date: last_week, user: test_user_three, restaurant: st_john, number_of_people: 5).save
+  test_visit_six_c = Visit.new(date: last_week, user: test_user_three, restaurant: st_john, number_of_people: 5)
+  test_visit_six_c.save
   Review.create(content: "A time-honoured London eatery. A real must-do for anyone passionate about British cooking, and particularly nose-to-tail. You may need an adventurous attitude for some of the dishes, but these are real classics that have largely been forgotten.", rating: 3, visit: test_visit_six_c)
 
 # Test User Four visits and reviews
-  test_visit_seven = Visit.new(date: last_week, user: test_user_four, restaurant: la_colombe, number_of_people: 2).save
+  test_visit_seven = Visit.new(date: last_week, user: test_user_four, restaurant: la_colombe, number_of_people: 2)
+  test_visit_seven.save
   Review.create(content: 'Extremely beautiful and delicate plates of food, romantic setting. A visit is a must! ', rating: 5, visit: test_visit_seven)
 
-  test_visit_eight = Visit.new(date: yesterday, user: test_user_four, restaurant: koy_shunka, number_of_people: 5).save
+  test_visit_eight = Visit.new(date: yesterday, user: test_user_four, restaurant: koy_shunka, number_of_people: 5)
+  test_visit_eight.save
   Review.create(content: 'Top rated sushi, beautifully presented ', rating: 4, visit: test_visit_eight)
 
-  test_visit_eight_b = Visit.new(date: Date.today, user: test_user_four, restaurant: five_fields, number_of_people: 5).save
+  test_visit_eight_b = Visit.new(date: Date.today, user: test_user_four, restaurant: five_fields, number_of_people: 5)
+  test_visit_eight_b.save
     # No review
 
-  test_visit_eight_c = Visit.new(date: day_before_yesterday, user: test_user_four, restaurant: stendhal, number_of_people: 3).save
+  test_visit_eight_c = Visit.new(date: day_before_yesterday, user: test_user_four, restaurant: stendhal, number_of_people: 3)
+  test_visit_eight_c.save
   Review.create(content: 'Fantastic authentic Milanese cuisine.', rating: 4, visit: test_visit_eight_c)
 
-  test_visit_eight_d = Visit.new(date: last_week, user: test_user_four, restaurant: noble_rot, number_of_people: 5).save
+  test_visit_eight_d = Visit.new(date: last_week, user: test_user_four, restaurant: noble_rot, number_of_people: 5)
+  test_visit_eight_d.save
   Review.create(content: 'Great wine bar and eatery. Fantastic selection of wines on offer and a really tasty menu of high-quality, well-cooked food. Very good value week-day set lunch menu too.', rating: 4, visit: test_visit_eight_d)
 
 # Philippa initial visit and review seeds
-  philippa_visit_one = Visit.new(date: day_before_yesterday, user: philippa, restaurant: st_john, number_of_people: 6).save
+  philippa_visit_one = Visit.new(date: day_before_yesterday, user: philippa, restaurant: st_john, number_of_people: 6)
+  philippa_visit_one.save
   Review.create(content: 'Traditional British food at its best!', rating: 5, visit: philippa_visit_one)
 
-  philippa_visit_two = Visit.new(date: yesterday, user: philippa, restaurant: trattoria_carampane, number_of_people: 5).save
+  philippa_visit_two = Visit.new(date: yesterday, user: philippa, restaurant: trattoria_carampane, number_of_people: 5)
+  philippa_visit_two.save
 
 # Joan initial visit and review seeds
-  joan_visit_one = Visit.new(date: last_week, user: joan, restaurant: koy_shunka, number_of_people: 6).save
+  joan_visit_one = Visit.new(date: last_week, user: joan, restaurant: koy_shunka, number_of_people: 6)
+  joan_visit_one.save
   Review.create(content: 'Superb sushi! Come here next time when you come to Barcelona.', rating: 5, visit: joan_visit_one)
 
-  joan_visit_two = Visit.new(date: tomorrow, user: joan, restaurant: roganic, number_of_people: 5).save
+  joan_visit_two = Visit.new(date: tomorrow, user: joan, restaurant: roganic, number_of_people: 5)
+  joan_visit_two.save
 
 # Jo initial visit and review seeds
-  jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6).save
+  jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6)
+  jo_visit_one.save
   Review.create(content: 'Delicious meaty heaven! Introduced me to South African cusisine and now I can\'t get enough', rating: 5, visit: jo_visit_one)
 
-  jo_visit_two = Visit.new(date: next_week, user: jo, restaurant: roganic, number_of_people: 2).save
+  jo_visit_two = Visit.new(date: next_week, user: jo, restaurant: roganic, number_of_people: 2)
+  jo_visit_two.save
 
 # Ben initial visit and review seeds
-  ben_review_one = Visit.new(date: last_week, user: ben, restaurant: noble_rot, number_of_people: 8).save
+  ben_review_one = Visit.new(date: last_week, user: ben, restaurant: noble_rot, number_of_people: 8)
+  ben_review_one.save
   Review.create(content: 'Large selection of wines, particularly more unusual wines you will not find everywhere. Food is homely, but high-quality and always delicious. A real gem. Likely to need to book in advance.', rating: 4, visit: ben_review_one)
 
-  ben_review_two = Visit.new(date: last_week, user: ben, restaurant: shawarma_bar, number_of_people: 3).save
+  ben_review_two = Visit.new(date: last_week, user: ben, restaurant: shawarma_bar, number_of_people: 3)
+  ben_review_two.save
   Review.create(content: 'One of my favourite places in London. Delicious food and always a busy, lively atmoshpere. The hummus is delicious - try the Iraqi hummus.', rating: 4, visit: ben_review_two)
 
-  ben_review_three = Visit.new(date: tomorrow, user: ben, restaurant: osteria_binari, number_of_people: 3).save
-  ben_review_four = Visit.new(date: next_week, user: ben, restaurant: luca, number_of_people: 5).save
+  ben_review_three = Visit.new(date: tomorrow, user: ben, restaurant: osteria_binari, number_of_people: 3)
+  ben_review_three.save
+  ben_review_four = Visit.new(date: next_week, user: ben, restaurant: luca, number_of_people: 5)
+  ben_review_four.save
 
-  ben_review_five = Visit.new(date: Date.today, user: ben, restaurant: st_john, number_of_people: 4).save
+  ben_review_five = Visit.new(date: Date.today, user: ben, restaurant: st_john, number_of_people: 4)
+  ben_review_five.save
 
-  ben_review_six = Visit.new(date: last_week, user: ben, restaurant: trattoria_carampane, number_of_people: 5).save
+  ben_review_six = Visit.new(date: last_week, user: ben, restaurant: trattoria_carampane, number_of_people: 5)
+  ben_review_six.save
   Review.create(content: 'Fantastic, classic Venetian restaurant. Get there in the right season to have the soft-shell crab.', rating: 5, visit: ben_review_six)
 
-  ben_review_seven = Visit.new(date: next_week, user: ben, restaurant: gloria, number_of_people: 5).save
+  ben_review_seven = Visit.new(date: next_week, user: ben, restaurant: gloria, number_of_people: 5)
+  ben_review_seven.save
 
-  ben_review_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15).save
+  ben_review_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15)
+  ben_review_eight.save
 
-  ben_review_nine = Visit.new(date: Date.today, user: ben, restaurant: roganic, number_of_people: 15).save
+  ben_review_nine = Visit.new(date: Date.today, user: ben, restaurant: roganic, number_of_people: 15)
+  ben_review_nine.save
 
-  ben_review_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8).save
+  ben_review_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8)
+  ben_review_ten.save
 
   # SuperFoodie visits
 
   #  Jamie Oliver
 
-  jamie_oliver_visit_one = Visit.new(date: last_week, user: jamie_oliver, restaurant: five_fields, number_of_people: 2).save
+  jamie_oliver_visit_one = Visit.new(date: last_week, user: jamie_oliver, restaurant: five_fields, number_of_people: 2)
+  jamie_oliver_visit_one.save
   Review.create(content: 'Absolutely pukka. On my top list for London.', rating: 5, visit: jamie_oliver_visit_one)
 
-  jamie_oliver_visit_two = Visit.new(date: day_before_yesterday, user: jamie_oliver, restaurant: st_john, number_of_people: 2).save
+  jamie_oliver_visit_two = Visit.new(date: day_before_yesterday, user: jamie_oliver, restaurant: st_john, number_of_people: 2)
+  jamie_oliver_visit_two.save
   Review.create(content: 'Absolute legend in the London culinary scene. A must-do for any serious foodie.', rating: 5, visit: jamie_oliver_visit_two)
 
-  jamie_oliver_visit_three = Visit.new(date: yesterday, user: jamie_oliver, restaurant: la_colombe, number_of_people: 6).save
+  jamie_oliver_visit_three = Visit.new(date: yesterday, user: jamie_oliver, restaurant: la_colombe, number_of_people: 6)
+  jamie_oliver_visit_three.save
   Review.create(content: 'You should defintely come here if you are visiting South Africa. Proper pukka South African cuisine.', rating: 5, visit: jamie_oliver_visit_three)
 
-  jamie_oliver_visit_four = Visit.new(date: yesterday, user: jamie_oliver, restaurant: senyor_parellada, number_of_people: 5).save
+  jamie_oliver_visit_four = Visit.new(date: yesterday, user: jamie_oliver, restaurant: senyor_parellada, number_of_people: 5)
+  jamie_oliver_visit_four.save
   Review.create(content: 'Excellent. You should defintely come here if you are visiting Barcelona. Proper catalan cuisine.', rating: 5, visit: jamie_oliver_visit_four)
 
   # Marco Pierre White
 
-  marco_visit_one = Visit.new(date: last_week, user: marco_pierre_white, restaurant: noble_rot, number_of_people: 2).save
+  marco_visit_one = Visit.new(date: last_week, user: marco_pierre_white, restaurant: noble_rot, number_of_people: 2)
+  marco_visit_one.save
   Review.create(content: "Fantastic wine bar. Bloody good food at decent prices. They also do Black Velvet, which is a true gentleman's drink.", rating: 5, visit: marco_visit_one)
 
-  marco_visit_two = Visit.new(date: day_before_yesterday, user: marco_pierre_white, restaurant: st_john, number_of_people: 2).save
+  marco_visit_two = Visit.new(date: day_before_yesterday, user: marco_pierre_white, restaurant: st_john, number_of_people: 2)
+  marco_visit_two.save
   Review.create(content: "Any serious foodie must have eaten here. The bone marrow is simply a necessary addition for the agenda of anyone passionate about British cooking.", rating: 5, visit: marco_visit_two)
 
-  marco_visit_three = Visit.new(date: yesterday, user: marco_pierre_white, restaurant: luca, number_of_people: 2).save
+  marco_visit_three = Visit.new(date: yesterday, user: marco_pierre_white, restaurant: luca, number_of_people: 2)
+  marco_visit_three.save
   Review.create(content: 'Simple ingredients, well-cooked, with a delciious (and, at times, unusual) wine list. What more could you want? A great little eatery.', rating: 5, visit: marco_visit_three)
 
   # Gordon Ramsay
 
-  ramsay_visit_one = Visit.new(date: last_week, user: gordon_ramsay, restaurant: st_john, number_of_people: 2).save
+  ramsay_visit_one = Visit.new(date: last_week, user: gordon_ramsay, restaurant: st_john, number_of_people: 2)
+  ramsay_visit_one.save
   Review.create(content: "I never let a month go by without coming here. Neither should you.", rating: 5, visit: ramsay_visit_one)
 
-  ramsay_visit_two = Visit.new(date: day_before_yesterday, user: gordon_ramsay, restaurant: gloria, number_of_people: 4).save
+  ramsay_visit_two = Visit.new(date: day_before_yesterday, user: gordon_ramsay, restaurant: gloria, number_of_people: 4)
+  ramsay_visit_two.save
   Review.create(content: "Delicious Italian place, very on vogue, but good nonetheless. Definitely have the truffle pizza if you come here (as you should).", rating: 4, visit: ramsay_visit_two)
 
-  ramsay_visit_three = Visit.new(date: yesterday, user: gordon_ramsay, restaurant: shawarma_bar, number_of_people: 2).save
+  ramsay_visit_three = Visit.new(date: yesterday, user: gordon_ramsay, restaurant: shawarma_bar, number_of_people: 2)
+  ramsay_visit_three.save
   Review.create(content: 'Ever-popular, set within the foodie haven of Exmouth Market. Delicious shawarma, done properly. Great for a casual dinner out.', rating: 5, visit: ramsay_visit_three)
 
-  ramsay_visit_four = Visit.new(date: yesterday, user: gordon_ramsay, restaurant: shawarma_bar, number_of_people: 2).save
+  ramsay_visit_four = Visit.new(date: yesterday, user: gordon_ramsay, restaurant: shawarma_bar, number_of_people: 2)
+  ramsay_visit_four.save
   Review.create(content: 'Ever-popular, set within the foodie haven of Exmouth Market. Delicious shawarma, done properly. Great for a casual dinner out.', rating: 5, visit: ramsay_visit_three)
 
   # Giles Coren
 
-  coren_visit_one = Visit.new(date: yesterday, user: giles_coren, restaurant: st_john, number_of_people: 2).save
+  coren_visit_one = Visit.new(date: yesterday, user: giles_coren, restaurant: st_john, number_of_people: 2)
+  coren_visit_one.save
   Review.create(content: "Simple British cooking at its best. A behemoth of the London food scene, which you need to have been to. If you haven't been here yet, it should be high on the list for your next meal out.", rating: 5, visit: coren_visit_one)
 
-  coren_visit_two = Visit.new(date: day_before_yesterday, user: giles_coren, restaurant: noble_rot, number_of_people: 4).save
+  coren_visit_two = Visit.new(date: day_before_yesterday, user: giles_coren, restaurant: noble_rot, number_of_people: 4)
+  coren_visit_two.save
   Review.create(content: "Wine lovers likely know of this place already, but the food here is also simply delicious. The wines are wide-ranging and the staff more than capable of advising you on what to drink with your meal.", rating: 4, visit: coren_visit_two)
 
-  coren_visit_three = Visit.new(date: yesterday, user: giles_coren, restaurant: luca, number_of_people: 2).save
+  coren_visit_three = Visit.new(date: yesterday, user: giles_coren, restaurant: luca, number_of_people: 2)
+  coren_visit_three.save
   Review.create(content: 'Luca burst onto the Clerkenwell food scene and it looks like it will hold a (well-deserved) leading spot in that scene for the foreseeable future.', rating: 5, visit: coren_visit_three)
 
   # Nigella Lawson
 
-  nigella_visit_one = Visit.new(date: yesterday, user: nigella_lawson, restaurant: st_john, number_of_people: 2).save
+  nigella_visit_one = Visit.new(date: yesterday, user: nigella_lawson, restaurant: st_john, number_of_people: 2)
+  nigella_visit_one.save
   Review.create(content: "Truly delicious! You may need to be quite adventurous in what parts of the animal you are happy to eat, but if you are, then you are in for a treat!", rating: 5, visit: nigella_visit_one)
 
-  nigella_visit_two = Visit.new(date: day_before_yesterday, user: nigella_lawson, restaurant: trattoria_pontini, number_of_people: 4).save
+  nigella_visit_two = Visit.new(date: day_before_yesterday, user: nigella_lawson, restaurant: trattoria_pontini, number_of_people: 4)
+  nigella_visit_two.save
   Review.create(content: "Come here and you see why the locals love it so much. Off the main tourist track, but well worth the visit.", rating: 4, visit: nigella_visit_two)
 
-  nigella_visit_three = Visit.new(date: yesterday, user: nigella_lawson, restaurant: luca, number_of_people: 2).save
+  nigella_visit_three = Visit.new(date: yesterday, user: nigella_lawson, restaurant: luca, number_of_people: 2)
+  nigella_visit_three.save
   Review.create(content: 'Gorgeous-looking restaurant with food to match. It has become a stalwart for me when eating out.', rating: 5, visit: nigella_visit_three)
 
 
