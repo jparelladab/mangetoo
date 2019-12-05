@@ -202,9 +202,9 @@ le_bernardin = Restaurant.new(name: "Le Bernardin", address: "155 W 51st St, New
 le_bernardin.save
 white_rabbit = Restaurant.new(name: "White Rabbit", address: "Smolenskaya Sq 3, Arbat District, Москва, Russia", city: 'Moscow', category: 'Russian', website: 'www.whiterabbitmoscow.ru', phone_number: '+7 495 510-51-01')
 white_rabbit.save
-cafe_pushkin = Restaurant.new(name: "Cafe Pushkin", address: "Tverskoy Blvd, 26А, Moscow, Russia, 125009", city: 'Moscow', category: 'Russian', website: 'www.cafe-pushkin.ru', phone_number: '+7 495 739-00-33')
+cafe_pushkin = Restaurant.new(name: "Cafe Pushkin", address: "Tverskoy Blvd 26, Tverskoy District, Москва, Russia", city: 'Moscow', category: 'Russian', website: 'www.cafe-pushkin.ru', phone_number: '+7 495 739-00-33')
 cafe_pushkin.save
-chemodan = Restaurant.new(name: "Chemodan", address: "Gogolevsky Blvd, 25, стр. 1, Moscow, Russia, 119019", city: 'Moscow', category: 'Russian', website: 'www.chemodan-msk.ru', phone_number: '+7 495 695-38-19')
+chemodan = Restaurant.new(name: "Chemodan", address: "Gogolevskiy Blvd 25, Moscow, Москва, Russia", city: 'Moscow', category: 'Russian', website: 'www.chemodan-msk.ru', phone_number: '+7 495 695-38-19')
 chemodan.save
 ratana = Restaurant.new(name: "Ratanà", address: "Via Gaetano de Castillia, 28, 20124 Milano MI, Italy", city: 'Milan', category: 'Italian', website: 'www.ratana.it', phone_number: '+39 02 8712 8855')
 ratana.save
@@ -227,8 +227,7 @@ ueberfahrt = Restaurant.new(name: 'Überfahrt', address: 'Überfahrtstraße 10, 
 ueberfahrt.save
 the_table = Restaurant.new(name: 'The Table', address: 'Shanghaiallee 15, 20457 Hamburg, Germany', city: 'Hamburg', category: 'Haute Cuisine', website: 'https://thetable-hamburg.de/', phone_number: '+49 40 22867422')
 the_table.save
-vendome = Restaurant.new(name: 'Vendôme', address: 'Althoff Grandhotel Schloss Bensberg, Kadettenstraße, 51429 Bergisch Gladbach, Germany', city: 'Bergisch Gladbach', category: 'Haute Cuisine', website: 'https://www.althoffcollection.com/en/althoff-grandhotel-schloss-bensberg/restaurant-vendome', phone_number: '+49 2204 42906')
-vendome.save
+vendome = Restaurant.new(name: 'Vendôme', address: 'Kadettenstraße, Bergisch Gladbach, Nordrhein-Westfalen, Germany', city: 'Bergisch Gladbach', category: 'Haute Cuisine', website: 'https://www.althoffcollection.com/en/althoff-grandhotel-schloss-bensberg/restaurant-vendome', phone_number: '+49 2204 42906')
 cuatro_vientos = Restaurant.new(name: 'Los 4 Vientos', address: 'Carrer de Mallorca, 330, 08037 Barcelona, Spain', city: 'Barcelona', category: 'Tapas', website: 'https://www.yelp.com/biz/los-4-vientos-barcelona', phone_number: '+34 934 57 12 96')
 cuatro_vientos.save
 
