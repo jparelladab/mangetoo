@@ -75,6 +75,14 @@ class VisitsController < ApplicationController
   end
 
   def destroy
+    visit = Visit.find(params[:id])
+    if visit.destroy
+      flash[:notice] = "Upcoming meal successfully removed."
+      redirect_to visits_path
+    else
+      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
+      render :index
+    end
   end
 
   private
