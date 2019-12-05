@@ -1,29 +1,27 @@
 // BACKGROUND IMAGE, LOGO AND INFO
 
 .sign-in-image {
-  height: 85vh;
+  height: 87vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), url('https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
-  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(120,120,120,0.2)), url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
-  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), asset_url('banner.png');
-  // background-image: linear-gradient(rgba(0,0,0,0.5),rgba(120,120,120,0.5)), asset_url('peachbanner1.png');
+  background-position: top;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url('https://cdn.vox-cdn.com/thumbor/WwwpINLbv7Sszqkn7zn8KvbWDRk=/0x0:3840x2560/1200x800/filters:focal(1613x973:2227x1587)/cdn.vox-cdn.com/uploads/chorus_image/image/65784263/libr2fix.0.jpg');
+  //g background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6)), asset_url('darkrestaurant1.png');
 }
 
 .home-page-logo {
-  width: 150px;
+  width: 170px;
   position: absolute;
-  bottom: 330px;
-  left: 30px;
+  bottom: 320px;
+  left: 42px;
 }
 
 .banner-flex {
   display: flex;
   flex-direction: column;
-  padding: 140px 0 0 80px;
+  padding: 120px 0 0 142px;
   justify-content: space-between;
   // padding-left: 50px;
   position: relative;
@@ -31,36 +29,39 @@
 }
 
 
-#mangetoo-logo2 {
-  font-family: $MangeToo-logofont;
-  font-size: 90px;
-  color: $MangeToo-green !important;
-  letter-spacing: 2px;
-  padding-bottom: 30px;
-  // position: relative;
-  // top: 20px;
-  // left: 150px;
-  width: 40%;
-
-
+#catchphrase-one {
+  letter-spacing: 1px;
+  width: 50%;
 
   h3 {
     color: rgba(251,251,251,0.95);
-    width: 70%;
-    font-size: 44px;
+    width: 80%;
+    font-size: 42px;
     bottom: 90px;
     text-shadow: none;
     letter-spacing: 3px;
     padding: 15px 0 25px 0;
     font-weight: bolder;
   }
-
-  // img {
-  //   position: relative;
-  //   bottom: 85px;
-  //   left: 230px;
-  // }
 }
+
+#catchphrase-two {
+  letter-spacing: 1px;
+  padding-bottom: 0px;
+  width: 40%;
+
+  h3 {
+    color: rgba(251,251,251,0.95);
+    width: 80%;
+    font-size: 44px;
+    bottom: 90px;
+    text-shadow: none;
+    letter-spacing: 3px;
+    padding: 0px 0 45px 0;
+    font-weight: bolder;
+  }
+}
+
 
 // BUTTON BOX FOR LOGIN AND SIGN UP
 
@@ -74,7 +75,8 @@
 
 .user-flex {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  // align-items: center;
   // flex-direction: column;
   // position: relative;
   // right: 250px;
@@ -190,7 +192,7 @@
     font-weight: bolder;
     font-size: 40px;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 25px;
   }
 }
 
@@ -204,10 +206,10 @@
   text-align: center;
   margin: 30px;
   box-shadow: 0 0 5px rgba(20, 20, 20, 0.5);
-  width: 20%;
+  width: 18%;
 
   img {
-    width: 40%;
+    width: 45%;
     height: auto;
     padding-top: 20px;
   }
@@ -221,7 +223,8 @@
 
   p {
     color: rgba(80, 80, 80, 0.9);
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: lighter;
     padding: 15px 15px 0 15px;
   }
 
