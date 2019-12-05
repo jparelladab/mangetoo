@@ -47,7 +47,7 @@ class ReviewsController < ApplicationController
     @review.visit = @visit
     if @review.save
       flash[:notice] = "Thank you for your review!"
-      redirect_to visits_path
+      redirect_to reviews_path
     else
       raise
       flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
