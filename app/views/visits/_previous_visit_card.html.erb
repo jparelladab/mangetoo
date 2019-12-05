@@ -1,6 +1,6 @@
 <div class="restaurant_card">
   <div class="restaurant_card_carousel">
-    <%= render 'shared/restaurant_carousel', restaurant: visit.restaurant %>
+    <%= render 'shared/restaurant_carousel_visit', locals: { :visit => visit, :restaurant => visit.restaurant } %>
   </div>
   <div class="restaurant_card_info">
 
