@@ -222,7 +222,7 @@ schwarzwaldstube = Restaurant.new(name: 'Schwarzwaldstube', address: 'Tonbachstr
 schwarzwaldstube.save
 ueberfahrt = Restaurant.new(name: 'Überfahrt', address: 'Überfahrtstraße 10, 83700 Rottach-Egern, Germany', city: 'Rottach-Egern', category: 'German', website: 'https://www.althoffcollection.com/de/althoff-seehotel-ueberfahrt/menues-entdecken', phone_number: '+49 8022 6692922')
 ueberfahrt.save
-the_table = Restaurant.new(name: 'The Table', addres: 'Shanghaiallee 15, 20457 Hamburg, Germany', city: 'Hamburg', category: 'Haute Cuisine', website: 'https://thetable-hamburg.de/', phone_number: '+49 40 22867422')
+the_table = Restaurant.new(name: 'The Table', address: 'Shanghaiallee 15, 20457 Hamburg, Germany', city: 'Hamburg', category: 'Haute Cuisine', website: 'https://thetable-hamburg.de/', phone_number: '+49 40 22867422')
 the_table.save
 vendome = Restaurant.new(name: 'Vendôme', address: 'Althoff Grandhotel Schloss Bensberg, Kadettenstraße, 51429 Bergisch Gladbach, Germany', city: 'Bergisch Gladbach', category: 'Haute Cuisine', website: 'https://www.althoffcollection.com/en/althoff-grandhotel-schloss-bensberg/restaurant-vendome', phone_number: '+49 2204 42906')
 
