@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.where(user: current_user)
+    @bookmarks = Bookmark.where(user: current_user).sort_by { |b| b[:created_at] }.reverse
     @bookmarked_restaurants = @bookmarks.map { |b| b.restaurant }
     followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
     @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten

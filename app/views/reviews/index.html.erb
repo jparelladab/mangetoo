@@ -17,23 +17,23 @@
         <div class="review-body">
 
           <div class="restaurant_info_strip">
-            <h2><%= link_to review_hash[:restaurant_name], restaurant_path(review_hash[:restaurant_instance]) %></h2>
+            <h2 style="margin-bottom: 3px;"><%= link_to review_hash[:restaurant_name], restaurant_path(review_hash[:restaurant_instance]) %></h2>
 
           </div>
           <div class="restaurant_info_strip">
-            <p style="margin-left: 0px; margin-bottom: 10px;"> <%= image_tag("city.svg")%><%= review_hash[:restaurant_city] %></p>
+            <p style="margin-left: 0px; margin-bottom: 5px; margin-top: 0;"> <%= image_tag("city.svg")%> <%= review_hash[:restaurant_city] %></p>
           </div>
-          <p class="review-details">Visited on: <%= review_hash[:visit_date] %> | Review from: <%= review_hash[:review_date] %></p>
-          <p><%= review_hash[:review_content_truncated] %>
+          <p class="review-details" style="margin-bottom: 7px;">Visited on: <%= review_hash[:visit_date] %> | Review from: <%= review_hash[:review_date] %></p>
+          <div class="star-container" style="text-align: center;margin-bottom:10px;">
+            <% count_gold = review_hash[:review_rating] %>
+            <% count_grey = (5 - count_gold) %>
+            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+          </div>
+          <p style="font-size: 13px;"><em>"<%= review_hash[:review_content_truncated] %>"</em>
             <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewIndexModal<%= review_hash[:review_id] %>">See More</a>
             <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
           </p>
-            <div class="star-container" style="text-align: center;margin-bottom:10px;">
-              <% count_gold = review_hash[:review_rating] %>
-              <% count_grey = (5 - count_gold) %>
-              <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
-              <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
-            </div>
           <div class="d-flex justify-content-between review-details flex-wrap">
 
           </div>

@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     @reviews_array.map do |review_hash|
       @restaurants << review_hash[:restaurant_instance]
     end
-    @reviews_array.sort_by { |r| r[:visit_date] }.reverse
+    @reviews_array.sort_by { |r| r[:review_date] }.reverse
 
     @markers = @restaurants.map do |restaurant|
       {
