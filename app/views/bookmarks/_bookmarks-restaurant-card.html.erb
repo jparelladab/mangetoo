@@ -18,13 +18,38 @@
       <p>
         <%= image_tag("city.svg")%> <%= restaurant.city%> <br>
         <%= image_tag("address.svg") %> <%= restaurant.address%> <br>
-        <%= image_tag("phone.svg") %> <%= restaurant.phone_number %>
       </p>
     </div>
 
     <div class="buttons-info">
-      <%= link_to 'See Details', restaurant_path(restaurant), class: 'greenbtn' %>
-      <a href="#" class="hollowbtn" data-toggle="modal" data-target="#bookmarkModalReviews<%= restaurant.id %>">Reviews</a>
+      <%= link_to 'See Details', restaurant_path(restaurant), class: 'greenbtn see-details-btn' %>
+      <a href="#" class="hollowbtn" data-toggle="modal" data-target="#bookmarkModalReviews<%= restaurant.id %>">
+        <span>Reviews
+          <div class="star-container d-flex justify-content-center align-items-center">
+    <!-- getting the average -->
+            <% restaurant_visits = @all_visits.select { |av| av.restaurant_id == restaurant.id } %>
+            <% restaurant_reviews = [] %>
+            <% restaurant_reviews_ratings = [] %>
+            <% restaurant_visits.each do |rv| %>
+              <% unless rv.reviews.first.nil? %>
+                <% restaurant_reviews << rv.reviews.first %>
+                <% restaurant_reviews_ratings << rv.reviews.first.rating %>
+              <% end %>
+            <% end %>
+            <% if restaurant_reviews_ratings == [] %>
+              <small>No ratings yet!</small>
+            <% else %>
+              <% total_figure = restaurant_reviews_ratings.sum %>
+              <% count = restaurant_reviews_ratings.count %>
+              <% count_gold = (total_figure / count).round %>
+              <% count_grey = (5 - count_gold) %>
+              <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+              <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+            <% end %>
+    <!-- getting the average end -->
+          </div>
+        </span>
+      </a>
         <%= render partial: 'modal_restaurant_reviews', locals: {restaurant: restaurant, followings_visits: @followings_visits} %>
     </div>
   </div>

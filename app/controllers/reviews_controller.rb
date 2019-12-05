@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def index
     @reviews_array = []
-    reviews = current_user.reviews
+    reviews = current_user.reviews.sort_by { |r| r[:created_at] }.reverse
     reviews.each do |review|
       visit = Visit.find(review.visit_id)
       restaurant = Restaurant.find(visit.restaurant_id)
@@ -47,7 +47,7 @@ class ReviewsController < ApplicationController
     @review.visit = @visit
     if @review.save
       flash[:notice] = "Thank you for your review!"
-      redirect_to visits_path
+      redirect_to reviews_path
     else
       raise
       flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
