@@ -6,41 +6,34 @@
 </div>
 
 <div id="restaurant_index_container">
-
   <div id="restaurant_index_cards_container">
     <% if @upcoming_visits.any? %>
-      <div class="cards-title-meals">
-        <h2 class="visits-title">Upcoming Meals</h2>
-        <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
-      </div>
-      <% @upcoming_visits.each do |v| %>
-        <%= render 'upcoming_visit_card', visit: v, restaurant: v.restaurant, followings_visits: @followings_visits %>
-      <% end %>
-      <div class="cards-title-meals">
-        <h2 class=visits-title>Previous Meals</h2>
-        <h5 class=visits-title><em>See your past foodie experiences below</em></h5>
-      </div>
-    <% else %>
-      <div id="restaurant_index_cards_container">
         <div class="cards-title-meals">
-          <h2 class="visits-title">No upcoming visits!</h2>
-         <h5 class=visits-title><em>Perhaps you could take a look at where your friends have been recently?</em></h5>
+          <h2 class="visits-title">Upcoming Meals</h2>
+          <h5 class=visits-title><em>Your next foodie adventures!</em></h5>
         </div>
-      </div>
-    <% end %>
-    <% if @previous_visits.any? %>
-      <div id="restaurant_index_cards_container">
+        <% @upcoming_visits.each do |v| %>
+          <%= render 'upcoming_visit_card', visit: v, restaurant: v.restaurant, followings_visits: @followings_visits %>
+        <% end %>
+      <% else %>
+          <div class="cards-title-meals">
+            <h2 class="visits-title">No upcoming visits!</h2>
+          <h5 class=visits-title><em>Perhaps you could take a look at where your friends have been recently?</em></h5>
+          </div>
+      <% end %>
+      <% if @previous_visits.any? %>
+        <div class="cards-title-meals">
+          <h2 class=visits-title>Previous Meals</h2>
+          <h5 class=visits-title><em>See your past foodie experiences below</em></h5>
+        </div>
         <% @previous_visits.each do |v| %>
           <%= render 'previous_visit_card', visit: v, previous_visits: @previous_visits %>
         <% end %>
-      </div>
     <% else %>
-      <div id="restaurant_index_cards_container">
         <div class="cards-title-meals">
           <h2 class="visits-title">No previous visits.</h2>
           <h5 class=visits-title><em>Time to book your next foodie experience.</em></h5>
         </div>
-      </div>
     <% end %>
   </div>
   <div id="restaurants_index_map_container" class="map-index">

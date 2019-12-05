@@ -7,9 +7,9 @@
 
 <div id="restaurant_index_container">
   <% if @reviews_array.any? %>
-
     <div id="restaurant_index_cards_container">
       <% @reviews_array.each do |review_hash| %>
+        <div class="review-index-card d-flex flex-wrap-reverse flex-sm-nowrap">
           <div class="review-index-card-carousel">
             <%= render 'shared/restaurant_carousel', restaurant: review_hash[:restaurant_instance] %>
           </div>
@@ -32,15 +32,16 @@
               <%= render partial: 'index_modal', locals: {review_hash: review_hash} %>
             </p>
           </div>
-      </div>
-      <% end %>
-    <% else %>
-      <div id="restaurant_index_cards_container">
-        <div class="cards-title-meals">
-          <h2 class="visits-title">No reviews yet.</h2>
-          <h5 class=visits-title>Rate your latest foodie experiences and leave a review. They will appear <b>here</b> and at your foodies friends dashboard.</h5>
         </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div id="restaurant_index_cards_container">
+      <div class="cards-title-meals">
+        <h2 class="visits-title">No reviews yet.</h2>
+        <h5 class=visits-title>Rate your latest foodie experiences and leave a review. They will appear <b>here</b> and at your foodies friends dashboard.</h5>
       </div>
+    </div>
   <% end %>
 
   <div id="restaurants_index_map_container" class="map-index">
