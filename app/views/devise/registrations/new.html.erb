@@ -1,10 +1,10 @@
 <div class="registration-container">
-<h2>Sign up</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
     <div class="card form-inputs registration-form">
+      <h2>Sign up</h2>
       <%= f.input :first_name,
                   required: true,
                   input_html: { autocomplete: "first name" }%>

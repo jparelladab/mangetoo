@@ -8,7 +8,6 @@
   background-position: top;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url('https://cdn.vox-cdn.com/thumbor/WwwpINLbv7Sszqkn7zn8KvbWDRk=/0x0:3840x2560/1200x800/filters:focal(1613x973:2227x1587)/cdn.vox-cdn.com/uploads/chorus_image/image/65784263/libr2fix.0.jpg');
   //g background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
-  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6)), asset_url('darkrestaurant1.png');
 }
 
 .home-page-logo {
@@ -21,7 +20,7 @@
 .banner-flex {
   display: flex;
   flex-direction: column;
-  padding: 120px 0 0 142px;
+  padding: 128px 0 0 55px;
   justify-content: space-between;
   // padding-left: 50px;
   position: relative;
@@ -31,7 +30,7 @@
 
 #catchphrase-one {
   letter-spacing: 1px;
-  width: 50%;
+  width: 600px;
 
   h3 {
     color: rgba(251,251,251,0.95);
@@ -48,7 +47,7 @@
 #catchphrase-two {
   letter-spacing: 1px;
   padding-bottom: 0px;
-  width: 40%;
+  width: 700px;
 
   h3 {
     color: rgba(251,251,251,0.95);
@@ -64,14 +63,6 @@
 
 
 // BUTTON BOX FOR LOGIN AND SIGN UP
-
-// #button-box {
-//     // background-color: rgba(250, 250, 250, 0.8);
-//     // border-radius: 5px;
-//     // padding: 50px 50px 60px 50px;
-//     // position: relative;
-//     // right: 270px;
-//   }
 
 .user-flex {
   display: flex;
@@ -102,7 +93,7 @@
     font-weight: bold;
     text-decoration: none;
     padding: 20px 60px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-right: 20px;
     display: inline-block;
 
@@ -230,6 +221,20 @@
 
 
 }
+
+
+// @media(max-width: 2492px) {
+//   .sign-in-image {
+//     height: 87vh;
+//   }
+// }
+
+
+// @media(max-width: 1268px) {
+//   .sign-in-image {
+//     min-height: 97vh;
+//   }
+// }
 
 
 
