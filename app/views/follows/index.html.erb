@@ -88,7 +88,7 @@
           <p><%= image_tag("notepad.svg")%> Reviews: <%= foodie.reviews.count %></p>
           <div class="add-foodie">
             <%= link_to user_follows_path(foodie), method: 'post', class: "add" do %>
-              <i class="fas fa-plus-circle"></i>
+              <i class="fas fa-plus-circle add-circle"></i>
             <% end %>
           </div>
         </div>
