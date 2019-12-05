@@ -4,15 +4,18 @@ class RestaurantsController < ApplicationController
   def index
     followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
     @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
-    followings_restaurants = @followings_visits.map {|v| v.restaurant.id}
+    followings_restaurants = @followings_visits.map { |v| v.restaurant.id }
     my_visits = Visit.where(user_id: current_user.id)
-    my_restaurants = my_visits.map {|v| v.restaurant.id}
+    @all_visits = []
+    @followings_visits.each { |fv| @all_visits << fv }
+    my_visits.each { |mv| @all_visits << mv }
+    my_restaurants = my_visits.map { |v| v.restaurant.id }
     all_restaurants_id = my_restaurants | followings_restaurants
     restaurants = all_restaurants_id.map { |id| Restaurant.where(id: id) }.flatten
 
     if params[:query].present?
       @restaurants = restaurants.select { |rest| rest[:city].downcase == params[:query].downcase }
-      @city = params[:query].split(" ").map { |w| w.capitalize}.join(" ")
+      @city = params[:query].split(" ").map { |w| w.capitalize }.join(" ")
     else
       @restaurants = restaurants
     end
@@ -67,6 +70,15 @@ class RestaurantsController < ApplicationController
     @visit = Visit.new
     user_bookmarks = Bookmark.where(user: current_user)
     @user_bookmarked_restaurants = user_bookmarks.map { |b| b.restaurant }
+
+    # calculating average rating
+    if @reviews == []
+      @avg_rating = 0
+    else
+      review_ratings_total = @reviews.map { |r| r.rating }.sum
+      review_count = @reviews.count
+      @avg_rating = (review_ratings_total / review_count).round
+    end
   end
 
   def edit

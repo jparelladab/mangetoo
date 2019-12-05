@@ -4,10 +4,27 @@
         <div class="title_and_rating">
           <h5 class="modal-title " id="restaurantModalReviewsTitle"><%= restaurant.name %></h5>
           <div class="star-container" style="margin-right: 10px">
-            <% count_gold = restaurant.total_rating %>
-            <% count_grey = (5 - count_gold) %>
-            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
-            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+<!-- getting the average -->
+              <% restaurant_visits = @all_visits.select { |av| av.restaurant_id == restaurant.id } %>
+              <% restaurant_reviews = [] %>
+              <% restaurant_reviews_ratings = [] %>
+              <% restaurant_visits.each do |rv| %>
+                <% unless rv.reviews.first.nil? %>
+                  <% restaurant_reviews << rv.reviews.first %>
+                  <% restaurant_reviews_ratings << rv.reviews.first.rating %>
+                <% end %>
+              <% end %>
+              <% if restaurant_reviews_ratings == [] %>
+                <p>No ratings yet!</p>
+              <% else %>
+                <% total_figure = restaurant_reviews_ratings.sum %>
+                <% count = restaurant_reviews_ratings.count %>
+                <% count_gold = (total_figure / count).round %>
+                <% count_grey = (5 - count_gold) %>
+                <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+                <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+              <% end %>
+<!-- getting the average end -->
           </div>
         </div>
         <div class="modal-header d-flex flex-column">
@@ -15,15 +32,30 @@
           <div class="modal-review-details">
           </div>
         </div>
-        <% followings_visits.select { |v| v.restaurant_id == restaurant.id }.each do |v| %>
-
+<!-- modal if there are no reviews-->
+        <% if restaurant_reviews == [] %>
           <div class="modal-body" style="font-size: 16px">
-            <% if !v.reviews.first.nil? %>
-              <p> <u> <%= v.user.first_name %> <%= v.user.last_name %></u>. Visited on: <%= v.date.strftime("%d/%m/%y") %> |
-              Review from: <%= v.reviews.first.created_at.strftime("%d/%m/%y") %></p>
-              <%= v.reviews.first.content %>
-            <% end %>
-        </div>
+            <p>No reviews yet by your Fellow Foodies! Be the first to write one!</p>
+          </div>
+<!-- modal if there are no reviews end-->
+        <% else %>
+<!-- modal if there are reviews -->
+          <% @all_visits.select { |v| v.restaurant_id == restaurant.id }.each do |v| %>
+            <div class="modal-body" style="font-size: 16px">
+              <% if !v.reviews.first.nil? %>
+                <p> <u> <%= v.user.first_name %> <%= v.user.last_name %></u>. Visited on: <%= v.date.strftime("%d/%m/%y") %> |
+                Review from: <%= v.reviews.first.created_at.strftime("%d/%m/%y") %></p>
+                <em>"<%= v.reviews.first.content %>"</em>
+                <div class="star-container d-flex justify-content-center p-2">
+                  <% count_gold = v.reviews.first.rating %>
+                  <% count_grey = (5 - count_gold) %>
+                  <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+                  <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+                </div>
+              <% end %>
+            </div>
+<!-- modal if there are reviews end -->
+          <% end %>
         <% end %>
         <div class="modal-footer">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">

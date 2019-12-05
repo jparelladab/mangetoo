@@ -36,17 +36,24 @@
     <div class="col-4">
       <div class="restaurant-info">
         <h2><%= @restaurant.name %></h2>
-        <p><%= @avg_rating %></p>
+        <% if @avg_rating == 0 %>
+          <p>No ratings yet!</p>
+        <% else %>
+          <% count_gold = @avg_rating %>
+          <% count_grey = (5 - count_gold) %>
+          <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+          <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+        <% end %>
         <div class="content-info">
           <p><%= image_tag("greenlocation.svg") %> <%= @restaurant.address %></p>
           <p><%= image_tag("greencategory.svg") %> <%= @restaurant.category %></p>
 
-          <p><%= @avg_rating %></p>
+          <!-- <p><%= @avg_rating %></p> -->
         </div>
         <div class="content-info">
           <p><%= image_tag("greenwebsite.svg") %><a href="http://<% @restaurant.website %>" target="_blank"><%= @restaurant.website %></a></p>
           <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
-          <p><%= @avg_rating %></p>
+          <!-- <p><%= @avg_rating %></p> -->
         </div>
         <div class="buttons-info">
           <!-- <a href="#" class="showgreenbtn">Book</a> -->
