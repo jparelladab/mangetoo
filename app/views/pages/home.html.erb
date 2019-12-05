@@ -43,13 +43,23 @@
           <p class = "home-review-content"><em>" <%= review.content.truncate(100) %> " -</em> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> Read more</a>
             <%= render partial: 'home_modal', locals: {review: review} %></p>
           <div class="user-flexbox">
-            <div class="avatar">
-              <% if review.visit.user.photo.attached? %>
-                <%= cl_image_tag review.visit.user.photo.key, alt: "Image of user" %>
-              <% else %>
-                <%=image_tag(review.visit.user.default_image)%>
-              <% end %>
-            </div>
+            <% if review.visit.user.super_foodie %>
+              <div class="avatar-home-superfoodie">
+                <% if review.visit.user.photo.attached? %>
+                  <%= cl_image_tag review.visit.user.photo.key, alt: "Image of user" %>
+                <% else %>
+                  <%= image_tag(review.visit.user.default_image) %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="avatar">
+                <% if review.visit.user.photo.attached? %>
+                  <%= cl_image_tag review.visit.user.photo.key, alt: "Image of user" %>
+                <% else %>
+                  <%=image_tag(review.visit.user.default_image)%>
+                <% end %>
+              </div>
+            <% end %>
               <h3><%= review.visit.user.first_name %> <%= review.visit.user.last_name %></h3>
             <div class="date-grid">
               <p class="home-date reviewdate"> Review: <%= review.created_at.strftime("%d/%m/%y")%></p>
