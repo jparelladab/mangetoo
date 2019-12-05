@@ -10,6 +10,11 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+
+  img {
+    height: 33px;
+    width: 33px;
+  }
 }
 
 .card-show {
@@ -22,14 +27,14 @@
   flex-grow: 0;
   border-radius: 100px 5px 5px 100px;
 
-
-   img {
+  .avatar-show > img {
     height: 100%;
     width: 140px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
   }
+
 
    h2 {
     font-size: 20px;
@@ -97,3 +102,13 @@
   // margin-top: 10px;
 }
 
+.avatar-show-superfoodie > img {
+  height: 100%;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-style: solid;
+  border-width: medium;
+  border-color: $MangeToo-green;
+}
