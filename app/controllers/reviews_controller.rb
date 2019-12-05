@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def index
     @reviews_array = []
-    reviews = current_user.reviews
+    reviews = current_user.reviews.sort_by { |r| r[:created_at] }.reverse
     reviews.each do |review|
       visit = Visit.find(review.visit_id)
       restaurant = Restaurant.find(visit.restaurant_id)
