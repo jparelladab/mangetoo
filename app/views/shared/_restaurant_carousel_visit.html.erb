@@ -1,0 +1,16 @@
+<div class="glider-contain">
+  <div id="gliderCarousel<%= locals[:visit].id %>" class="glider" data-id="<%= locals[:visit].id %>">
+        <% if locals[:restaurant].photos.attached? %>
+            <% locals[:restaurant].photos.each_with_index do |photo, i| %>
+                <%= cl_image_tag photo.key, class: "main-image d-block w-100" %>
+            <% end %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="main-image" alt="">
+          <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="main-image" alt="">
+          <img src="https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" class="main-image" alt="">
+        <% end %>
+  </div>
+  <div role="tablist" id="gliderCarouselDots<%= locals[:visit].id %>" class="dots"></div>
+  <button role="button" aria-label="Previous" id="gliderCarouselPrev<%= locals[:visit].id %>" class="glider-prev">«</button>
+  <button role="button" aria-label="Next" id="gliderCarouselNext<%= locals[:visit].id %>" class="glider-next">»</button>
+</div>
