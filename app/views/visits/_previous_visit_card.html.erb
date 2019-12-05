@@ -19,7 +19,7 @@
         <%= image_tag("city.svg")%> <%= visit.restaurant.city%> <br>
         <%= image_tag("address.svg") %> <%= visit.restaurant.address%> <br>
         <%= image_tag("people.svg") %> <%= visit.number_of_people %> <br>
-        <%= image_tag("calendar.svg") %> <%= visit.date %> <br>
+        <%= image_tag("calendar.svg") %> <%= visit.date.strftime("%d/%m/%y") %> <br>
       </p>
     </div>
 

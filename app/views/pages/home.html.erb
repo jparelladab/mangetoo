@@ -36,14 +36,14 @@
             </div>
           </div>
           <%= review.visit.restaurant.city%>
+          <div class="star-container" style="text-align: center; margin-top:5px;">
+            <% count_gold = review.rating %>
+            <% count_grey = (5 - count_gold) %>
+            <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
+            <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
+          </div>
           <p class = "home-review-content"><em>" <%= review.content.truncate(100) %> " -</em> <a href="#" class="see_more_btn" data-toggle="modal" data-target="#reviewHomeModal<%= review.id %>"> Read more</a>
             <%= render partial: 'home_modal', locals: {review: review} %></p>
-            <div class="star-container" style="text-align: center; margin-top:15px;">
-              <% count_gold = review.rating %>
-              <% count_grey = (5 - count_gold) %>
-              <% count_gold.times do %> <i class="fas fa-star gold-star"></i> <% end %>
-              <% count_grey.times do %> <i class="fas fa-star grey-star"></i> <% end %>
-            </div>
           <div class="user-flexbox">
             <div class="avatar">
               <% if review.visit.user.photo.attached? %>

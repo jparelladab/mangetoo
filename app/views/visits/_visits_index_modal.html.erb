@@ -13,7 +13,7 @@
         <% if !visit.reviews.first.nil? %>
         <h5>Your review: </h5>
         <br>
-        <%= visit.reviews.first.content %>
+        <em>"<%= visit.reviews.first.content %>"</em>
           <div class="star-container d-flex justify-content-center pt-3">
             <br>
             <% count_gold = visit.reviews.first.rating %>
