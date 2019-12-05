@@ -14,7 +14,7 @@
   width: 170px;
   position: absolute;
   bottom: 320px;
-  left: 42px;
+  left: 45px;
 }
 
 .banner-flex {
@@ -97,6 +97,28 @@
     margin-right: 20px;
     display: inline-block;
 
+
+    .hvr-float {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        color: #ffffff;
+      }
+      .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+
+      }
+
+
   }
 }
 
@@ -134,6 +156,11 @@
        font-size: 18px;
        font-family: Lato;
        text-decoration: none;
+
+    .btn:hover {
+      color: #ffffff;
+
+    }
   }
 
 .form-group {
@@ -172,6 +199,7 @@
       .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
         -webkit-transform: translateY(-8px);
         transform: translateY(-8px);
+
       }
 
 // HOW IT WORKS SECTION
