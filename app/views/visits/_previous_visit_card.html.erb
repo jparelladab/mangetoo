@@ -23,11 +23,11 @@
       </p>
     </div>
 
-    <div class="buttons-info" style="justify-content: center">
+    <div class="buttons-info" style="justify-content: center; align-items: center;">
       <% if visit.reviews.first.nil? %>
-        <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn" %>
+        <%= link_to 'Write Review', new_visit_review_path(visit), class: "bannerbtn previous-visit-btn" %>
       <% else %>
-        <a href="#" class="hollowbtn" data-toggle="modal" data-target="#visitsIndexModal<%= visit.restaurant_id %>">My Review</a>
+        <a href="#" class="hollowbtn previous-visit-btn" data-toggle="modal" data-target="#visitsIndexModal<%= visit.restaurant_id %>">My Review</a>
         <%= render partial: 'visits_index_modal', locals: { visit: visit } %>
       <% end %>
     </div>
