@@ -14,7 +14,7 @@
         <h5>Your review: </h5>
         <br>
         <%= visit.reviews.first.content %>
-          <div class="star-container">
+          <div class="star-container d-flex justify-content-center pt-3">
             <br>
             <% count_gold = visit.reviews.first.rating %>
             <% count_grey = (5 - count_gold) %>
