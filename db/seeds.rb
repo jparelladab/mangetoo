@@ -43,13 +43,13 @@ test_user_nine.save
 test_user_ten = User.new(first_name: 'Henry', last_name: 'Mores', city: 'London', super_foodie: false, admin: false, email: 'henry@mores.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
 test_user_ten.save
 
-philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: false, admin: true, email: 'philippa@mitchell.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: day_before_yesterday)
+philippa = User.new(first_name: 'Philippa', last_name: 'Mitchell', city: 'London', super_foodie: false, admin: true, email: 'philippa@mangetoo.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: day_before_yesterday)
 philippa.save
-joan = User.new(first_name: 'Joan', last_name: 'Parellada', city: 'Barcelona', super_foodie: false, admin: true, email: 'joan@parellada.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: yesterday)
+joan = User.new(first_name: 'Joan', last_name: 'Parellada', city: 'Barcelona', super_foodie: false, admin: true, email: 'joan@mangetoo.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', last_seen_at: yesterday)
 joan.save
-jo = User.new(first_name: 'Jo', last_name: 'Pearson', city: 'London', super_foodie: false, admin: true, email: 'jo@pearson.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1559548331-f9cb98001426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80', last_seen_at: yesterday)
+jo = User.new(first_name: 'Jo', last_name: 'Pearson', city: 'London', super_foodie: false, admin: true, email: 'jo@mangetoo.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1559548331-f9cb98001426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80', last_seen_at: yesterday)
 jo.save
-ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super_foodie: false, admin: true, email: 'benjamin@baker.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1495078065017-564723e7e3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', last_seen_at: day_before_yesterday)
+ben = User.new(first_name: 'Benjamin', last_name: 'Baker', city: 'London', super_foodie: false, admin: true, email: 'benjamin@mangetoo.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1495078065017-564723e7e3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', last_seen_at: day_before_yesterday)
 ben.save
 
 marc = User.new(first_name: 'Marc', last_name: 'Font', city: 'Vic', super_foodie: false, admin: false, email: 'marc@font.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1517932509923-3b465ef866fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80', last_seen_at: last_week)
@@ -197,7 +197,7 @@ bens_pizza = Restaurant.new(name: "Famous Ben's Pizza", address: "177 Spring St,
 bens_pizza.save
 le_bernardin = Restaurant.new(name: "Le Bernardin", address: "155 W 51st St, New York, NY 10019, United States", city: 'New York', category: 'Seafood', website: 'www.le-bernardin.com', phone_number: '+1 212-554-1515')
 le_bernardin.save
-white_rabbit = Restaurant.new(name: "White Rabbit", address: "Smolenskaya Square, 3, Moscow, Russia, 121099", city: 'Moscow', category: 'Russian', website: 'www.whiterabbitmoscow.ru', phone_number: '+7 495 510-51-01')
+white_rabbit = Restaurant.new(name: "White Rabbit", address: "Smolenskaya Sq 3, Arbat District, Москва, Russia", city: 'Moscow', category: 'Russian', website: 'www.whiterabbitmoscow.ru', phone_number: '+7 495 510-51-01')
 white_rabbit.save
 cafe_pushkin = Restaurant.new(name: "Cafe Pushkin", address: "Tverskoy Blvd, 26А, Moscow, Russia, 125009", city: 'Moscow', category: 'Russian', website: 'www.cafe-pushkin.ru', phone_number: '+7 495 739-00-33')
 cafe_pushkin.save
@@ -269,6 +269,26 @@ puts "Creating visit and associated reviews initial seeds"
   test_user_one_visit_one.save
   Review.create(content: 'Out of the way, charming little restaurant. Unfortunately, our primi piatti were a bit oversalted, but the desserts were tasty.', rating: 2, visit: test_user_one_visit_one)
 
+  test_user_one_visit_two = Visit.new(date: last_week, user: test_user_one, restaurant: cafe_pushkin, number_of_people: 3)
+  test_user_one_visit_two.save
+  Review.create(content: 'Crazy but amazing! Old world Russian food!.', rating: 2, visit: test_user_one_visit_two)
+
+  test_user_one_visit_three = Visit.new(date: yesterday, user: test_user_one, restaurant: chemodan, number_of_people: 3)
+  test_user_one_visit_three.save
+  Review.create(content: "Probably the only chance to get proper Siberian food in Moscow. Worth the visit, but maybe not to my tastes, there is a reason Siberian food isn't international.", rating: 2, visit: test_user_one_visit_three)
+
+  test_user_one_visit_four = Visit.new(date: day_before_yesterday, user: test_user_one, restaurant: au_passage, number_of_people: 2)
+  test_user_one_visit_four.save
+  Review.create(content: "Very well-prepared and presented, novel French food with a twist.", rating: 4, visit: test_user_one_visit_four)
+
+  test_user_one_visit_five = Visit.new(date: last_year, user: test_user_one, restaurant: bistrot_paul_bert, number_of_people: 4)
+  test_user_one_visit_five.save
+  Review.create(content: "Old school French cuisine for some quintessential Parisian bistrot food. Staff aren't super friendly though.", rating: 3, visit: test_user_one_visit_five)
+
+  test_user_one_visit_six = Visit.new(date: last_year, user: test_user_one, restaurant: vendome, number_of_people: 4)
+  test_user_one_visit_six.save
+  Review.create(content: "Great meal here, though I didn't think much of the dessert selection.", rating: 4, visit: test_user_one_visit_six)
+
 # Test User Two visits and reviews
   test_visit_three = Visit.new(date: yesterday, user: test_user_two, restaurant: five_fields, number_of_people: 8)
   test_visit_three.save
@@ -281,6 +301,26 @@ puts "Creating visit and associated reviews initial seeds"
   test_visit_four_b = Visit.new(date: last_week, user: test_user_two, restaurant: song_que, number_of_people: 5)
   test_visit_four_b.save
   Review.create(content: 'Very authentic. Probably among the best Vietnamese places in London.', rating: 5, visit: test_visit_four_b)
+
+  test_user_two_visit_one = Visit.new(date: last_year, user: test_user_two, restaurant: bistrot_paul_bert, number_of_people: 2)
+  test_user_two_visit_one.save
+  Review.create(content: 'Romantic, old school Parisian bistrot. Wonderful onion soup!.', rating: 5, visit: test_user_two_visit_one)
+
+  test_user_two_visit_two = Visit.new(date: yesterday, user: test_user_two, restaurant: le_bernardin, number_of_people: 2)
+  test_user_two_visit_two.save
+  Review.create(content: 'Nearly bankrupted myself, but worth every penny!', rating: 5, visit: test_user_two_visit_two)
+
+  test_user_two_visit_three = Visit.new(date: yesterday, user: test_user_two, restaurant: bens_pizza, number_of_people: 2)
+  test_user_two_visit_three.save
+  Review.create(content: 'Pretty average pizza in my personal opinion. Not sure what the fuss is about.', rating: 1, visit: test_user_two_visit_three)
+
+  test_user_two_visit_four = Visit.new(date: day_before_yesterday, user: test_user_two, restaurant: cracco, number_of_people: 2)
+  test_user_two_visit_four.save
+  Review.create(content: 'A bit stuffy and overhyped for astronomical prices.', rating: 1, visit: test_user_two_visit_four)
+
+  test_user_two_visit_five = Visit.new(date: day_before_yesterday, user: test_user_two, restaurant: schwarzwaldstube, number_of_people: 2)
+  test_user_two_visit_five.save
+  Review.create(content: 'Classic German cooking, a little heavy for my tastes but undoubtedly flavoursome.', rating: 3, visit: test_user_two_visit_five)
 
 # Test User Three visits and reviews
   test_visit_five = Visit.new(date: last_week, user: test_user_three, restaurant: five_fields, number_of_people: 6)
@@ -297,7 +337,39 @@ puts "Creating visit and associated reviews initial seeds"
 
   test_visit_six_c = Visit.new(date: last_week, user: test_user_three, restaurant: st_john, number_of_people: 5)
   test_visit_six_c.save
-  Review.create(content: "A time-honoured London eatery. A real must-do for anyone passionate about British cooking, and particularly nose-to-tail. You may need an adventurous attitude for some of the dishes, but these are real classics that have largely been forgotten.", rating: 3, visit: test_visit_six_c)
+  Review.create(content: "A time-honoured London eatery. A real must-do for anyone passionate about British cooking, and particularly nose-to-tail. You may need an adventurous attitude for some of the dishes, but these are real classics that have largely been forgotten.", rating: 5, visit: test_visit_six_c)
+
+  test_user_three_visit_one = Visit.new(date: last_week, user: test_user_three, restaurant: paul_bocuse, number_of_people: 2)
+  test_user_three_visit_one.save
+  Review.create(content: "A classic on the French culinary scene. A must-do. Or rather must-eat.", rating: 5, visit: test_user_three_visit_one)
+
+  test_user_three_visit_two = Visit.new(date: yesterday, user: test_user_three, restaurant: el_porteno, number_of_people: 3)
+  test_user_three_visit_two.save
+  Review.create(content: "Surprisingly good Argentinian steak in Milan. A stylish joint.", rating: 4, visit: test_user_three_visit_two)
+
+  test_user_three_visit_three = Visit.new(date: yesterday, user: test_user_three, restaurant: luini, number_of_people: 3)
+  test_user_three_visit_three.save
+  Review.create(content: "Best panzerotti in Milan!", rating: 4, visit: test_user_three_visit_three)
+
+  test_user_three_visit_four = Visit.new(date: day_before_yesterday, user: test_user_three, restaurant: ratana, number_of_people: 3)
+  test_user_three_visit_four.save
+  Review.create(content: "Aims a little high and doesn't quite manage to pull off the interesting food it seeks to achieve.", rating: 2, visit: test_user_three_visit_four)
+
+  test_user_three_visit_five = Visit.new(date: last_week, user: test_user_three, restaurant: du_pain_et_des_idees, number_of_people: 1)
+  test_user_three_visit_five.save
+  Review.create(content: "The best Parisian bakery without a doubt!", rating: 5, visit: test_user_three_visit_five)
+
+  test_user_three_visit_six = Visit.new(date: last_year, user: test_user_three, restaurant: bohemian, number_of_people: 2)
+  test_user_three_visit_six.save
+  Review.create(content: "Overly restrictive on entry and the food simply doesn't live up to the mystery of the place.", rating: 2, visit: test_user_three_visit_six)
+
+  test_user_three_visit_six = Visit.new(date: last_year, user: test_user_three, restaurant: ueberfahrt, number_of_people: 8)
+  test_user_three_visit_six.save
+  Review.create(content: "Great sauerkraut and bratwurst. Really enjoyed my trip here with a large-ish group of friends.", rating: 4, visit: test_user_three_visit_six)
+
+  test_user_three_visit_seven = Visit.new(date: last_year, user: test_user_three, restaurant: fouquets, number_of_people: 2)
+  test_user_three_visit_seven.save
+  Review.create(content: "Stuffy surroundings and food was overpriced, though still tasty.", rating: 2, visit: test_user_three_visit_seven)
 
 # Test User Four visits and reviews
   test_visit_seven = Visit.new(date: last_week, user: test_user_four, restaurant: la_colombe, number_of_people: 2)
@@ -319,6 +391,26 @@ puts "Creating visit and associated reviews initial seeds"
   test_visit_eight_d = Visit.new(date: last_week, user: test_user_four, restaurant: noble_rot, number_of_people: 5)
   test_visit_eight_d.save
   Review.create(content: 'Great wine bar and eatery. Fantastic selection of wines on offer and a really tasty menu of high-quality, well-cooked food. Very good value week-day set lunch menu too.', rating: 4, visit: test_visit_eight_d)
+
+  test_user_four_visit_one = Visit.new(date: yesterday, user: test_user_four, restaurant: luini, number_of_people: 1)
+  test_user_four_visit_one.save
+  Review.create(content: 'Classic panzerotti!', rating: 4, visit: test_user_four_visit_one)
+
+  test_user_four_visit_two = Visit.new(date: yesterday, user: test_user_four, restaurant: cracco, number_of_people: 2)
+  test_user_four_visit_two.save
+  Review.create(content: "Very disappointed. All the expense but the food just wasn't up to the Michelin prices.", rating: 1, visit: test_user_four_visit_two)
+
+  test_user_four_visit_three = Visit.new(date: last_year, user: test_user_four, restaurant: bens_pizza, number_of_people: 3)
+  test_user_four_visit_three.save
+  Review.create(content: "Decent American-style pizza. Among the better pizzas I have had in New York. Still prefer Neapolitan, however.", rating: 4, visit: test_user_four_visit_three)
+
+  test_user_four_visit_four = Visit.new(date: last_year, user: test_user_four, restaurant: le_bernardin, number_of_people: 2)
+  test_user_four_visit_four.save
+  Review.create(content: "It wasn't quite the life-changing fishy experience I hoped for, but still a really top-class eatery.", rating: 4, visit: test_user_four_visit_four)
+
+  test_user_four_visit_five = Visit.new(date: last_week, user: test_user_four, restaurant: the_table, number_of_people: 5)
+  test_user_four_visit_five.save
+  Review.create(content: "Lovely little place! Definitely worth the visit!", rating: 4, visit: test_user_four_visit_five)
 
 # Philippa initial visit and review seeds
   philippa_visit_one = Visit.new(date: day_before_yesterday, user: philippa, restaurant: st_john, number_of_people: 6)
@@ -343,7 +435,7 @@ puts "Creating visit and associated reviews initial seeds"
 # Jo initial visit and review seeds
   jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6)
   jo_visit_one.save
-  Review.create(content: 'Delicious meaty heaven! Introduced me to South African cusisine and now I can\'t get enough', rating: 5, visit: jo_visit_one)
+  Review.create(content: "Delicious meaty heaven! Introduced me to South African cusisine and now I can't get enough", rating: 5, visit: jo_visit_one)
 
   jo_visit_two = Visit.new(date: next_week, user: jo, restaurant: roganic, number_of_people: 2)
   jo_visit_two.save
