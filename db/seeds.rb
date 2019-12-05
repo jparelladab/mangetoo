@@ -54,6 +54,8 @@ ben.save
 
 marc = User.new(first_name: 'Marc', last_name: 'Font', city: 'Vic', super_foodie: false, admin: false, email: 'marc@font.com', password: 'password', default_image: 'https://images.unsplash.com/photo-1517932509923-3b465ef866fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80', last_seen_at: last_week)
 marc.save
+maria_luisa = User.new(first_name: 'Maria Luisa', last_name: 'Reñaga', city: 'Santa Coloma de Gramenet', super_foodie: false, admin: false, email: 'marialuisa@gustavo', password: 'password', default_image: 'https://images.unsplash.com/photo-1551860234-f8806422bef9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80', last_seen_at: yesterday)
+maria_luisa.save
 
 # SuperFoodie seeds
 jamie_oliver = User.new(first_name: 'Jamie', last_name: 'Oliver', city: 'London', super_foodie: true, admin: false, email: 'jamie@oliver.com', password: 'password', default_image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkpq4jO3T2LBfHBEctDdAuJQnQhYyLFajD9N75E2srRXQasrcrug&s')
@@ -118,6 +120,7 @@ Follow.create('follower_id': joan.id, 'following_id': ben.id)
 Follow.create('follower_id': joan.id, 'following_id': nigella_lawson.id)
 Follow.create('follower_id': joan.id, 'following_id': marc.id)
 Follow.create('follower_id': joan.id, 'following_id': marco_pierre_white.id)
+Follow.create('follower_id': joan.id, 'following_id': maria_luisa.id)
 
 # Jo following all test users
 Follow.create('follower_id': jo.id, 'following_id': test_user_one.id)
@@ -225,6 +228,9 @@ ueberfahrt.save
 the_table = Restaurant.new(name: 'The Table', address: 'Shanghaiallee 15, 20457 Hamburg, Germany', city: 'Hamburg', category: 'Haute Cuisine', website: 'https://thetable-hamburg.de/', phone_number: '+49 40 22867422')
 the_table.save
 vendome = Restaurant.new(name: 'Vendôme', address: 'Althoff Grandhotel Schloss Bensberg, Kadettenstraße, 51429 Bergisch Gladbach, Germany', city: 'Bergisch Gladbach', category: 'Haute Cuisine', website: 'https://www.althoffcollection.com/en/althoff-grandhotel-schloss-bensberg/restaurant-vendome', phone_number: '+49 2204 42906')
+vendome.save
+cuatro_vientos = Restaurant.new(name: 'Los 4 Vientos', address: 'Carrer de Mallorca, 330, 08037 Barcelona, Spain', city: 'Barcelona', category: 'Tapas', website: 'https://www.yelp.com/biz/los-4-vientos-barcelona', phone_number: '+34 934 57 12 96')
+cuatro_vientos.save
 
 puts "Created restaurant initial seeds!"
 
@@ -432,6 +438,9 @@ puts "Creating visit and associated reviews initial seeds"
   joan_visit_three.save
   Review.create(content: 'Going to Paul Bocuse is an unforgettable experience. The place, the food and the service. Excellent.', rating: 5, visit: joan_visit_three)
 
+  joan_visit_four = Visit.new(date: Date.today-rand(1000), user: joan, restaurant: cuatro_vientos, number_of_people: 2)
+  joan_visit_four.save
+  Review.create(content: 'Tapas where not as tasty as I expected. -Pa amb tomaquet- whas good, though.', rating: 2, visit: joan_visit_four)
 # Jo initial visit and review seeds
   jo_visit_one = Visit.new(date: day_before_yesterday, user: jo, restaurant: hammer_tongs, number_of_people: 6)
   jo_visit_one.save
@@ -479,6 +488,9 @@ puts "Creating visit and associated reviews initial seeds"
 
   marc_visit_one = Visit.new(date: Date.today-rand(1000), user: marc, restaurant: the_table, number_of_people: 6)
   marc_visit_one.save
+
+  maria_luisa_visit_one = Visit.new(date: Date.today-rand(1000), user: maria_luisa, restaurant: cuatro_vientos, number_of_people: 1)
+  maria_luisa_visit_one.save
 
   # SuperFoodie visits
 
