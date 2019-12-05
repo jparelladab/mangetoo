@@ -9,7 +9,6 @@
       <div class="card-container-show">
           <% @reviews.each do |review| %>
             <div class="card-show">
-
               <% if review.visit.user.super_foodie %>
                 <div class="avatar-show-superfoodie">
                   <% if review.visit.user.photo.attached? %>
@@ -67,16 +66,12 @@
         <div class="content-info">
           <p><%= image_tag("greenlocation.svg") %> <%= @restaurant.address %></p>
           <p><%= image_tag("greencategory.svg") %> <%= @restaurant.category %></p>
-
-          <!-- <p><%= @avg_rating %></p> -->
         </div>
         <div class="content-info">
           <p><%= image_tag("greenwebsite.svg") %><a href="http://<% @restaurant.website %>" target="_blank"><%= @restaurant.website %></a></p>
           <p><%= image_tag("greenphone.svg") %> <%= @restaurant.phone_number %></p>
-          <!-- <p><%= @avg_rating %></p> -->
         </div>
         <div class="buttons-info">
-          <!-- <a href="#" class="showgreenbtn">Book</a> -->
           <div class="book-button-container">
             <button type="button" class="showgreenbtn" data-toggle="modal" data-target="#bookingModal<%= @restaurant.id %>">
               Book
@@ -88,7 +83,6 @@
           </div>
         </div>
       </div>
-    <!-- <div class="col-4"> -->
         <div
           id="map"
           style="width: 100%;
@@ -96,7 +90,6 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
-    <!-- </div> -->
         <% if current_user.admin %>
           <%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant), style: "color: white" %>
         <% end %>
