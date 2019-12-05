@@ -1,7 +1,7 @@
 .registration-container {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,6 +19,14 @@
     text-align: center;
     color: $MangeToo-green;
     font-weight: bolder;
-    padding: 15px;
+    padding: 5px;
+  }
+
+  .btn {
+    background-color: $MangeToo-green;
+    color: #ffffff;
+    margin: 10px 15px 5px 110px;
+    padding: 10px 25px;
   }
 }
+
