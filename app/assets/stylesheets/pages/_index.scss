@@ -12,15 +12,14 @@
 #restaurant_index_container {
   display: flex;
   justify-content: flex-start;
-  background-color: gray;
   margin-left: 2.5%;
   margin-right: 2.5%;
 }
 
 #restaurant_index_cards_container {
   background-color: white;
-  max-width: 50%;
-  min-width: 50%;
+  // max-width: 50%;
+  // min-width: 50%;
   padding-right: 25px;
 }
 
