@@ -14,6 +14,7 @@ day_before_yesterday = Date.today - 2
 last_week = Date.today - 7
 tomorrow = Date.today + 1
 next_week = Date.today + 7
+last_year = Date.today - 365
 
 # USER SEEDS
 
@@ -101,6 +102,8 @@ Follow.create('follower_id': philippa.id, 'following_id': test_user_four.id)
 Follow.create('follower_id': philippa.id, 'following_id': joan.id)
 Follow.create('follower_id': philippa.id, 'following_id': jo.id)
 Follow.create('follower_id': philippa.id, 'following_id': ben.id)
+Follow.create('follower_id': philippa.id, 'following_id': nigella_lawson.id)
+Follow.create('follower_id': philippa.id, 'following_id': jamie_oliver.id)
 # Joan following all test users
 Follow.create('follower_id': joan.id, 'following_id': test_user_one.id)
 Follow.create('follower_id': joan.id, 'following_id': test_user_two.id)
@@ -109,6 +112,7 @@ Follow.create('follower_id': joan.id, 'following_id': test_user_four.id)
 Follow.create('follower_id': joan.id, 'following_id': philippa.id)
 Follow.create('follower_id': joan.id, 'following_id': jo.id)
 Follow.create('follower_id': joan.id, 'following_id': ben.id)
+Follow.create('follower_id': joan.id, 'following_id': marco_pierre_white.id)
 # Jo following all test users
 Follow.create('follower_id': jo.id, 'following_id': test_user_one.id)
 Follow.create('follower_id': jo.id, 'following_id': test_user_two.id)
@@ -125,6 +129,8 @@ Follow.create('follower_id': ben.id, 'following_id': test_user_four.id)
 Follow.create('follower_id': ben.id, 'following_id': philippa.id)
 Follow.create('follower_id': ben.id, 'following_id': joan.id)
 Follow.create('follower_id': ben.id, 'following_id': jo.id)
+Follow.create('follower_id': ben.id, 'following_id': nigella_lawson.id)
+Follow.create('follower_id': ben.id, 'following_id': marco_pierre_white.id)
 
 puts "Created the intiial follow seed."
 
@@ -241,6 +247,10 @@ puts "Creating visit and associated reviews initial seeds"
   test_visit_two_d.save
   Review.create(content: 'Superb! Not cheap, but the amazing food is worth the expense.', rating: 5, visit: test_visit_two_d)
 
+  test_user_one_visit_one = Visit.new(date: last_year, user: test_user_one, restaurant: osteria_binari, number_of_people: 5)
+  test_user_one_visit_one.save
+  Review.create(content: 'Out of the way, charming little restaurant. Unfortunately, our primi piatti were a bit oversalted, but the desserts were tasty.', rating: 2, visit: test_user_one_visit_one)
+
 # Test User Two visits and reviews
   test_visit_three = Visit.new(date: yesterday, user: test_user_two, restaurant: five_fields, number_of_people: 8)
   test_visit_three.save
@@ -317,37 +327,41 @@ puts "Creating visit and associated reviews initial seeds"
   jo_visit_two.save
 
 # Ben initial visit and review seeds
-  ben_review_one = Visit.new(date: last_week, user: ben, restaurant: noble_rot, number_of_people: 8)
-  ben_review_one.save
-  Review.create(content: 'Large selection of wines, particularly more unusual wines you will not find everywhere. Food is homely, but high-quality and always delicious. A real gem. Likely to need to book in advance.', rating: 4, visit: ben_review_one)
+  ben_visit_one = Visit.new(date: last_week, user: ben, restaurant: noble_rot, number_of_people: 8)
+  ben_visit_one.save
+  Review.create(content: 'Large selection of wines, particularly more unusual wines you will not find everywhere. Food is homely, but high-quality and always delicious. A real gem. Likely to need to book in advance.', rating: 4, visit: ben_visit_one)
 
-  ben_review_two = Visit.new(date: last_week, user: ben, restaurant: shawarma_bar, number_of_people: 3)
-  ben_review_two.save
-  Review.create(content: 'One of my favourite places in London. Delicious food and always a busy, lively atmoshpere. The hummus is delicious - try the Iraqi hummus.', rating: 4, visit: ben_review_two)
+  ben_visit_two = Visit.new(date: last_week, user: ben, restaurant: shawarma_bar, number_of_people: 3)
+  ben_visit_two.save
+  Review.create(content: 'One of my favourite places in London. Delicious food and always a busy, lively atmoshpere. The hummus is delicious - try the Iraqi hummus.', rating: 4, visit: ben_visit_two)
 
-  ben_review_three = Visit.new(date: tomorrow, user: ben, restaurant: osteria_binari, number_of_people: 3)
-  ben_review_three.save
-  ben_review_four = Visit.new(date: next_week, user: ben, restaurant: luca, number_of_people: 5)
-  ben_review_four.save
+  ben_visit_three = Visit.new(date: tomorrow, user: ben, restaurant: osteria_binari, number_of_people: 3)
+  ben_visit_three.save
+  ben_visit_four = Visit.new(date: next_week, user: ben, restaurant: luca, number_of_people: 5)
+  ben_visit_four.save
 
-  ben_review_five = Visit.new(date: Date.today, user: ben, restaurant: st_john, number_of_people: 4)
-  ben_review_five.save
+  ben_visit_five = Visit.new(date: Date.today, user: ben, restaurant: st_john, number_of_people: 4)
+  ben_visit_five.save
 
-  ben_review_six = Visit.new(date: last_week, user: ben, restaurant: trattoria_carampane, number_of_people: 5)
-  ben_review_six.save
-  Review.create(content: 'Fantastic, classic Venetian restaurant. Get there in the right season to have the soft-shell crab.', rating: 5, visit: ben_review_six)
+  ben_visit_six = Visit.new(date: last_week, user: ben, restaurant: trattoria_carampane, number_of_people: 5)
+  ben_visit_six.save
+  Review.create(content: 'Fantastic, classic Venetian restaurant. Get there in the right season to have the soft-shell crab.', rating: 5, visit: ben_visit_six)
 
-  ben_review_seven = Visit.new(date: next_week, user: ben, restaurant: gloria, number_of_people: 5)
-  ben_review_seven.save
+  ben_visit_seven = Visit.new(date: next_week, user: ben, restaurant: gloria, number_of_people: 5)
+  ben_visit_seven.save
 
-  ben_review_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15)
-  ben_review_eight.save
+  ben_visit_eight = Visit.new(date: yesterday, user: ben, restaurant: la_colombe, number_of_people: 15)
+  ben_visit_eight.save
 
-  ben_review_nine = Visit.new(date: Date.today, user: ben, restaurant: roganic, number_of_people: 15)
-  ben_review_nine.save
+  ben_visit_nine = Visit.new(date: Date.today, user: ben, restaurant: roganic, number_of_people: 15)
+  ben_visit_nine.save
 
-  ben_review_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8)
-  ben_review_ten.save
+  ben_visit_ten = Visit.new(date: last_week, user: ben, restaurant: hammer_tongs, number_of_people: 8)
+  ben_visit_ten.save
+
+  ben_visit_eleven = Visit.new(date: last_year, user: ben, restaurant: white_rabbit, number_of_people: 5)
+  ben_visit_eleven.save
+  Review.create(content: 'Amazing location on top of Moscow. The surroundings alone are worth a visit, and the food is high-quality and delicious. Worth a visit if you are in Moscow.', rating: 5, visit: ben_visit_eleven)
 
   # SuperFoodie visits
 
@@ -415,6 +429,26 @@ puts "Creating visit and associated reviews initial seeds"
   coren_visit_three.save
   Review.create(content: 'Luca burst onto the Clerkenwell food scene and it looks like it will hold a (well-deserved) leading spot in that scene for the foreseeable future.', rating: 5, visit: coren_visit_three)
 
+  coren_visit_four = Visit.new(date: last_week, user: giles_coren, restaurant: white_rabbit, number_of_people: 2)
+  coren_visit_four.save
+  Review.create(content: 'White Rabbit is the jewel in the crown of the Moscow dining scene in a city in which it can be difficult to find high quality food.', rating: 5, visit: coren_visit_four)
+
+  coren_visit_five = Visit.new(date: last_year, user: giles_coren, restaurant: cracco, number_of_people: 4)
+  coren_visit_five.save
+  Review.create(content: 'I was originally very excited to eat here. Unfortunately, it provide to be overblown and over-pretentious. The ingredients are high quality enough but the end result is not quite what Cracco aims to achieve.', rating: 2, visit: coren_visit_five)
+
+  coren_visit_six = Visit.new(date: last_year, user: giles_coren, restaurant: le_bernardin, number_of_people: 4)
+  coren_visit_six.save
+  Review.create(content: "No point coming here if you don't like seafood, but you're in for the meal of your life if you do. Just, quite simply, a classic.", rating: 5, visit: coren_visit_six)
+
+  coren_visit_seven = Visit.new(date: last_year, user: giles_coren, restaurant: stendhal, number_of_people: 4)
+  coren_visit_seven.save
+  Review.create(content: "Great little osteria for authentic Milanese cuisine.", rating: 4, visit: coren_visit_seven)
+
+  coren_visit_seven = Visit.new(date: last_year, user: giles_coren, restaurant: roganic, number_of_people: 4)
+  coren_visit_seven.save
+  Review.create(content: "If you like eating cardboard, then you should definitely try this place.", rating: 1, visit: coren_visit_seven)
+
   # Nigella Lawson
 
   nigella_visit_one = Visit.new(date: yesterday, user: nigella_lawson, restaurant: st_john, number_of_people: 2)
@@ -428,6 +462,18 @@ puts "Creating visit and associated reviews initial seeds"
   nigella_visit_three = Visit.new(date: yesterday, user: nigella_lawson, restaurant: luca, number_of_people: 2)
   nigella_visit_three.save
   Review.create(content: 'Gorgeous-looking restaurant with food to match. It has become a stalwart for me when eating out.', rating: 5, visit: nigella_visit_three)
+
+  nigella_visit_four = Visit.new(date: last_year, user: nigella_lawson, restaurant: bohemian, number_of_people: 4)
+  nigella_visit_four.save
+  Review.create(content: 'The policy of being a secret restaurant always annoys me a little. However, if you are lucky enough to eat here, then you are in for a treat. Delicious wagyu beef sashimi and charming speakeasy surroundings.', rating: 4, visit: nigella_visit_four)
+
+  nigella_visit_five = Visit.new(date: last_week, user: nigella_lawson, restaurant: jean_georges, number_of_people: 2)
+  nigella_visit_five.save
+  Review.create(content: 'Jean-Georges never fails to deliver. Exquisite, class French haute cuisine.', rating: 5, visit: nigella_visit_five)
+
+  nigella_visit_five = Visit.new(date: last_week, user: nigella_lawson, restaurant: drogheria_milanese, number_of_people: 4)
+  nigella_visit_five.save
+  Review.create(content: 'A delight in the heart of Milan. Italian-style tapas dishes. Delicious.', rating: 4, visit: nigella_visit_five)
 
 
 
@@ -482,7 +528,6 @@ puts "Creating the bookmark initial seeds"
 # Ben bookmark seeds
   Bookmark.create(restaurant: scully, user: ben)
   Bookmark.create(restaurant: shawarma_bar, user: ben)
-  Bookmark.create(restaurant: five_fields, user: ben)
   Bookmark.create(restaurant: trattoria_pontini, user: ben)
   Bookmark.create(restaurant: trattoria_carampane, user: ben)
   Bookmark.create(restaurant: st_john, user: ben)
