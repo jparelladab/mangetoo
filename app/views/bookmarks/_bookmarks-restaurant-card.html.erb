@@ -3,7 +3,11 @@
     <%= render 'shared/restaurant_carousel', restaurant: restaurant %>
   </div>
   <div class="restaurant_card_info">
-
+    <div class="delete-path">
+      <%= link_to bookmark_path(restaurant.id), method: 'delete', class: "bookmark-delete" do %>
+        <i class="far fa-times-circle"></i>
+      <% end %>
+    </div>
     <div class="restaurant_info_strip">
       <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
     </div>

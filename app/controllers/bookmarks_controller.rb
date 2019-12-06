@@ -39,12 +39,14 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.find(params[:restaurant_id])
-    if @bookmark.destroy
-      flash[:notice] = "Bookmark successfully removed"
+    restaurant = Restaurant.find(params[:id])
+    bookmark = current_user.bookmarks.find_by(restaurant_id: restaurant.id)
+    if bookmark.destroy
+      flash[:notice] = "Bookmark successfully removed."
+      redirect_to bookmarks_path
     else
       flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
-      render bookmarks_path
+      render :index
     end
   end
 end

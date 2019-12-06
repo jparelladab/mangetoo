@@ -27,10 +27,9 @@
       <%= link_to visits_path, class: "hollowbtn upcoming-visit-btn" do %>
         <i class="fas fa-edit"></i> Change
       <% end %>
-      <%= link_to visits_path, class: "hollowbtn upcoming-visit-btn" do %>
+      <%= link_to visit_path(visit), method: 'delete', class: "hollowbtn upcoming-visit-btn" do %>
         <i class="fas fa-trash-alt"></i> Cancel
       <% end %>
     </div>
-
   </div>
 </div>

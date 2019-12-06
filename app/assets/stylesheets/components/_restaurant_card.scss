@@ -34,6 +34,7 @@
   background-color: white;
   padding: 2.5%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  position: relative;
   .see-details-btn {
     display: flex;
     justify-content: center;
@@ -136,6 +137,18 @@
   border: 2px solid #79cba7;
  }
 
+.delete-path > a {
+  font-size: 14px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  color: $MangeToo-green;
+
+  &:hover {
+    font-size: 16px;
+    color: $MangeToo-hovergreen;
+  }
+}
 
 // .btn-reviewers {
 //   margin-right: 5%;
