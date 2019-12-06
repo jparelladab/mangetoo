@@ -3,7 +3,7 @@ class VisitsController < ApplicationController
     visits = Visit.where(user: current_user)
 
     @upcoming_visits = visits.select { |v| v.date > Date.today }.sort_by { |v| v[:created_at] }.reverse
-    @previous_visits = visits.select { |v| v.date <= Date.today }.sort_by { |v| v[:date] }
+    @previous_visits = visits.select { |v| v.date <= Date.today }.sort_by { |v| v[:date] }.reverse
 
     followings_id = Follow.where(follower_id: current_user.id).map { |user| user.following_id }
     @followings_visits = followings_id.map { |id| Visit.where(user_id: id) }.flatten
