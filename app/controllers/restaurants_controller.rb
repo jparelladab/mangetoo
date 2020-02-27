@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
     my_restaurants = my_visits.map { |v| v.restaurant.id }
     all_restaurants_id = my_restaurants | followings_restaurants
     restaurants = all_restaurants_id.map { |id| Restaurant.where(id: id) }.flatten
+    restaurants = Restaurant.all
 
     if params[:query].present?
       @restaurants = restaurants.select { |rest| rest[:city].downcase == params[:query].downcase }
