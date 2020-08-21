@@ -47,7 +47,7 @@
   <% end %>
 </div>
 <% else %>
-  <p id="no-fellow-foodies">Follow some foodies! Take a look at MangeToo's foodie network below!</p>
+  <p id="no-fellow-foodies" style="text-align: center; opacity: 0.6;">Follow some foodies! Take a look at MangeToo's foodie network below!</p>
 <% end %>
 
 <div class="foodies-header">
@@ -63,7 +63,7 @@
         <% if foodie.photo.attached? %>
           <%= cl_image_tag foodie.photo.key, alt: "Image of user" %>
         <% else %>
-          <%= image_tag(foodie.default_image) %>
+          <%= cl_image_tag(foodie.default_image) %>
         <% end %>
       </div>
       <% else %>
@@ -71,7 +71,7 @@
         <% if foodie.photo.attached? %>
           <%= cl_image_tag foodie.photo.key, alt: "Image of user" %>
         <% else %>
-          <%=image_tag(foodie.default_image)%>
+          <%= cl_image_tag(foodie.default_image)%>
         <% end %>
       </div>
       <% end %>
